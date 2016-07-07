@@ -1,6 +1,6 @@
 {
   "name": "Site",
   "tagline": "我的网页.",
-  "body": "Hello",
+  "body": "Hello,欢迎浏览我的 [[emacs.html][emacs资料]] .",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
