@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>emacs</title>
-<!-- 2016-07-08 周五 12:55 -->
+<!-- 2016-07-08 周五 14:25 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -160,7 +160,12 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-15"><span class="todo TODO">TODO</span> 14. Find/Replace Text in Directory</a></li>
 <li><a href="#sec-1-16"><span class="todo TODO">TODO</span> 15.</a></li>
 <li><a href="#sec-1-17"><span class="todo TODO">TODO</span> 16. easypg encrypt decrypt gpg 加密,解密</a></li>
-<li><a href="#sec-1-18"><span class="todo TODO">TODO</span> 17. keyboard macro(键盘宏)</a></li>
+<li><a href="#sec-1-18"><span class="todo TODO">TODO</span> 17. keyboard macro(键盘宏)</a>
+<ul>
+<li><a href="#sec-1-18-1">定义</a></li>
+<li><a href="#sec-1-18-2">保存,导出:</a></li>
+</ul>
+</li>
 <li><a href="#sec-1-19"><span class="todo TODO">TODO</span> 18. 重复执行上一条命令</a></li>
 <li><a href="#sec-1-20"><span class="todo TODO">TODO</span> 19. org git</a></li>
 <li><a href="#sec-1-21">基本按键</a></li>
@@ -210,6 +215,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2-6">Introduction</a></li>
 <li><a href="#sec-2-7">Obtainine org-mode</a></li>
 <li><a href="#sec-2-8">Configuration</a></li>
+<li><a href="#sec-2-9"><span class="todo TODO">TODO</span> Publishing Org-mode files to HTML</a></li>
 </ul>
 </li>
 <li><a href="#sec-3">Org basics</a>
@@ -277,6 +283,12 @@ for the JavaScript code in this tag.
 <li><a href="#sec-7">git</a>
 <ul>
 <li><a href="#sec-7-1"><span class="todo TODO">TODO</span> 1.解决冲突问题.</a></li>
+<li><a href="#sec-7-2"><span class="todo TODO">TODO</span> 使用gitbub写博客</a>
+<ul>
+<li><a href="#sec-7-2-1"><span class="todo TODO">TODO</span> 1.创建project博客</a></li>
+<li><a href="#sec-7-2-2"><span class="todo TODO">TODO</span> 2.创建user博客</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#sec-8">Emacs</a>
@@ -420,6 +432,9 @@ C-x C-f,也可以打开&#x2026;
 <div id="outline-container-sec-1-18" class="outline-3">
 <h3 id="sec-1-18"><span class="todo TODO">TODO</span> 17. keyboard macro(键盘宏)</h3>
 <div class="outline-text-3" id="text-1-18">
+</div><div id="outline-container-sec-1-18-1" class="outline-4">
+<h4 id="sec-1-18-1">定义</h4>
+<div class="outline-text-4" id="text-1-18-1">
 <pre class="example">
 1. To start recording, press C-x ( ,kmacro-start-macro
 2. Type your keystrokes.
@@ -429,15 +444,27 @@ To run the keystrokes you've just recorded, call one of:
 call-last-kbd-macro
 kmacro-end-and-call-macro C-x e
 重复执行:从第二次开始,只需要按一次e.
-
-保存:
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-1-18-2" class="outline-4">
+<h4 id="sec-1-18-2">保存,导出:</h4>
+<div class="outline-text-4" id="text-1-18-2">
+<pre class="example">
 1. call name-last-kbd-macro and give it a name.
 2. call insert-kbd-macro. This will insert the list code for a named kmaro at the cursor position.
 3. Copy &amp; Paste the code into your emacs init file.
 4. In any future emacs session, you can call your kmacro by name just like any emacs command.
 </pre>
+<pre class="example">
+此处保存了一个macro:icode,既插入代码.
+执行icode后代码头信息已经键入,直接键入要插入的代码.
+最后C-y,把结尾加上.
+</pre>
 </div>
 </div>
+</div>
+
 <div id="outline-container-sec-1-19" class="outline-3">
 <h3 id="sec-1-19"><span class="todo TODO">TODO</span> 18. 重复执行上一条命令</h3>
 <div class="outline-text-3" id="text-1-19">
@@ -788,7 +815,13 @@ You can download org-mode from the <a href="http://orgmode.org">orgmode.org</a>
 </ol>
 </div>
 </div>
+<div id="outline-container-sec-2-9" class="outline-3">
+<h3 id="sec-2-9"><span class="todo TODO">TODO</span> Publishing Org-mode files to HTML</h3>
+<div class="outline-text-3" id="text-2-9">
 </div>
+</div>
+</div>
+
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Org basics</h2>
 <div class="outline-text-2" id="text-3">
@@ -824,12 +857,12 @@ You can download org-mode from the <a href="http://orgmode.org">orgmode.org</a>
 <div id="outline-container-sec-3-8" class="outline-3">
 <h3 id="sec-3-8">Scheduling tasks</h3>
 <div class="outline-text-3" id="text-3-8">
-<p>
+<pre class="example">
 C-c C-s org-schedule
 The calendar pops up, and I can either enter or click the desired date:
 Once I select the date, org-mode inserts a scheduling timestamp after the TODO item:
 Now save your file,
-</p>
+</pre>
 </div>
 </div>
 <div id="outline-container-sec-3-9" class="outline-3">
@@ -999,8 +1032,32 @@ M-n 向下移动选择.
 </div><div id="outline-container-sec-7-1" class="outline-3">
 <h3 id="sec-7-1"><span class="todo TODO">TODO</span> 1.解决冲突问题.</h3>
 </div>
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="todo TODO">TODO</span> 使用gitbub写博客</h3>
+<div class="outline-text-3" id="text-7-2">
+</div><div id="outline-container-sec-7-2-1" class="outline-4">
+<h4 id="sec-7-2-1"><span class="todo TODO">TODO</span> 1.创建project博客</h4>
+<div class="outline-text-4" id="text-7-2-1">
+<pre class="example">
+1.创建repository:site.
+2.创建branch: gh-pages.在ph-pages分支下的文件即为博客内容.
+3.替换index.html为自己的首页.
+4.git clone git@github.com:YOURGITHUBNAME/site.git
+5.cd site
+6.git checkout gh-pages 注:该命令自动切换应该显示的内容.
+7.修改index.html,添加新文件等.
+8.git add .
+9.git commit -m 'comments'
+10.git push
+至此,网页内容也修改.
+</pre>
 </div>
-
+</div>
+<div id="outline-container-sec-7-2-2" class="outline-4">
+<h4 id="sec-7-2-2"><span class="todo TODO">TODO</span> 2.创建user博客</h4>
+</div>
+</div>
+</div>
 <div id="outline-container-sec-8" class="outline-2">
 <h2 id="sec-8">Emacs</h2>
 <div class="outline-text-2" id="text-8">
@@ -1033,7 +1090,7 @@ org-mode，easypg：Emacs 自带。
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-07-08 周五 12:55</p>
+<p class="date">Created: 2016-07-08 周五 14:25</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
