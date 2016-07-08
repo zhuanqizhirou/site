@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>emacs</title>
-<!-- 2016-07-08 周五 05:19 -->
+<!-- 2016-07-08 周五 12:55 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -158,8 +158,8 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-13"><span class="todo TODO">TODO</span> 12. 替换</a></li>
 <li><a href="#sec-1-14"><span class="todo TODO">TODO</span> 13. 插入代码</a></li>
 <li><a href="#sec-1-15"><span class="todo TODO">TODO</span> 14. Find/Replace Text in Directory</a></li>
-<li><a href="#sec-1-16"><span class="todo TODO">TODO</span> 15. 键盘宏</a></li>
-<li><a href="#sec-1-17"><span class="todo TODO">TODO</span> 16. easypg</a></li>
+<li><a href="#sec-1-16"><span class="todo TODO">TODO</span> 15.</a></li>
+<li><a href="#sec-1-17"><span class="todo TODO">TODO</span> 16. easypg encrypt decrypt gpg 加密,解密</a></li>
 <li><a href="#sec-1-18"><span class="todo TODO">TODO</span> 17. keyboard macro(键盘宏)</a></li>
 <li><a href="#sec-1-19"><span class="todo TODO">TODO</span> 18. 重复执行上一条命令</a></li>
 <li><a href="#sec-1-20"><span class="todo TODO">TODO</span> 19. org git</a></li>
@@ -331,11 +331,11 @@ for the JavaScript code in this tag.
 <div id="outline-container-sec-1-9" class="outline-3">
 <h3 id="sec-1-9"><span class="done DONE">DONE</span> 8. 保存当前desktop,加载某一个desktop</h3>
 <div class="outline-text-3" id="text-1-9">
-<p>
+<pre class="example">
 M-x desktop-save,
 (desktop-save-mode 1);放入初始化文件.emacs中,会自动保存,并在重启时自动加载.
 M-x desktop-change-dir, reverts to the desktop previously reloaded.
-</p>
+</pre>
 </div>
 </div>
 <div id="outline-container-sec-1-10" class="outline-3">
@@ -343,12 +343,16 @@ M-x desktop-change-dir, reverts to the desktop previously reloaded.
 <div class="outline-text-3" id="text-1-10">
 <p>
 1.执行下面命令(如放在.emacs配置文件中,在每一行后按 C-c C-e,查看是否返回t,如果为nil,则不支持
+</p>
+<pre class="example">
 (image-type-available-p 'png)
 (image-type-available-p 'jpeg)
 (image-type-available-p 'gif)
 (image-type-available-p 'tiff)
 (image-type-available-p 'xbm)
 (image-type-available-p 'xpm)
+</pre>
+<p>
 2.C-h v,dynamic-library-alist,根据显示的value,加入dll到emacs根目录/bin文件夹内:
 </p>
 </div>
@@ -394,24 +398,20 @@ M-x desktop-change-dir, reverts to the desktop previously reloaded.
 </div>
 </div>
 <div id="outline-container-sec-1-16" class="outline-3">
-<h3 id="sec-1-16"><span class="todo TODO">TODO</span> 15. 键盘宏</h3>
+<h3 id="sec-1-16"><span class="todo TODO">TODO</span> 15.</h3>
 </div>
 <div id="outline-container-sec-1-17" class="outline-3">
-<h3 id="sec-1-17"><span class="todo TODO">TODO</span> 16. easypg</h3>
+<h3 id="sec-1-17"><span class="todo TODO">TODO</span> 16. easypg encrypt decrypt gpg 加密,解密</h3>
 <div class="outline-text-3" id="text-1-17">
-<p>
+<pre class="example">
 org 文件,第一行加入:
 -*- mode: org -*- -*- epa-file-encrypt-to: ("2517320453@qq.com") -*-
 ,加密后改名为**.org.gpg
 使用dired命令,查找进入(RET直接当前buffer,C-o新buffer),可以打开.
 当前版本自带easypg,不需要以下两行
-</p>
-<div class="org-src-container">
-
-<pre class="src src-emacs-lisp">;;(require 'epa-file)
+;;(require 'epa-file)
 ;;(epa-file-enable)
 </pre>
-</div>
 <p>
 C-x C-f,也可以打开&#x2026;
 </p>
@@ -420,38 +420,24 @@ C-x C-f,也可以打开&#x2026;
 <div id="outline-container-sec-1-18" class="outline-3">
 <h3 id="sec-1-18"><span class="todo TODO">TODO</span> 17. keyboard macro(键盘宏)</h3>
 <div class="outline-text-3" id="text-1-18">
-<ol class="org-ol">
-<li>To start recording, press C-x ( ,kmacro-start-macro
-</li>
-<li>Type your keystrokes.
-</li>
-<li>To stop recording, press C-x ) ,kmacro-end-macro
-</li>
-</ol>
-<p>
+<pre class="example">
+1. To start recording, press C-x ( ,kmacro-start-macro
+2. Type your keystrokes.
+3. To stop recording, press C-x ) ,kmacro-end-macro
 C-g ,keyboard-quit 
 To run the keystrokes you've just recorded, call one of:
 call-last-kbd-macro
 kmacro-end-and-call-macro C-x e
 重复执行:从第二次开始,只需要按一次e.
-</p>
 
-<p>
 保存:
-</p>
-<ol class="org-ol">
-<li>call name-last-kbd-macro and give it a name.
-</li>
-<li>call insert-kbd-macro. This will insert the list code for a named kmaro at the cursor position.
-</li>
-<li>Copy &amp; Paste the code into your emacs init file.
-</li>
-<li>In any future emacs session, you can call your kmacro by name just like any emacs command.
-</li>
-</ol>
+1. call name-last-kbd-macro and give it a name.
+2. call insert-kbd-macro. This will insert the list code for a named kmaro at the cursor position.
+3. Copy &amp; Paste the code into your emacs init file.
+4. In any future emacs session, you can call your kmacro by name just like any emacs command.
+</pre>
 </div>
 </div>
-
 <div id="outline-container-sec-1-19" class="outline-3">
 <h3 id="sec-1-19"><span class="todo TODO">TODO</span> 18. 重复执行上一条命令</h3>
 <div class="outline-text-3" id="text-1-19">
@@ -470,6 +456,7 @@ C-x z,repeat
 <h3 id="sec-1-21">基本按键</h3>
 <div class="outline-text-3" id="text-1-21">
 <p>
+#+BEGIN<sub>SRC</sub>
 ﻿C-x o other window
 C-x 2 split window
 C-x 1 sdfasdfsdf
@@ -495,20 +482,19 @@ C-g keyboard-quit,
 M-% query-replace
 1.启动Emacs随便在Options菜单里面选上两项,如USE CUS keys，选择save options选项，即会在默认目录里生成.Emacs配置文件。
 2.(load-file "e:/git/emacs/.emacs")；
+#+END<sub>SRC</sub>
 </p>
 </div>
 </div>
-
 <div id="outline-container-sec-1-23" class="outline-3">
 <h3 id="sec-1-23">基础:</h3>
 <div class="outline-text-3" id="text-1-23">
-<p>
-1.下载:<a href="http://ftp.gnu.org/pub/gnu/emacs/windows/">http://ftp.gnu.org/pub/gnu/emacs/windows/</a> 不推荐使用64位非官方版,否则会经常出现卡顿.
-2.C-Space 与输入法冲突问题:右键任务栏&gt;高级键设置&gt;修改.如果在emacs中已经使用了中文输入法,可能需要设置完成后重启该输入法.
-</p>
+<pre class="example">
+1.下载:http://ftp.gnu.org/pub/gnu/emacs/windows/ 不推荐使用64位非官方版,否则会经常出现卡顿.
+2.C-Space 与输入法冲突问题:右键任务栏&gt;高级键设置&gt;修改.如果在emacs中已经使用了中文输入法,可能需要设置完成后重启该输入法
+</pre>
 </div>
 </div>
-
 <div id="outline-container-sec-1-24" class="outline-3">
 <h3 id="sec-1-24">需求</h3>
 <div class="outline-text-3" id="text-1-24">
@@ -518,22 +504,22 @@ M-% query-replace
 <div id="outline-container-sec-1-24-2" class="outline-4">
 <h4 id="sec-1-24-2">split windows:</h4>
 <div class="outline-text-4" id="text-1-24-2">
-<p>
+<pre class="example">
 C-x 0 delete-window
 C-x 1 delete-other-windows
 C-x 2 split-window-below
 C-x 3 split-window-right
-</p>
+</pre>
 </div>
 </div>
 <div id="outline-container-sec-1-24-3" class="outline-4">
 <h4 id="sec-1-24-3">list buffer</h4>
 <div class="outline-text-4" id="text-1-24-3">
-<p>
+<pre class="example">
 C-x C-b list-buffers;
 C-x b switch-to-buffer
 M-x ibuffer command ibuffer is a improved version of list-buffers.
-</p>
+</pre>
 </div>
 </div>
 </div>
@@ -543,16 +529,14 @@ M-x ibuffer command ibuffer is a improved version of list-buffers.
 </div><div id="outline-container-sec-1-25-1" class="outline-4">
 <h4 id="sec-1-25-1">基本编辑</h4>
 <div class="outline-text-4" id="text-1-25-1">
-<p>
+<pre class="example">
 M-&lt;DEL&gt; backward-kill-word. 
    ‘M-&lt;DEL&gt;’ (‘backward-kill-word’) kills the word before point.  It
 kills everything from point back to where ‘M-b’ would move to.  For
 instance, if point is after the space in ‘FOO, BAR’, it kills ‘FOO, ’.
 If you wish to kill just ‘FOO’, and not the comma and the space, use
 ‘M-b M-d’ instead of ‘M-&lt;DEL&gt;’.
-</p>
 
-<p>
 C-' org-cycle-agenda-files,
 C-/ undo
 C-w kill-region,
@@ -560,20 +544,20 @@ M-w kill-ring-save,(copy);如果按M-w无效,可能是QQ热键冲突.
 C-y paste
 Cut is called “kill”, as in {kill word, kill text, kill region}.
 Paste is called “yank”.
-<code>========================</code>
+==========================
 A history of copied text is called “kill ring”, stored in the variable kill-ring.
 ##kill-ring:(剪贴板中的多条记录?)
 C-y yank
 M-y yank-pop
 场景:使用C-y,然后M-y循环切换要粘贴的内容.
-</p>
+</pre>
 </div>
 </div>
 </div>
 <div id="outline-container-sec-1-26" class="outline-3">
 <h3 id="sec-1-26">光标移动:</h3>
 <div class="outline-text-3" id="text-1-26">
-<p>
+<pre class="example">
 C-a move-beginning-of-line
 C-e move-end-of-line
 C-f forward-char
@@ -584,40 +568,37 @@ M-b backward-word
 M-f forward-word
 C-v scroll-up-sommand,向下滚动
 M-v scroll-down-command,向上滚动
-</p>
+</pre>
 </div>
 </div>
-
 <div id="outline-container-sec-1-27" class="outline-3">
 <h3 id="sec-1-27">文本选择</h3>
 <div class="outline-text-3" id="text-1-27">
-<p>
+<pre class="example">
 C-SPC set-mark-command,即开始标记
 C-x h 全选
-</p>
+</pre>
 </div>
 </div>
 <div id="outline-container-sec-1-28" class="outline-3">
 <h3 id="sec-1-28">缩进</h3>
 <div class="outline-text-3" id="text-1-28">
-<p>
+<pre class="example">
 C-x h,&lt;TAB&gt;
 HTML 不用HTML mode,而是Web mode:
 M-x package-show-package-list
-</p>
+</pre>
 </div>
-
 <div id="outline-container-sec-1-28-1" class="outline-4">
 <h4 id="sec-1-28-1">ibuffer并在其他窗口中打开:</h4>
 <div class="outline-text-4" id="text-1-28-1">
-<p>
+<pre class="example">
 C-x C-b,open buffer window,C-p/C-n move the cursor,
 C-o open the selected buffer in other buffer.
 RET open the selected buffer in this buffer.
-</p>
+</pre>
 </div>
 </div>
-
 <div id="outline-container-sec-1-28-2" class="outline-4">
 <h4 id="sec-1-28-2">选择光标到行首的位置</h4>
 <div class="outline-text-4" id="text-1-28-2">
@@ -643,30 +624,28 @@ C-SPC C-e
 <div id="outline-container-sec-1-29" class="outline-3">
 <h3 id="sec-1-29">不重启执行:</h3>
 <div class="outline-text-3" id="text-1-29">
-<p>
+<pre class="example">
 M-x eval-buffer
 C-x C-e 执行光标前的语句.
 M-x eval-region 选择region(区域)执行
 M-x eval-buffer 执行当前buffer.
-</p>
+</pre>
 </div>
 </div>
-
 <div id="outline-container-sec-1-30" class="outline-3">
 <h3 id="sec-1-30">mark text, register it</h3>
 <div class="outline-text-3" id="text-1-30">
-<p>
+<pre class="example">
 C-SPC mark a text
 C-x r s [0-9] register it
 C-x r i [0-9] yank
-</p>
+</pre>
 </div>
 </div>
-
 <div id="outline-container-sec-1-31" class="outline-3">
 <h3 id="sec-1-31">abbrev mode</h3>
 <div class="outline-text-3" id="text-1-31">
-<p>
+<pre class="example">
 (define-abbrev-table 'global-abbrev-table '(
 ;;normal english words
 ("9bg" "background")
@@ -675,53 +654,49 @@ C-x r i [0-9] yank
 (setq save-abbrevs nil)
 ;;turn on abbrev mode globally
 (setq-default abbrev-mode t)
-</p>
 
-<p>
 M-x abbrev-mode,toggle abbrev mode in the buffer.
-</p>
 
 
-<p>
 M-i tab-to-tab-stop,类似光标处插入TAB位移.
 M-/ 
 M-b backward-word,
-</p>
+</pre>
 </div>
 </div>
 <div id="outline-container-sec-1-32" class="outline-3">
 <h3 id="sec-1-32">编码</h3>
 <div class="outline-text-3" id="text-1-32">
-<p>
+<pre class="example">
 (setq default-buffer-file-coding-system 'utf-8);;Default coding system (for new files)      默认buffer编码是utf-8,(写文件)
 (prefer-coding-system 'utf-8);指定文件编码,此时buffer新建和读取都默认是utf-8,也可以M-x prefer-coding-system 只执行一次
 此时如果重新进入emacs,一个文件还是显示中文乱码,可能是加载的.emacs.desktop文件中保存的buffer-file-coding-system设置没有变化,
 ;;可以手动修改当前buffer编码:
 C-x RET r utf-8
-</p>
+</pre>
 </div>
 </div>
 <div id="outline-container-sec-1-33" class="outline-3">
 <h3 id="sec-1-33">enable recentf-mode</h3>
 <div class="outline-text-3" id="text-1-33">
-<div class="org-src-container">
-
-<pre class="src src-emacs-lisp">;;在中间这部分区域,按C-c ',进入退出代码编辑.
+<pre class="example">
+;;在中间这部分区域,按C-c ',进入退出代码编辑.
   (require 'recentf)
   (recentf-mode 1)
   (setq recentf-max-menu-items 25)
   ;(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 </pre>
-</div>
 <p>
 &lt;s &lt;Tab&gt;,即可快速生成如下代码
 </p>
 <pre class="example">
-</pre>
-<pre class="example">
+#+BEGIN_SRC 
+
+\#+END_SRC
 </pre>
 </div>
 </div>
+
 <div id="outline-container-sec-1-34" class="outline-3">
 <h3 id="sec-1-34">小问题</h3>
 <div class="outline-text-3" id="text-1-34">
@@ -752,7 +727,7 @@ Org 是一个基于快速高效的文本方式来实现做笔记、管理待办�
 <div id="outline-container-sec-2-2" class="outline-3">
 <h3 id="sec-2-2"><span class="todo TODO">TODO</span> 删除光标右边的内容</h3>
 <div class="outline-text-3" id="text-2-2">
-<p>
+<pre class="example">
 C-x C-t transpose-lines
 C-c C-t tog: TODO START DONE
 M-S-RET(Alt+Space+Enteer),'org-insert-todo-heading
@@ -760,8 +735,8 @@ C-c l org-store-link,保存为org链接?
 C-c C-l org-insert-link,插入org 链接.
 C-c C-o org-open-at-point,
 S-TAB,即Shift-TAB,NOT Space-TAB, org-shifttab,切换文档显示模式
-TAB 
-</p>
+TAB
+</pre>
 </div>
 </div>
 <div id="outline-container-sec-2-3" class="outline-3">
@@ -838,22 +813,14 @@ You can download org-mode from the <a href="http://orgmode.org">orgmode.org</a>
 <div id="outline-container-sec-3-7" class="outline-3">
 <h3 id="sec-3-7"><span class="todo TODO">TODO</span> The global TODO list</h3>
 <div class="outline-text-3" id="text-3-7">
-<ol class="org-ol">
-<li>将多个org文件配置在emacs initialization file:
-</li>
-</ol>
-<p>
+<pre class="example">
+1. 将多个org文件配置在emacs initialization file:
 (setq org-agenda-files(list "e:/git/emacs/orgfirst.org""e:/git/emacs/emacs.org"));"is right,'is wrong?
-</p>
-<ol class="org-ol">
-<li>C-c a t to enter the global todo list.
-</li>
-<li>You can move the cursor around to the different todo items, and hit "t" to mark an item DONE, or hit RET to jump to the source file where the TODO is located.
-</li>
-</ol>
+2. C-c a t to enter the global todo list.
+3. You can move the cursor around to the different todo items, and hit "t" to mark an item DONE, or hit RET to jump to the source file where the TODO is located.
+</pre>
 </div>
 </div>
-
 <div id="outline-container-sec-3-8" class="outline-3">
 <h3 id="sec-3-8">Scheduling tasks</h3>
 <div class="outline-text-3" id="text-3-8">
@@ -872,13 +839,11 @@ Now save your file,
 C-c a a org-agenda
 A display of this week's scheduled items are displayed:Now press "l" (lowercase L) to turn on log display. This displays the all finished tasks and their completion times.
 </p>
-<div class="org-src-container">
-
-<pre class="src src-ema">cs-lisp
+<pre class="example">
+cs-lisp
   (require 'org)
   (setq org-src-fontify-natively t)
 </pre>
-</div>
 </div>
 </div>
 <div id="outline-container-sec-3-10" class="outline-3">
@@ -905,71 +870,58 @@ Menu&gt;Options&gt;Manage Emacs packages&gt;
 <div id="outline-container-sec-4-1" class="outline-3">
 <h3 id="sec-4-1">使用melpa源:</h3>
 <div class="outline-text-3" id="text-4-1">
-<p>
+<pre class="example">
 把下面的代码放入配置文件中,启动emacs时自身检查列出的package是否已经安装,自动安装.
 手动安装方法:
 M-x list-packages,选择package,按i,标记安装,按x,执行安装.u,标记更新.
-</p>
 
-<p>
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "<a href="http://melpa.org/packages/">http://melpa.org/packages/</a>") t)
+             '("melpa" . "http://melpa.org/packages/") t)
 (when (&lt; emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "<a href="http://elpa.gnu.org/packages/">http://elpa.gnu.org/packages/</a>")))
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
-</p>
 
-<p>
 ;; cl - Common Lisp Extension
 (require 'cl)
-</p>
 
-<p>
 ;; Add Packages
 (defvar my/packages '(
-               ;; &#x2014; Auto-completion &#x2014;
-               company
-               ;; &#x2014; Better Editor &#x2014;
-               hungry-delete
+	       ;; --- Auto-completion ---
+	       company
+	       ;; --- Better Editor ---
+	       hungry-delete
                web-mode
-               ;swiper
-               ;counsel
-               ;smartparens
-               ;; &#x2014; Major Mode &#x2014;
-               ;js2-mode
-               ;; &#x2014; Minor Mode &#x2014;
-               ;nodejs-repl
-               ;exec-path-from-shell
-               ;; &#x2014; Themes &#x2014;
-               ;monokai-theme
-               ;; solarized-theme
-               ) "Default packages")
-</p>
+	       ;swiper
+	       ;counsel
+	       ;smartparens
+	       ;; --- Major Mode ---
+	       ;js2-mode
+	       ;; --- Minor Mode ---
+	       ;nodejs-repl
+	       ;exec-path-from-shell
+	       ;; --- Themes ---
+	       ;monokai-theme
+	       ;; solarized-theme
+	       ) "Default packages")
 
-<p>
 (setq package-selected-packages my/packages)
-</p>
 
-<p>
 (defun my/packages-installed-p ()
     (loop for pkg in my/packages
-          when (not (package-installed-p pkg)) do (return nil)
-          finally (return t)))
-</p>
+	  when (not (package-installed-p pkg)) do (return nil)
+	  finally (return t)))
 
-<p>
 (unless (my/packages-installed-p)
-    (message "%s" "Refreshing package database&#x2026;")
+    (message "%s" "Refreshing package database...")
     (package-refresh-contents)
     (dolist (pkg my/packages)
       (when (not (package-installed-p pkg))
-        (package-install pkg))))
-</p>
+	(package-install pkg))))
+</pre>
 </div>
 </div>
-
 <div id="outline-container-sec-4-2" class="outline-3">
 <h3 id="sec-4-2">major</h3>
 <div class="outline-text-3" id="text-4-2">
@@ -991,14 +943,14 @@ M-x dired,或者C-x d,开启.
 </div><div id="outline-container-sec-4-3-1" class="outline-4">
 <h4 id="sec-4-3-1">Company</h4>
 <div class="outline-text-4" id="text-4-3-1">
-<p>
+<pre class="example">
 M-x company-mode;只在运行此命令的buffer下有效.
 在.emacs中执行上面命令,输入
 (glo
 出现自动补全提示,选择
 (global-company-mode t);下次启动自动有补全功能.
 M-n 向下移动选择.
-</p>
+</pre>
 </div>
 </div>
 </div>
@@ -1055,23 +1007,25 @@ M-n 向下移动选择.
 </div><div id="outline-container-sec-8-1" class="outline-3">
 <h3 id="sec-8-1">目标：</h3>
 <div class="outline-text-3" id="text-8-1">
-<p>
+<pre class="example">
 1.emacs：神的编辑器。
 2.Gpg4win：加密，解密，签名。（这里使用非对称加密）
 3.Thunderbird+enigmail+Gpg4win 实现收发加密邮件（这里使用非对称加密）
 4.org-mode：最好的文档编辑利器。使用emacs编辑org mode文件。可用于平时记录日志，管理待办事项（TODO list），项目计划。
 5.easypg：读写加密文件，将org mode文件使用Gpg4win加密后，可以使用easypg读写加密后的文件，磁盘上只需保存加密后的文件，删除原文件，达到密保效果。
-</p>
+</pre>
 </div>
 </div>
 <div id="outline-container-sec-8-2" class="outline-3">
 <h3 id="sec-8-2">软件：</h3>
 <div class="outline-text-3" id="text-8-2">
-<p>
-<a href="http://ftp.gnu.org/pub/gnu/emacs/windows/">Emacs 24.5</a>
-<a href="https://www.gpg4win.org/">Gpg4win 2.3.1(Released:2016-04-05)</a>
-<a href="https://www.mozilla.org/en-US/thunderbird/">Thunderbird(另需插件：enigmail)</a>
+<pre class="example">
+[[http://ftp.gnu.org/pub/gnu/emacs/windows/][Emacs 24.5]]
+[[https://www.gpg4win.org/][Gpg4win 2.3.1(Released:2016-04-05)]]
+[[https://www.mozilla.org/en-US/thunderbird/][Thunderbird(另需插件：enigmail)]]
 org-mode，easypg：Emacs 自带。
+</pre>
+<p>
 **
 </p>
 </div>
@@ -1079,7 +1033,7 @@ org-mode，easypg：Emacs 自带。
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-07-08 周五 05:19</p>
+<p class="date">Created: 2016-07-08 周五 12:55</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
