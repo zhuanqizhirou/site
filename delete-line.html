@@ -181,7 +181,7 @@ This cmmand doesnot push text to 'kill-ring'"
   "Delete characters forward until encountering the end of a word.
 With argument,do this many times.
 This command does not push text to 'kill-ring'"
-  (interactive "p");;told Emacs to interpret your typing either C-u followed by a number or META followed by a number as a command to pass that number to the function as its argument.
+  (interactive "p");;interpret your typing either C-u followed by a number or META followed by a number as a command to pass that number to the function as its argument.
   (delete-region
    (point)
    (progn
