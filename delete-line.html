@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>delete-line</title>
-<!-- 2016-08-11 周四 06:36 -->
+<!-- 2016-10-21 周五 03:43 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -137,9 +137,8 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">delete-line</h1>
-<div class="org-src-container">
-
-<pre class="src src-emacs-lisp">(defun pw-delete-line-forward()
+<pre class="example">
+(defun pw-delete-line-forward()
   "delete text from current position to end of line char.
 This command does not push text to 'kill-ring'"
   (interactive)
@@ -195,14 +194,13 @@ This command does not push text to 'kill-ring'"
     (interactive "p")
     (pw-delete-word-forward (- arg)))
 
-(global-set-key (kbd "M-S-d") 'pw-delete-work-forward)
-(global-set-key (kbd "M-S-DEL") 'pw-delete-work-backward)
+(global-set-key (kbd "C-S-d") 'pw-delete-word-forward)
+(global-set-key (kbd "C-S-b") 'pw-delete-word-backward)
 </pre>
 </div>
-</div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-08-11 周四 06:36</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2016-10-21 周五 03:43</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
