@@ -2452,7 +2452,7 @@ Tool-&gt;check model&#x2026;去掉Entity Attribute下Entity Attribute name uniqu
 driver name:
 随便取
 connection url:
-jdbc:jtds:sqlserver://192.168.1.223:1433/tms_tianshun;user=sa;password=sa123456
+jdbc:jtds:sqlserver://192.168.1.223:1433/DB-NAME;user=sa;password=sa123456
 user name:
 sa
 password:
@@ -2491,9 +2491,9 @@ In my case I forgot to change the mapper namespace:
 </pre>
 <p>
 再如：
-org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.lcdt.frame.mapper.CustomerLevelMapper.selectByPrimaryKey
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.XX.frame.mapper.CustomerLevelMapper.selectByPrimaryKey
 ，发现CustomerLevelMapper。xml中，
-&lt;mapper namespace="com.lcdt.customer.mapper.CustomerLevelMapper"&gt;
+&lt;mapper namespace="com.XX.customer.mapper.CustomerLevelMapper"&gt;
 当时自动生成的xml文件，原在customer下，后移动至frame下，故出错。
 </p>
 </div>
