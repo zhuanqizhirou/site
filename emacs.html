@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>emacs</title>
-<!-- 2016-08-11 周四 06:45 -->
+<!-- 2016-10-21 周五 03:55 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -133,6 +133,48 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
 </head>
 <body>
 <div id="content">
@@ -157,58 +199,62 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1-12"><span class="todo TODO">TODO</span> 11. 设定major mode</a></li>
 <li><a href="#sec-1-13"><span class="todo TODO">TODO</span> 12. 替换</a></li>
 <li><a href="#sec-1-14"><span class="todo TODO">TODO</span> 13. 插入代码</a></li>
-<li><a href="#sec-1-15">Liternal examples</a></li>
-<li><a href="#sec-1-16"><span class="todo TODO">TODO</span> 14. Find/Replace Text in Directory</a></li>
-<li><a href="#sec-1-17"><span class="todo TODO">TODO</span> 15.</a></li>
-<li><a href="#sec-1-18"><span class="todo TODO">TODO</span> 16. easypg encrypt decrypt gpg 加密,解密</a></li>
-<li><a href="#sec-1-19"><span class="todo TODO">TODO</span> 17. keyboard macro(键盘宏)</a></li>
-<li><a href="#sec-1-20"><span class="todo TODO">TODO</span> 18.删除整行操作不保存到yank</a>
+<li><a href="#sec-1-15">13. 打开临时buffer,驶入代码,自动缩进</a></li>
+<li><a href="#sec-1-16">Liternal examples</a></li>
+<li><a href="#sec-1-17"><span class="todo TODO">TODO</span> 14. Find/Replace Text in Directory</a></li>
+<li><a href="#sec-1-18"><span class="todo TODO">TODO</span> 15.</a></li>
+<li><a href="#sec-1-19"><span class="todo TODO">TODO</span> 16. easypg encrypt decrypt gpg 加密,解密</a></li>
+<li><a href="#sec-1-20"><span class="todo TODO">TODO</span> 17. keyboard macro(键盘宏)</a></li>
+<li><a href="#sec-1-21"><span class="todo TODO">TODO</span> 18. 删除整行操作不保存到yank</a></li>
+<li><a href="#sec-1-22"><span class="todo TODO">TODO</span> 19. git排除目录</a>
 <ul>
-<li><a href="#sec-1-20-1">定义</a></li>
-<li><a href="#sec-1-20-2">保存,导出:</a></li>
+<li><a href="#sec-1-22-1">定义</a></li>
+<li><a href="#sec-1-22-2">保存,导出:</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-21"><span class="todo TODO">TODO</span> 18. 重复执行上一条命令</a></li>
-<li><a href="#sec-1-22"><span class="todo TODO">TODO</span> 19. org git</a></li>
-<li><a href="#sec-1-23">20. 移动到文档末尾</a></li>
-<li><a href="#sec-1-24">基本按键</a></li>
-<li><a href="#sec-1-25">最基础有用的command</a></li>
-<li><a href="#sec-1-26">基础:</a></li>
-<li><a href="#sec-1-27">光标移动</a></li>
-<li><a href="#sec-1-28">文件编辑</a></li>
-<li><a href="#sec-1-29">文本搜索</a></li>
-<li><a href="#sec-1-30">多窗口</a></li>
-<li><a href="#sec-1-31">需求</a>
+<li><a href="#sec-1-23"><span class="todo TODO">TODO</span> 18. 重复执行上一条命令</a></li>
+<li><a href="#sec-1-24"><span class="todo TODO">TODO</span> 19. git 忽略文件</a></li>
+<li><a href="#sec-1-25">20. 移动到文档末尾</a></li>
+<li><a href="#sec-1-26">21. make-directory</a></li>
+<li><a href="#sec-1-27">22. 标记当前point position,返回之前标记的位置:</a></li>
+<li><a href="#sec-1-28">基本按键</a></li>
+<li><a href="#sec-1-29">最基础有用的command</a></li>
+<li><a href="#sec-1-30">基础:</a></li>
+<li><a href="#sec-1-31">光标移动</a></li>
+<li><a href="#sec-1-32">文件编辑</a></li>
+<li><a href="#sec-1-33">文本搜索</a></li>
+<li><a href="#sec-1-34">多窗口</a></li>
+<li><a href="#sec-1-35">需求</a>
 <ul>
-<li><a href="#sec-1-31-1">切换buffer:</a></li>
-<li><a href="#sec-1-31-2">切换窗口：</a></li>
-<li><a href="#sec-1-31-3">split windows:</a></li>
-<li><a href="#sec-1-31-4">list buffer</a></li>
+<li><a href="#sec-1-35-1">切换buffer:</a></li>
+<li><a href="#sec-1-35-2">切换窗口：</a></li>
+<li><a href="#sec-1-35-3">split windows:</a></li>
+<li><a href="#sec-1-35-4">list buffer</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-32">编辑操作</a>
+<li><a href="#sec-1-36">编辑操作</a>
 <ul>
-<li><a href="#sec-1-32-1">基本编辑</a></li>
+<li><a href="#sec-1-36-1">基本编辑</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-33">光标移动:</a></li>
-<li><a href="#sec-1-34">文本选择</a></li>
-<li><a href="#sec-1-35">缩进</a>
+<li><a href="#sec-1-37">光标移动:</a></li>
+<li><a href="#sec-1-38">文本选择</a></li>
+<li><a href="#sec-1-39">缩进</a>
 <ul>
-<li><a href="#sec-1-35-1">ibuffer并在其他窗口中打开:</a></li>
-<li><a href="#sec-1-35-2">选择光标到行首的位置</a></li>
-<li><a href="#sec-1-35-3">选择光标到行尾的位置</a></li>
-<li><a href="#sec-1-35-4">光标所在行上下移动</a></li>
+<li><a href="#sec-1-39-1">ibuffer并在其他窗口中打开:</a></li>
+<li><a href="#sec-1-39-2">选择光标到行首的位置</a></li>
+<li><a href="#sec-1-39-3">选择光标到行尾的位置</a></li>
+<li><a href="#sec-1-39-4">光标所在行上下移动</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-36">不重启执行:</a></li>
-<li><a href="#sec-1-37">mark text, register it</a></li>
-<li><a href="#sec-1-38">abbrev mode</a></li>
-<li><a href="#sec-1-39">编码</a></li>
-<li><a href="#sec-1-40">enable recentf-mode</a></li>
-<li><a href="#sec-1-41">小问题</a>
+<li><a href="#sec-1-40">不重启执行:</a></li>
+<li><a href="#sec-1-41">mark text, register it</a></li>
+<li><a href="#sec-1-42">abbrev mode</a></li>
+<li><a href="#sec-1-43">编码</a></li>
+<li><a href="#sec-1-44">enable recentf-mode</a></li>
+<li><a href="#sec-1-45">小问题</a>
 <ul>
-<li><a href="#sec-1-41-1">引号需要输入两次,才会显示,不但输入别扭,更会导致快捷键效果不理想.</a></li>
+<li><a href="#sec-1-45-1">引号需要输入两次,才会显示,不但输入别扭,更会导致快捷键效果不理想.</a></li>
 </ul>
 </li>
 </ul>
@@ -224,6 +270,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2-7">Obtainine org-mode</a></li>
 <li><a href="#sec-2-8">Configuration</a></li>
 <li><a href="#sec-2-9"><span class="done DONE">DONE</span> Publishing Org-mode files to HTML</a></li>
+<li><a href="#sec-2-10">中英文表格对齐：等宽字体配置：安装chinese-fonts-setup</a></li>
 </ul>
 </li>
 <li><a href="#sec-3">Org basics</a>
@@ -264,55 +311,64 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#sec-6">每日计划</a>
+<li><a href="#sec-6">git</a>
 <ul>
-<li><a href="#sec-6-1">201606</a>
+<li><a href="#sec-6-1">情景：revert change</a>
 <ul>
-<li><a href="#sec-6-1-1">21</a>
-<ul>
-<li><a href="#sec-6-1-1-1"><span class="todo TODO">TODO</span> web-mode官方文档.</a></li>
+<li><a href="#sec-6-1-1">git checkout HEAD</a></li>
+<li><a href="#sec-6-1-2">get checkout &#x2013; filename</a></li>
+<li><a href="#sec-6-1-3">git checkout HEAD filename</a></li>
+<li><a href="#sec-6-1-4">add后，git reset</a></li>
+<li><a href="#sec-6-1-5">add后，git reset HEAD</a></li>
+<li><a href="#sec-6-1-6">git reset &#x2013; filename</a></li>
+<li><a href="#sec-6-1-7">git reset HEAD filename</a></li>
+<li><a href="#sec-6-1-8">git checkout HEAD filename</a></li>
 </ul>
 </li>
-<li><a href="#sec-6-1-2">30</a>
+<li><a href="#sec-6-2">配置命令：</a></li>
+<li><a href="#sec-6-3"><span class="todo TODO">TODO</span> 1.解决冲突问题.</a></li>
+<li><a href="#sec-6-4"><span class="todo TODO">TODO</span> 使用gitbub写博客</a>
 <ul>
-<li><a href="#sec-6-1-2-1"><span class="todo TODO">TODO</span> 订购,评价公司产品.</a></li>
+<li><a href="#sec-6-4-1"><span class="todo TODO">TODO</span> 1.创建project博客</a></li>
+<li><a href="#sec-6-4-2"><span class="todo TODO">TODO</span> 2.创建user博客</a></li>
 </ul>
 </li>
-<li><a href="#sec-6-1-3"><span class="todo TODO">TODO</span> 20160811</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#sec-7">git</a>
+<li><a href="#sec-6-5"><span class="todo TODO">TODO</span> 1. 本地与远程二进制文件冲突的后果:</a></li>
+<li><a href="#sec-6-6"><span class="todo TODO">TODO</span> 2. git 分支</a>
 <ul>
-<li><a href="#sec-7-1">配置命令：</a></li>
-<li><a href="#sec-7-2"><span class="todo TODO">TODO</span> 1.解决冲突问题.</a></li>
-<li><a href="#sec-7-3"><span class="todo TODO">TODO</span> 使用gitbub写博客</a>
+<li><a href="#sec-6-6-1">local-only合并到master</a></li>
+<li><a href="#sec-6-6-2">git教程再次学习</a></li>
+<li><a href="#sec-6-6-3">创建标签</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-7">签名标签 存疑</a>
 <ul>
-<li><a href="#sec-7-3-1"><span class="todo TODO">TODO</span> 1.创建project博客</a></li>
-<li><a href="#sec-7-3-2"><span class="todo TODO">TODO</span> 2.创建user博客</a></li>
+<li><a href="#sec-6-7-1">操作标签</a></li>
+<li><a href="#sec-6-7-2">忽略文件</a></li>
 </ul>
 </li>
-<li><a href="#sec-7-4"><span class="todo TODO">TODO</span> 1. 本地与远程二进制文件冲突的后果:</a></li>
-<li><a href="#sec-7-5"><span class="todo TODO">TODO</span> 2. git 分支</a>
+<li><a href="#sec-6-8"><span class="todo TODO">TODO</span> 3. emacs+git</a></li>
+<li><a href="#sec-6-9"><span class="todo TODO">TODO</span> 4.查看/编辑git全局配置</a></li>
+<li><a href="#sec-6-10"><span class="done DONE">DONE</span> 5.gpg diff</a></li>
+<li><a href="#sec-6-11">情景:修改/添加了普通文件,删除了除in.org.gpg外的gpg文件.</a></li>
+<li><a href="#sec-6-12">情景:统以本地与远程</a></li>
+<li><a href="#sec-6-13">情景: git add后,撤销stage中内容.</a></li>
+<li><a href="#sec-6-14"><span class="todo TODO">TODO</span> 情景: 查看某文件的历史版本</a></li>
+<li><a href="#sec-6-15"><span class="todo TODO">TODO</span> 情景: 保存当前工作,恢复资源库内容.</a></li>
+<li><a href="#sec-6-16">情景: 列出repository中的所有文件</a></li>
+<li><a href="#sec-6-17">情景:</a>
 <ul>
-<li><a href="#sec-7-5-1">local-only合并到master</a></li>
-<li><a href="#sec-7-5-2">git教程再次学习</a></li>
-<li><a href="#sec-7-5-3">创建标签</a></li>
+<li><a href="#sec-6-17-1">remove sensitive data</a></li>
+<li><a href="#sec-6-17-2"><span class="todo TODO">TODO</span> 删除资源库中的内容,保存工作区内容.</a></li>
 </ul>
 </li>
-<li><a href="#sec-7-6">签名标签 存疑</a>
-<ul>
-<li><a href="#sec-7-6-1">操作标签</a></li>
-<li><a href="#sec-7-6-2">忽略文件</a></li>
+<li><a href="#sec-6-18">git diff &lt;file&gt; 比较工作区与暂存区</a></li>
+<li><a href="#sec-6-19">git diff &#x2013;ignore-space-change file 忽略空格</a></li>
+<li><a href="#sec-6-20">git diff &#x2013;cached file 比较暂存区与版本库</a></li>
+<li><a href="#sec-6-21">git svn管理同一目录问题:</a></li>
 </ul>
 </li>
-<li><a href="#sec-7-7"><span class="todo TODO">TODO</span> 3. emacs+git</a></li>
-<li><a href="#sec-7-8"><span class="todo TODO">TODO</span> 4.查看/编辑git全局配置</a></li>
-<li><a href="#sec-7-9"><span class="done DONE">DONE</span> 5.gpg diff</a></li>
-<li><a href="#sec-7-10">情景:修改/添加了普通文件,删除了除in.org.gpg外的gpg文件.</a></li>
-</ul>
-</li>
+<li><a href="#sec-7">magit</a></li>
 <li><a href="#sec-8">GPG</a>
 <ul>
 <li><a href="#sec-8-1">gpg命令</a></li>
@@ -337,6 +393,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-11-1-1">数组:</a></li>
 </ul>
 </li>
+<li><a href="#sec-11-2">jquery</a></li>
 </ul>
 </li>
 <li><a href="#sec-12">CSS</a>
@@ -350,22 +407,103 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-14-1"><span class="todo TODO">TODO</span> 1. git</a></li>
 <li><a href="#sec-14-2"><span class="todo TODO">TODO</span> 2. org</a></li>
+<li><a href="#sec-14-3"><span class="todo TODO">TODO</span> 3. Common Lisp</a></li>
+<li><a href="#sec-14-4"><span class="todo TODO">TODO</span> 4. Clojure</a></li>
+<li><a href="#sec-14-5"><span class="todo TODO">TODO</span> 5. Bootstrap</a></li>
 </ul>
 </li>
 <li><a href="#sec-15">平时用到却需要再次翻找的功能</a>
 <ul>
-<li><a href="#sec-15-1">打开新窗口，插入代码。</a></li>
+<li><a href="#sec-15-1">1. 打开新窗口，插入代码。</a></li>
 <li><a href="#sec-15-2">粘贴内容，并选中粘贴的内容</a></li>
-<li><a href="#sec-15-3">列模式？选中内容前面加4个空格</a></li>
-<li><a href="#sec-15-4">就是要输入tab：M-i</a></li>
+<li><a href="#sec-15-3"></a></li>
+<li><a href="#sec-15-4">列模式？选中内容前面加4个空格</a></li>
+<li><a href="#sec-15-5">就是要输入tab：M-i</a></li>
+<li><a href="#sec-15-6">找不到/ or such file or directory</a></li>
+<li><a href="#sec-15-7">自动添加序号:</a></li>
+<li><a href="#sec-15-8">简写: abbreviation</a>
+<ul>
+<li><a href="#sec-15-8-1">常用</a></li>
+<li><a href="#sec-15-8-2">添加:</a></li>
+<li><a href="#sec-15-8-3">delete:</a></li>
+<li><a href="#sec-15-8-4">list</a></li>
+<li><a href="#sec-15-8-5">edit</a></li>
+</ul>
+</li>
+<li><a href="#sec-15-9">M-L DOWNCASE-WORD</a></li>
+<li><a href="#sec-15-10">M-U UPCASE-WORD</a></li>
+<li><a href="#sec-15-11">输入unicode字符</a></li>
+<li><a href="#sec-15-12"><span class="done DONE">DONE</span> Yasinppet</a>
+<ul>
+<li><a href="#sec-15-12-1">安装 yasnippet</a></li>
+<li><a href="#sec-15-12-2">配置</a></li>
+<li><a href="#sec-15-12-3">新建</a></li>
+<li><a href="#sec-15-12-4">使用</a></li>
+<li><a href="#sec-15-12-5">查看/修改</a></li>
+</ul>
+</li>
+<li><a href="#sec-15-13">Org 导出网页</a>
+<ul>
+<li><a href="#sec-15-13-1">配置见init.el</a></li>
+<li><a href="#sec-15-13-2">导出</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#sec-16">IT</a>
 <ul>
-<li><a href="#sec-16-1">后台数据库等相关</a></li>
+<li><a href="#sec-16-1">后台数据库等相关</a>
+<ul>
+<li><a href="#sec-16-1-1">myeclipse database explorer 配置</a></li>
+<li><a href="#sec-16-1-2">设置主键自增</a></li>
+</ul>
+</li>
+<li><a href="#sec-16-2">mybatis</a>
+<ul>
+<li><a href="#sec-16-2-1">异常:</a></li>
+</ul>
+</li>
+<li><a href="#sec-16-3">struts2</a></li>
 </ul>
 </li>
 <li><a href="#sec-17">English</a></li>
+<li><a href="#sec-18">Lisp</a>
+<ul>
+<li><a href="#sec-18-1">快速学习:expand calls to the built-in macros</a></li>
+<li><a href="#sec-18-2"></a></li>
+<li><a href="#sec-18-3">Common Lisp</a>
+<ul>
+<li><a href="#sec-18-3-1">学习路径</a></li>
+<li><a href="#sec-18-3-2">入门基本概念,容易混淆的地方</a></li>
+<li><a href="#sec-18-3-3">列表</a>
+<ul>
+<li><a href="#sec-18-3-3-1">一个例子:压缩(游程编码),充分理解cons与list的区别,lisp(list)编码(处理)的核心思想</a></li>
+<li><a href="#sec-18-3-3-2"></a></li>
+<li><a href="#sec-18-3-3-3">tree</a></li>
+<li><a href="#sec-18-3-3-4">序列 sequence</a></li>
+<li><a href="#sec-18-3-3-5">栈 Stacks</a></li>
+<li><a href="#sec-18-3-3-6">push 与cons的区别</a></li>
+<li><a href="#sec-18-3-3-7">点状列表 dotted lists</a></li>
+<li><a href="#sec-18-3-3-8">关联列表 assoc-lists</a></li>
+<li><a href="#sec-18-3-3-9">最短路径</a></li>
+<li><a href="#sec-18-3-3-10"></a></li>
+</ul>
+</li>
+<li><a href="#sec-18-3-4">特殊数据结构</a>
+<ul>
+<li><a href="#sec-18-3-4-1">array vector</a></li>
+<li><a href="#sec-18-3-4-2"><span class="todo TODO">TODO</span> 二叉搜索</a></li>
+<li><a href="#sec-18-3-4-3">字符与字符串</a></li>
+<li><a href="#sec-18-3-4-4">序列:序列类型包含了列表与向量(list,vector)</a></li>
+</ul>
+</li>
+<li><a href="#sec-18-3-5">ANSI COMMON LISP</a></li>
+<li><a href="#sec-18-3-6">SBCL</a></li>
+<li><a href="#sec-18-3-7"><span class="todo TODO">TODO</span> macro</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -458,16 +596,34 @@ M-x desktop-change-dir, reverts to the desktop previously reloaded.
 <h3 id="sec-1-14"><span class="todo TODO">TODO</span> 13. 插入代码</h3>
 <div class="outline-text-3" id="text-1-14">
 <p>
-&lt; s TAB
+&lt; s TAB,紧接着在出现的代码块,光标所在位置输入如:common-lisp,emacslisp,然后代码块就可以高亮显示(defun显示红色.(需要如下配置:
 </p>
+<pre class="example">
+(require 'org)
+(setq org-src-fontify-natively t)
+</pre>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">(defun
+</pre>
+</div>
 <pre class="example">
 本内容包含在#+BEGIN_SRC块中。
 </pre>
 </div>
 </div>
 <div id="outline-container-sec-1-15" class="outline-3">
-<h3 id="sec-1-15">Liternal examples</h3>
+<h3 id="sec-1-15">13. 打开临时buffer,驶入代码,自动缩进</h3>
 <div class="outline-text-3" id="text-1-15">
+<p>
+C-c '
+退出也是
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-16" class="outline-3">
+<h3 id="sec-1-16">Liternal examples</h3>
+<div class="outline-text-3" id="text-1-16">
 <p>
 &lt;e TAB
 </p>
@@ -476,9 +632,9 @@ M-x desktop-change-dir, reverts to the desktop previously reloaded.
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-16" class="outline-3">
-<h3 id="sec-1-16"><span class="todo TODO">TODO</span> 14. Find/Replace Text in Directory</h3>
-<div class="outline-text-3" id="text-1-16">
+<div id="outline-container-sec-1-17" class="outline-3">
+<h3 id="sec-1-17"><span class="todo TODO">TODO</span> 14. Find/Replace Text in Directory</h3>
+<div class="outline-text-3" id="text-1-17">
 <pre class="example">
 1.call dired to list files in dir, or call find-dired if you need all subdirectories.
 2.type % m to mark the files you want.
@@ -492,15 +648,15 @@ M-x desktop-change-dir, reverts to the desktop previously reloaded.
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-17" class="outline-3">
-<h3 id="sec-1-17"><span class="todo TODO">TODO</span> 15.</h3>
-</div>
 <div id="outline-container-sec-1-18" class="outline-3">
-<h3 id="sec-1-18"><span class="todo TODO">TODO</span> 16. easypg encrypt decrypt gpg 加密,解密</h3>
-<div class="outline-text-3" id="text-1-18">
+<h3 id="sec-1-18"><span class="todo TODO">TODO</span> 15.</h3>
+</div>
+<div id="outline-container-sec-1-19" class="outline-3">
+<h3 id="sec-1-19"><span class="todo TODO">TODO</span> 16. easypg encrypt decrypt gpg 加密,解密</h3>
+<div class="outline-text-3" id="text-1-19">
 <pre class="example">
 org 文件,第一行加入:
--*- mode: org -*- -*- epa-file-encrypt-to: ("2517320453@qq.com") -*-
+-*- mode: org -*- -*- epa-file-encrypt-to: ("email@qq.com") -*-
 ,加密后改名为**.org.gpg
 使用dired命令,查找进入(RET直接当前buffer,C-o新buffer),可以打开.
 当前版本自带easypg,不需要以下两行
@@ -512,15 +668,19 @@ C-x C-f,也可以打开&#x2026;
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-19" class="outline-3">
-<h3 id="sec-1-19"><span class="todo TODO">TODO</span> 17. keyboard macro(键盘宏)</h3>
-</div>
 <div id="outline-container-sec-1-20" class="outline-3">
-<h3 id="sec-1-20"><span class="todo TODO">TODO</span> 18.删除整行操作不保存到yank</h3>
-<div class="outline-text-3" id="text-1-20">
-</div><div id="outline-container-sec-1-20-1" class="outline-4">
-<h4 id="sec-1-20-1">定义</h4>
-<div class="outline-text-4" id="text-1-20-1">
+<h3 id="sec-1-20"><span class="todo TODO">TODO</span> 17. keyboard macro(键盘宏)</h3>
+</div>
+<div id="outline-container-sec-1-21" class="outline-3">
+<h3 id="sec-1-21"><span class="todo TODO">TODO</span> 18. 删除整行操作不保存到yank</h3>
+</div>
+
+<div id="outline-container-sec-1-22" class="outline-3">
+<h3 id="sec-1-22"><span class="todo TODO">TODO</span> 19. git排除目录</h3>
+<div class="outline-text-3" id="text-1-22">
+</div><div id="outline-container-sec-1-22-1" class="outline-4">
+<h4 id="sec-1-22-1">定义</h4>
+<div class="outline-text-4" id="text-1-22-1">
 <pre class="example">
 1. To start recording, press C-x ( ,kmacro-start-macro
 2. Type your keystrokes.
@@ -533,9 +693,9 @@ kmacro-end-and-call-macro C-x e
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-20-2" class="outline-4">
-<h4 id="sec-1-20-2">保存,导出:</h4>
-<div class="outline-text-4" id="text-1-20-2">
+<div id="outline-container-sec-1-22-2" class="outline-4">
+<h4 id="sec-1-22-2">保存,导出:</h4>
+<div class="outline-text-4" id="text-1-22-2">
 <pre class="example">
 1. call name-last-kbd-macro and give it a name.
 2. call insert-kbd-macro. This will insert the list code for a named kmaro at the cursor position.
@@ -551,9 +711,9 @@ kmacro-end-and-call-macro C-x e
 </div>
 </div>
 
-<div id="outline-container-sec-1-21" class="outline-3">
-<h3 id="sec-1-21"><span class="todo TODO">TODO</span> 18. 重复执行上一条命令</h3>
-<div class="outline-text-3" id="text-1-21">
+<div id="outline-container-sec-1-23" class="outline-3">
+<h3 id="sec-1-23"><span class="todo TODO">TODO</span> 18. 重复执行上一条命令</h3>
+<div class="outline-text-3" id="text-1-23">
 <p>
 C-x z,repeat
 绑定到f12:
@@ -561,16 +721,53 @@ C-x z,repeat
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-22" class="outline-3">
-<h3 id="sec-1-22"><span class="todo TODO">TODO</span> 19. org git</h3>
+<div id="outline-container-sec-1-24" class="outline-3">
+<h3 id="sec-1-24"><span class="todo TODO">TODO</span> 19. git 忽略文件</h3>
+<div class="outline-text-3" id="text-1-24">
+<pre class="example">
+见 git 忽略文件
+git bash中执行命令 
+vim .gitignore
+不确定: 按esc,输入,之后按esc,然后敲
+:wq!
+保存并推出vim模式.
+</pre>
+<pre class="example">
+忽略文件夹:
+.settings/
+.svn/
+WebRoot/WEB-INF/classes/
+
+*.a       # 忽略所有 .a 结尾的文件
+!lib.a    # 但 lib.a 除外
+</pre>
 </div>
-<div id="outline-container-sec-1-23" class="outline-3">
-<h3 id="sec-1-23">20. 移动到文档末尾</h3>
 </div>
 
-<div id="outline-container-sec-1-24" class="outline-3">
-<h3 id="sec-1-24">基本按键</h3>
-<div class="outline-text-3" id="text-1-24">
+<div id="outline-container-sec-1-25" class="outline-3">
+<h3 id="sec-1-25">20. 移动到文档末尾</h3>
+</div>
+<div id="outline-container-sec-1-26" class="outline-3">
+<h3 id="sec-1-26">21. make-directory</h3>
+<div class="outline-text-3" id="text-1-26">
+<p>
+M-x make-directory
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-27" class="outline-3">
+<h3 id="sec-1-27">22. 标记当前point position,返回之前标记的位置:</h3>
+<div class="outline-text-3" id="text-1-27">
+<p>
+C-&lt;SPC&gt; C-&lt;SPC&gt;
+C-U C-&lt;SPC&gt;
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-28" class="outline-3">
+<h3 id="sec-1-28">基本按键</h3>
+<div class="outline-text-3" id="text-1-28">
 <pre class="example">
 ﻿C-x o other window
 C-x 2 split window
@@ -580,12 +777,14 @@ C-w kill-region
 C-k kill line,kill the rest of the current line
 C-h m,Enabled minor/'mainE/ modes
 ^(Shift-6) dired模式下后退.
+C-M-p backward-list
+M-M-n forward-list
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-25" class="outline-3">
-<h3 id="sec-1-25">最基础有用的command</h3>
-<div class="outline-text-3" id="text-1-25">
+<div id="outline-container-sec-1-29" class="outline-3">
+<h3 id="sec-1-29">最基础有用的command</h3>
+<div class="outline-text-3" id="text-1-29">
 <pre class="example">
 C-h t help-with-tutorial,调出帮助文档
 C-h k describe-key,调用此命令后,再按快捷键,可查看该快捷键说明
@@ -600,18 +799,18 @@ M-% query-replace
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-26" class="outline-3">
-<h3 id="sec-1-26">基础:</h3>
-<div class="outline-text-3" id="text-1-26">
+<div id="outline-container-sec-1-30" class="outline-3">
+<h3 id="sec-1-30">基础:</h3>
+<div class="outline-text-3" id="text-1-30">
 <pre class="example">
 1.下载:http://ftp.gnu.org/pub/gnu/emacs/windows/ 不推荐使用64位非官方版,否则会经常出现卡顿.
 2.C-Space 与输入法冲突问题:右键任务栏&gt;高级键设置&gt;修改.如果在emacs中已经使用了中文输入法,可能需要设置完成后重启该输入法
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-27" class="outline-3">
-<h3 id="sec-1-27">光标移动</h3>
-<div class="outline-text-3" id="text-1-27">
+<div id="outline-container-sec-1-31" class="outline-3">
+<h3 id="sec-1-31">光标移动</h3>
+<div class="outline-text-3" id="text-1-31">
 <pre class="example">
 上：C-p(previous).
 
@@ -621,9 +820,9 @@ M-% query-replace
 
 右：C-f(forward).
 
-移动到文件的开始处：M-&lt;.
+移动到文件的开始处：M-&lt;.即M-S-,
 
-移动到文件的结尾处：M-&gt;.
+移动到文件的结尾处：M-&gt;.即M-S-.
 
 移动到行首：C-a.
 
@@ -645,9 +844,9 @@ M-% query-replace
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-28" class="outline-3">
-<h3 id="sec-1-28">文件编辑</h3>
-<div class="outline-text-3" id="text-1-28">
+<div id="outline-container-sec-1-32" class="outline-3">
+<h3 id="sec-1-32">文件编辑</h3>
+<div class="outline-text-3" id="text-1-32">
 <pre class="example">
 删除光标前字符：backspace（回车键上面那个）.
 
@@ -677,9 +876,9 @@ M-% query-replace
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-29" class="outline-3">
-<h3 id="sec-1-29">文本搜索</h3>
-<div class="outline-text-3" id="text-1-29">
+<div id="outline-container-sec-1-33" class="outline-3">
+<h3 id="sec-1-33">文本搜索</h3>
+<div class="outline-text-3" id="text-1-33">
 <pre class="example">
 向前搜索：C-r.
 
@@ -689,9 +888,9 @@ M-% query-replace
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-30" class="outline-3">
-<h3 id="sec-1-30">多窗口</h3>
-<div class="outline-text-3" id="text-1-30">
+<div id="outline-container-sec-1-34" class="outline-3">
+<h3 id="sec-1-34">多窗口</h3>
+<div class="outline-text-3" id="text-1-34">
 <pre class="example">
 添加窗口：C-x 2.新添加的窗口为当前文件。
 
@@ -708,29 +907,29 @@ M-% query-replace
 </div>
 </div>
 
-<div id="outline-container-sec-1-31" class="outline-3">
-<h3 id="sec-1-31">需求</h3>
-<div class="outline-text-3" id="text-1-31">
-</div><div id="outline-container-sec-1-31-1" class="outline-4">
-<h4 id="sec-1-31-1">切换buffer:</h4>
-<div class="outline-text-4" id="text-1-31-1">
+<div id="outline-container-sec-1-35" class="outline-3">
+<h3 id="sec-1-35">需求</h3>
+<div class="outline-text-3" id="text-1-35">
+</div><div id="outline-container-sec-1-35-1" class="outline-4">
+<h4 id="sec-1-35-1">切换buffer:</h4>
+<div class="outline-text-4" id="text-1-35-1">
 <p>
 C-x b
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-31-2" class="outline-4">
-<h4 id="sec-1-31-2">切换窗口：</h4>
-<div class="outline-text-4" id="text-1-31-2">
+<div id="outline-container-sec-1-35-2" class="outline-4">
+<h4 id="sec-1-35-2">切换窗口：</h4>
+<div class="outline-text-4" id="text-1-35-2">
 <p>
 C-x o
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-1-31-3" class="outline-4">
-<h4 id="sec-1-31-3">split windows:</h4>
-<div class="outline-text-4" id="text-1-31-3">
+<div id="outline-container-sec-1-35-3" class="outline-4">
+<h4 id="sec-1-35-3">split windows:</h4>
+<div class="outline-text-4" id="text-1-35-3">
 <pre class="example">
 C-x 0 delete-window
 C-x 1 delete-other-windows
@@ -739,9 +938,9 @@ C-x 3 split-window-right
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-31-4" class="outline-4">
-<h4 id="sec-1-31-4">list buffer</h4>
-<div class="outline-text-4" id="text-1-31-4">
+<div id="outline-container-sec-1-35-4" class="outline-4">
+<h4 id="sec-1-35-4">list buffer</h4>
+<div class="outline-text-4" id="text-1-35-4">
 <pre class="example">
 C-x C-b list-buffers;
 C-x b switch-to-buffer
@@ -750,12 +949,12 @@ M-x ibuffer command ibuffer is a improved version of list-buffers.
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-32" class="outline-3">
-<h3 id="sec-1-32">编辑操作</h3>
-<div class="outline-text-3" id="text-1-32">
-</div><div id="outline-container-sec-1-32-1" class="outline-4">
-<h4 id="sec-1-32-1">基本编辑</h4>
-<div class="outline-text-4" id="text-1-32-1">
+<div id="outline-container-sec-1-36" class="outline-3">
+<h3 id="sec-1-36">编辑操作</h3>
+<div class="outline-text-3" id="text-1-36">
+</div><div id="outline-container-sec-1-36-1" class="outline-4">
+<h4 id="sec-1-36-1">基本编辑</h4>
+<div class="outline-text-4" id="text-1-36-1">
 <pre class="example">
 M-&lt;DEL&gt; backward-kill-word. 
    ‘M-&lt;DEL&gt;’ (‘backward-kill-word’) kills the word before point.  It
@@ -781,9 +980,9 @@ M-y yank-pop
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-33" class="outline-3">
-<h3 id="sec-1-33">光标移动:</h3>
-<div class="outline-text-3" id="text-1-33">
+<div id="outline-container-sec-1-37" class="outline-3">
+<h3 id="sec-1-37">光标移动:</h3>
+<div class="outline-text-3" id="text-1-37">
 <pre class="example">
 C-a move-beginning-of-line
 C-e move-end-of-line
@@ -798,27 +997,27 @@ M-v scroll-down-command,向上滚动
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-34" class="outline-3">
-<h3 id="sec-1-34">文本选择</h3>
-<div class="outline-text-3" id="text-1-34">
+<div id="outline-container-sec-1-38" class="outline-3">
+<h3 id="sec-1-38">文本选择</h3>
+<div class="outline-text-3" id="text-1-38">
 <pre class="example">
 C-SPC set-mark-command,即开始标记
 C-x h 全选
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-35" class="outline-3">
-<h3 id="sec-1-35">缩进</h3>
-<div class="outline-text-3" id="text-1-35">
+<div id="outline-container-sec-1-39" class="outline-3">
+<h3 id="sec-1-39">缩进</h3>
+<div class="outline-text-3" id="text-1-39">
 <pre class="example">
 C-x h,&lt;TAB&gt;
 HTML 不用HTML mode,而是Web mode:
 M-x package-show-package-list
 </pre>
 </div>
-<div id="outline-container-sec-1-35-1" class="outline-4">
-<h4 id="sec-1-35-1">ibuffer并在其他窗口中打开:</h4>
-<div class="outline-text-4" id="text-1-35-1">
+<div id="outline-container-sec-1-39-1" class="outline-4">
+<h4 id="sec-1-39-1">ibuffer并在其他窗口中打开:</h4>
+<div class="outline-text-4" id="text-1-39-1">
 <pre class="example">
 C-x C-b,open buffer window,C-p/C-n move the cursor,
 C-o open the selected buffer in other buffer.
@@ -826,31 +1025,31 @@ RET open the selected buffer in this buffer.
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-35-2" class="outline-4">
-<h4 id="sec-1-35-2">选择光标到行首的位置</h4>
-<div class="outline-text-4" id="text-1-35-2">
+<div id="outline-container-sec-1-39-2" class="outline-4">
+<h4 id="sec-1-39-2">选择光标到行首的位置</h4>
+<div class="outline-text-4" id="text-1-39-2">
 <p>
 C-SPC C-a
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-35-3" class="outline-4">
-<h4 id="sec-1-35-3">选择光标到行尾的位置</h4>
-<div class="outline-text-4" id="text-1-35-3">
+<div id="outline-container-sec-1-39-3" class="outline-4">
+<h4 id="sec-1-39-3">选择光标到行尾的位置</h4>
+<div class="outline-text-4" id="text-1-39-3">
 <p>
 C-SPC C-e
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-1-35-4" class="outline-4">
-<h4 id="sec-1-35-4">光标所在行上下移动</h4>
+<div id="outline-container-sec-1-39-4" class="outline-4">
+<h4 id="sec-1-39-4">光标所在行上下移动</h4>
 </div>
 </div>
 
-<div id="outline-container-sec-1-36" class="outline-3">
-<h3 id="sec-1-36">不重启执行:</h3>
-<div class="outline-text-3" id="text-1-36">
+<div id="outline-container-sec-1-40" class="outline-3">
+<h3 id="sec-1-40">不重启执行:</h3>
+<div class="outline-text-3" id="text-1-40">
 <pre class="example">
 M-x eval-buffer
 C-x C-e 执行光标前的语句.
@@ -859,9 +1058,9 @@ M-x eval-buffer 执行当前buffer.
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-37" class="outline-3">
-<h3 id="sec-1-37">mark text, register it</h3>
-<div class="outline-text-3" id="text-1-37">
+<div id="outline-container-sec-1-41" class="outline-3">
+<h3 id="sec-1-41">mark text, register it</h3>
+<div class="outline-text-3" id="text-1-41">
 <pre class="example">
 C-SPC mark a text
 C-x r s [0-9] register it
@@ -869,9 +1068,9 @@ C-x r i [0-9] yank
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-38" class="outline-3">
-<h3 id="sec-1-38">abbrev mode</h3>
-<div class="outline-text-3" id="text-1-38">
+<div id="outline-container-sec-1-42" class="outline-3">
+<h3 id="sec-1-42">abbrev mode</h3>
+<div class="outline-text-3" id="text-1-42">
 <pre class="example">
 (define-abbrev-table 'global-abbrev-table '(
 ;;normal english words
@@ -891,9 +1090,9 @@ M-b backward-word,
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-39" class="outline-3">
-<h3 id="sec-1-39">编码</h3>
-<div class="outline-text-3" id="text-1-39">
+<div id="outline-container-sec-1-43" class="outline-3">
+<h3 id="sec-1-43">编码</h3>
+<div class="outline-text-3" id="text-1-43">
 <pre class="example">
 (setq default-buffer-file-coding-system 'utf-8);;Default coding system (for new files)      默认buffer编码是utf-8,(写文件)
 (prefer-coding-system 'utf-8);指定文件编码,此时buffer新建和读取都默认是utf-8,也可以M-x prefer-coding-system 只执行一次
@@ -903,9 +1102,9 @@ C-x RET r utf-8
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-1-40" class="outline-3">
-<h3 id="sec-1-40">enable recentf-mode</h3>
-<div class="outline-text-3" id="text-1-40">
+<div id="outline-container-sec-1-44" class="outline-3">
+<h3 id="sec-1-44">enable recentf-mode</h3>
+<div class="outline-text-3" id="text-1-44">
 <pre class="example">
 ;;在中间这部分区域,按C-c ',进入退出代码编辑.
   (require 'recentf)
@@ -924,12 +1123,12 @@ C-x RET r utf-8
 </div>
 </div>
 
-<div id="outline-container-sec-1-41" class="outline-3">
-<h3 id="sec-1-41">小问题</h3>
-<div class="outline-text-3" id="text-1-41">
-</div><div id="outline-container-sec-1-41-1" class="outline-4">
-<h4 id="sec-1-41-1">引号需要输入两次,才会显示,不但输入别扭,更会导致快捷键效果不理想.</h4>
-<div class="outline-text-4" id="text-1-41-1">
+<div id="outline-container-sec-1-45" class="outline-3">
+<h3 id="sec-1-45">小问题</h3>
+<div class="outline-text-3" id="text-1-45">
+</div><div id="outline-container-sec-1-45-1" class="outline-4">
+<h4 id="sec-1-45-1">引号需要输入两次,才会显示,不但输入别扭,更会导致快捷键效果不理想.</h4>
+<div class="outline-text-4" id="text-1-45-1">
 <p>
 英语输入法的键盘模式设置选择了“美国英语-国际”，而正确的英语输入法键盘应该选择“美式键盘”。
 </p>
@@ -1036,7 +1235,20 @@ org-publish-project
 </ol>
 </div>
 </div>
+<div id="outline-container-sec-2-10" class="outline-3">
+<h3 id="sec-2-10">中英文表格对齐：等宽字体配置：安装chinese-fonts-setup</h3>
+<div class="outline-text-3" id="text-2-10">
+<p>
+配置文件中添加
+(require 'chinese-fonts-setup)
+(chinese-fonts-setup-enable)
+M-x cfs-edit-profile,选择"对齐",对每种字号,分别点击 -/+ 配置,直至表格对齐,保存.
+或者参见ex/profile1.el配置。
+</p>
 </div>
+</div>
+</div>
+
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">Org basics</h2>
 <div class="outline-text-2" id="text-3">
@@ -1201,42 +1413,90 @@ M-n 向下移动选择.
 </div>
 
 <div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6">每日计划</h2>
+<h2 id="sec-6">git</h2>
 <div class="outline-text-2" id="text-6">
-</div><div id="outline-container-sec-6-1" class="outline-3">
-<h3 id="sec-6-1">201606</h3>
+<p>
+最重要的事情：设置HOME
+windows系统配置环境变量：
+HOME
+C:\Users\ASUS\AppData\Roaming
+</p>
+<pre class="example">
+magit commit 出现GitError! empty ident name。原因：windows系统未配置HOME变量 ，.gitconfig文件位于C:\Users\ASUS 配置了HOME变量（emacs中～）C:\Users\ASUS\AppData\Roaming，再把.gitconfig复制过去，OK。
+</pre>
+</div>
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1">情景：revert change</h3>
 <div class="outline-text-3" id="text-6-1">
 </div><div id="outline-container-sec-6-1-1" class="outline-4">
-<h4 id="sec-6-1-1">21</h4>
+<h4 id="sec-6-1-1">git checkout HEAD</h4>
 <div class="outline-text-4" id="text-6-1-1">
-</div><div id="outline-container-sec-6-1-1-1" class="outline-5">
-<h5 id="sec-6-1-1-1"><span class="todo TODO">TODO</span> web-mode官方文档.</h5>
+<p>
+无变化。
+</p>
 </div>
 </div>
 <div id="outline-container-sec-6-1-2" class="outline-4">
-<h4 id="sec-6-1-2">30</h4>
+<h4 id="sec-6-1-2">get checkout &#x2013; filename</h4>
 <div class="outline-text-4" id="text-6-1-2">
-</div><div id="outline-container-sec-6-1-2-1" class="outline-5">
-<h5 id="sec-6-1-2-1"><span class="todo TODO">TODO</span> 订购,评价公司产品.</h5>
+<p>
+如果filename已经staged，无法revert。
+</p>
 </div>
 </div>
 <div id="outline-container-sec-6-1-3" class="outline-4">
-<h4 id="sec-6-1-3"><span class="todo TODO">TODO</span> 20160811</h4>
+<h4 id="sec-6-1-3">git checkout HEAD filename</h4>
 <div class="outline-text-4" id="text-6-1-3">
 <p>
-git 学习，现在实际操作中还经常遇到问题，无法解决。
-emacs中直接删除:
+即使filename已经staged，也会revert。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-1-4" class="outline-4">
+<h4 id="sec-6-1-4">add后，git reset</h4>
+<div class="outline-text-4" id="text-6-1-4">
+<p>
+staged内容会变成unstaged。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-1-5" class="outline-4">
+<h4 id="sec-6-1-5">add后，git reset HEAD</h4>
+<div class="outline-text-4" id="text-6-1-5">
+<p>
+staged内容会变成unstaged.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-1-6" class="outline-4">
+<h4 id="sec-6-1-6">git reset &#x2013; filename</h4>
+<div class="outline-text-4" id="text-6-1-6">
+<p>
+filename变成unstaged。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-1-7" class="outline-4">
+<h4 id="sec-6-1-7">git reset HEAD filename</h4>
+<div class="outline-text-4" id="text-6-1-7">
+<p>
+单个filename staged内容会变成unstaged
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-1-8" class="outline-4">
+<h4 id="sec-6-1-8">git checkout HEAD filename</h4>
+<div class="outline-text-4" id="text-6-1-8">
+<p>
+单个filename staged内容会变成unstaged
 </p>
 </div>
 </div>
 </div>
-</div>
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7">git</h2>
-<div class="outline-text-2" id="text-7">
-</div><div id="outline-container-sec-7-1" class="outline-3">
-<h3 id="sec-7-1">配置命令：</h3>
-<div class="outline-text-3" id="text-7-1">
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2">配置命令：</h3>
+<div class="outline-text-3" id="text-6-2">
 <pre class="example">
 http://blog.csdn.net/hutaoer06051/article/details/8275069
 
@@ -1253,15 +1513,15 @@ git config --local -l ;list local config.
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-7-2" class="outline-3">
-<h3 id="sec-7-2"><span class="todo TODO">TODO</span> 1.解决冲突问题.</h3>
+<div id="outline-container-sec-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="todo TODO">TODO</span> 1.解决冲突问题.</h3>
 </div>
-<div id="outline-container-sec-7-3" class="outline-3">
-<h3 id="sec-7-3"><span class="todo TODO">TODO</span> 使用gitbub写博客</h3>
-<div class="outline-text-3" id="text-7-3">
-</div><div id="outline-container-sec-7-3-1" class="outline-4">
-<h4 id="sec-7-3-1"><span class="todo TODO">TODO</span> 1.创建project博客</h4>
-<div class="outline-text-4" id="text-7-3-1">
+<div id="outline-container-sec-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="todo TODO">TODO</span> 使用gitbub写博客</h3>
+<div class="outline-text-3" id="text-6-4">
+</div><div id="outline-container-sec-6-4-1" class="outline-4">
+<h4 id="sec-6-4-1"><span class="todo TODO">TODO</span> 1.创建project博客</h4>
+<div class="outline-text-4" id="text-6-4-1">
 <pre class="example">
 1.创建repository:site.
 2.创建branch: gh-pages.在ph-pages分支下的文件即为博客内容.
@@ -1277,22 +1537,22 @@ git config --local -l ;list local config.
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-7-3-2" class="outline-4">
-<h4 id="sec-7-3-2"><span class="todo TODO">TODO</span> 2.创建user博客</h4>
+<div id="outline-container-sec-6-4-2" class="outline-4">
+<h4 id="sec-6-4-2"><span class="todo TODO">TODO</span> 2.创建user博客</h4>
 </div>
 </div>
-<div id="outline-container-sec-7-4" class="outline-3">
-<h3 id="sec-7-4"><span class="todo TODO">TODO</span> 1. 本地与远程二进制文件冲突的后果:</h3>
+<div id="outline-container-sec-6-5" class="outline-3">
+<h3 id="sec-6-5"><span class="todo TODO">TODO</span> 1. 本地与远程二进制文件冲突的后果:</h3>
 </div>
-<div id="outline-container-sec-7-5" class="outline-3">
-<h3 id="sec-7-5"><span class="todo TODO">TODO</span> 2. git 分支</h3>
-<div class="outline-text-3" id="text-7-5">
-</div><div id="outline-container-sec-7-5-1" class="outline-4">
-<h4 id="sec-7-5-1">local-only合并到master</h4>
+<div id="outline-container-sec-6-6" class="outline-3">
+<h3 id="sec-6-6"><span class="todo TODO">TODO</span> 2. git 分支</h3>
+<div class="outline-text-3" id="text-6-6">
+</div><div id="outline-container-sec-6-6-1" class="outline-4">
+<h4 id="sec-6-6-1">local-only合并到master</h4>
 </div>
-<div id="outline-container-sec-7-5-2" class="outline-4">
-<h4 id="sec-7-5-2">git教程再次学习</h4>
-<div class="outline-text-4" id="text-7-5-2">
+<div id="outline-container-sec-6-6-2" class="outline-4">
+<h4 id="sec-6-6-2">git教程再次学习</h4>
+<div class="outline-text-4" id="text-6-6-2">
 <pre class="example">
 新学内容：
 1. git add &lt;file1&gt; &lt;file2&gt; ;;一次添加多个文件到暂存区
@@ -1333,9 +1593,10 @@ git log --graph --pretty=oneline --abbrev-commit ;使用图的形式，显示提
 git merge --no-ff -m 'commit log' dev ;合并分支，不使用fast-forward模式。当branch删除后，可以看出合并历史。
 bug分支：
 git stash ;保存当前工作目录。除了未被git管理起来的内容，无论是工作区还是暂存区（stage），内容都“消失”，status变得clean。
+git stash save ' 这是备注信息'
 git stash list ;查看stash列表
 git stash pop ;弹出stash继续工作。相当于git stash apply ,然后git stash drop
-git stash apply stash@[0] ;恢复
+git stash apply stash@{0} ;恢复
 git stash drop ;删除
 
 无论是bug branch，还是feature branch，意义都在于，当前工作分支在dev上，而必须从master分支进行bug/feature。
@@ -1447,9 +1708,9 @@ Finally :q followed by enter to quit.
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-7-5-3" class="outline-4">
-<h4 id="sec-7-5-3">创建标签</h4>
-<div class="outline-text-4" id="text-7-5-3">
+<div id="outline-container-sec-6-6-3" class="outline-4">
+<h4 id="sec-6-6-3">创建标签</h4>
+<div class="outline-text-4" id="text-6-6-3">
 <pre class="example">
 git tag v1.0 ;
 git tag ;
@@ -1460,9 +1721,9 @@ git tag -a &lt;tag name&gt; -m &lt;tag comments&gt; &lt;commit id&gt; ;
 </div>
 </div>
 </div>
-<div id="outline-container-sec-7-6" class="outline-3">
-<h3 id="sec-7-6">签名标签 存疑</h3>
-<div class="outline-text-3" id="text-7-6">
+<div id="outline-container-sec-6-7" class="outline-3">
+<h3 id="sec-6-7">签名标签 存疑</h3>
+<div class="outline-text-3" id="text-6-7">
 <pre class="example">
 1. GPG，生成密钥对。
 2. 新建环境变量：
@@ -1474,9 +1735,9 @@ C:\Users\ASUS\AppData\Roaming\gnupg
 成功！
 </pre>
 </div>
-<div id="outline-container-sec-7-6-1" class="outline-4">
-<h4 id="sec-7-6-1">操作标签</h4>
-<div class="outline-text-4" id="text-7-6-1">
+<div id="outline-container-sec-6-7-1" class="outline-4">
+<h4 id="sec-6-7-1">操作标签</h4>
+<div class="outline-text-4" id="text-6-7-1">
 <pre class="example">
 git tag -d v0.1 ;
 git push origin &lt;tag name&gt; ;
@@ -1490,9 +1751,9 @@ git push origin :refs/tags/v0.1 ;
 </div>
 
 
-<div id="outline-container-sec-7-6-2" class="outline-4">
-<h4 id="sec-7-6-2">忽略文件</h4>
-<div class="outline-text-4" id="text-7-6-2">
+<div id="outline-container-sec-6-7-2" class="outline-4">
+<h4 id="sec-6-7-2">忽略文件</h4>
+<div class="outline-text-4" id="text-6-7-2">
 <p>
 新建.gitignore文件，并提交到git。
 windows会提示必须输入文件名，在文本编辑器中保存/另存为即可。
@@ -1526,18 +1787,18 @@ deploy_key_rsa
 </div>
 </div>
 
-<div id="outline-container-sec-7-7" class="outline-3">
-<h3 id="sec-7-7"><span class="todo TODO">TODO</span> 3. emacs+git</h3>
+<div id="outline-container-sec-6-8" class="outline-3">
+<h3 id="sec-6-8"><span class="todo TODO">TODO</span> 3. emacs+git</h3>
 </div>
-<div id="outline-container-sec-7-8" class="outline-3">
-<h3 id="sec-7-8"><span class="todo TODO">TODO</span> 4.查看/编辑git全局配置</h3>
-<div class="outline-text-3" id="text-7-8">
+<div id="outline-container-sec-6-9" class="outline-3">
+<h3 id="sec-6-9"><span class="todo TODO">TODO</span> 4.查看/编辑git全局配置</h3>
+<div class="outline-text-3" id="text-6-9">
 </div>
 </div>
 
-<div id="outline-container-sec-7-9" class="outline-3">
-<h3 id="sec-7-9"><span class="done DONE">DONE</span> 5.gpg diff</h3>
-<div class="outline-text-3" id="text-7-9">
+<div id="outline-container-sec-6-10" class="outline-3">
+<h3 id="sec-6-10"><span class="done DONE">DONE</span> 5.gpg diff</h3>
+<div class="outline-text-3" id="text-6-10">
 <pre class="example">
 git config --global diff.gpg.textconv "gpg --no-tty --decrypt" ;;去掉--global(可选)，最重要的是，去掉--no-tty，见下面说明。
 echo "*.gpg filter=gpg diff=gpg" &gt; .gitattributes
@@ -1553,9 +1814,9 @@ fatal: unable to read files to diff
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-7-10" class="outline-3">
-<h3 id="sec-7-10">情景:修改/添加了普通文件,删除了除in.org.gpg外的gpg文件.</h3>
-<div class="outline-text-3" id="text-7-10">
+<div id="outline-container-sec-6-11" class="outline-3">
+<h3 id="sec-6-11">情景:修改/添加了普通文件,删除了除in.org.gpg外的gpg文件.</h3>
+<div class="outline-text-3" id="text-6-11">
 <p>
 git commit -m 'delete gpg except in.org.gpg'
 git pull,本地并没有变化,本地删除的文件也没有出现.
@@ -1577,6 +1838,153 @@ $ git reset &#x2013;hard 7c8804d
 HEAD is now at 7c8804d delete gpg except in。org.gpg
 </p>
 </div>
+</div>
+
+<div id="outline-container-sec-6-12" class="outline-3">
+<h3 id="sec-6-12">情景:统以本地与远程</h3>
+<div class="outline-text-3" id="text-6-12">
+<ol class="org-ol">
+<li>git pull
+</li>
+</ol>
+<p>
+Already up-to-date. 只代表本地从远程更新过,而有可能本地修改,commit,并没有push到远程.
+</p>
+<ol class="org-ol">
+<li>git status
+</li>
+</ol>
+<p>
+可以查看本地更新状态: 
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+</p>
+<ol class="org-ol">
+<li>保存本地修改的文件到一个目录
+</li>
+<li>git reset &#x2013;hard origin/master
+</li>
+</ol>
+<p>
+强制用远程覆盖本地.
+</p>
+<ol class="org-ol">
+<li>用本地修改的文件替换
+</li>
+<li>git add,git commit ,git push.
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-6-13" class="outline-3">
+<h3 id="sec-6-13">情景: git add后,撤销stage中内容.</h3>
+<div class="outline-text-3" id="text-6-13">
+<pre class="example">
+git reset &lt;file&gt;
+git reset .
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6-14" class="outline-3">
+<h3 id="sec-6-14"><span class="todo TODO">TODO</span> 情景: 查看某文件的历史版本</h3>
+<div class="outline-text-3" id="text-6-14">
+<pre class="example">
+1. gitk file
+2.
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6-15" class="outline-3">
+<h3 id="sec-6-15"><span class="todo TODO">TODO</span> 情景: 保存当前工作,恢复资源库内容.</h3>
+<div class="outline-text-3" id="text-6-15">
+</div>
+</div>
+
+<div id="outline-container-sec-6-16" class="outline-3">
+<h3 id="sec-6-16">情景: 列出repository中的所有文件</h3>
+</div>
+<div id="outline-container-sec-6-17" class="outline-3">
+<h3 id="sec-6-17">情景:</h3>
+<div class="outline-text-3" id="text-6-17">
+</div><div id="outline-container-sec-6-17-1" class="outline-4">
+<h4 id="sec-6-17-1">remove sensitive data</h4>
+<div class="outline-text-4" id="text-6-17-1">
+<p>
+<a href="https://help.github.com/articles/remove-sensitive-data/">https://help.github.com/articles/remove-sensitive-data/</a>
+</p>
+
+<pre class="example">
+git ls-tree --full-true -r HEAD
+git ls-files
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6-17-2" class="outline-4">
+<h4 id="sec-6-17-2"><span class="todo TODO">TODO</span> 删除资源库中的内容,保存工作区内容.</h4>
+<div class="outline-text-4" id="text-6-17-2">
+<p>
+remove files from the repository based on your .gitignore without deleting them from the local file system
+</p>
+
+<p>
+git rm &#x2013;cached `git ls-files -i -X .gitignore` ;` 不是 '
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6-18" class="outline-3">
+<h3 id="sec-6-18">git diff &lt;file&gt; 比较工作区与暂存区</h3>
+</div>
+<div id="outline-container-sec-6-19" class="outline-3">
+<h3 id="sec-6-19">git diff &#x2013;ignore-space-change file 忽略空格</h3>
+<div class="outline-text-3" id="text-6-19">
+<p>
+git diff &#x2013;ignore-space-change pw.css
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6-20" class="outline-3">
+<h3 id="sec-6-20">git diff &#x2013;cached file 比较暂存区与版本库</h3>
+</div>
+<div id="outline-container-sec-6-21" class="outline-3">
+<h3 id="sec-6-21">git svn管理同一目录问题:</h3>
+<div class="outline-text-3" id="text-6-21">
+<p>
+git reset &#x2013;hard xxx 导致svn信息被覆盖
+可能之前版本未使用.gitignore
+解决:
+</p>
+<pre class="example">
+1.修改目录名称.
+2.svn重新下载
+3.复制原.git目录,以及.gitignore到新下载的目录
+4.git reset --hard HEAD,用最新版本库内容覆盖SVN内容,svn不会崩溃.
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">magit</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+C-x g / magit-status,进入magit(需要配置文件配置)
+</p>
+<pre class="example">
+magit commit 出现GitError! empty ident name。原因：windows系统未配置HOME变量 ，.gitconfig文件位于C:\Users\ASUS 配置了HOME变量（emacs中～）C:\Users\ASUS\AppData\Roaming，再把.gitconfig复制过去，OK。
+</pre>
+<pre class="example">
+主要/基本操作
+在修改的文件上，
+s：添加到暂存区
+u：暂存区的文件，取消添加到暂存区
+c：commit，
+再按c：进入parpare commit页面，输入备注，可将列出的信息前面#号去掉，包括其他非空白行，是备注信息。
+此时按C-c C-c，提交。
+</pre>
 </div>
 </div>
 
@@ -1678,6 +2086,39 @@ consigners.sort(function(a,b){
 </div>
 </div>
 </div>
+
+<div id="outline-container-sec-11-2" class="outline-3">
+<h3 id="sec-11-2">jquery</h3>
+<div class="outline-text-3" id="text-11-2">
+<ol class="org-ol">
+<li>上一个节点
+</li>
+</ol>
+<p>
+.prev()
+</p>
+<ol class="org-ol">
+<li>对象赋值:
+</li>
+</ol>
+<p>
+sku["sku<sub>str</sub>"]=$(this).attr('str');
+sku.sku=$(this).attr('sku');
+但不能是sku[sku<sub>str]</sub>
+</p>
+<ol class="org-ol">
+<li>事件绑定：
+</li>
+</ol>
+<p>
+$(".goods-detail-block").on("click",".option",function(event){
+                     processSelectedSkus(data)
+                 })
+click与tap不同：如option，click后，状态已经变化。
+而tap可能状态还没有变化！
+</p>
+</div>
+</div>
 </div>
 <div id="outline-container-sec-12" class="outline-2">
 <h2 id="sec-12">CSS</h2>
@@ -1721,31 +2162,268 @@ Map用普通对象的方法替换.如var x={},x[a]=b;
 <div id="outline-container-sec-14-2" class="outline-3">
 <h3 id="sec-14-2"><span class="todo TODO">TODO</span> 2. org</h3>
 </div>
+<div id="outline-container-sec-14-3" class="outline-3">
+<h3 id="sec-14-3"><span class="todo TODO">TODO</span> 3. Common Lisp</h3>
+</div>
+<div id="outline-container-sec-14-4" class="outline-3">
+<h3 id="sec-14-4"><span class="todo TODO">TODO</span> 4. Clojure</h3>
+</div>
+<div id="outline-container-sec-14-5" class="outline-3">
+<h3 id="sec-14-5"><span class="todo TODO">TODO</span> 5. Bootstrap</h3>
+</div>
 </div>
 <div id="outline-container-sec-15" class="outline-2">
 <h2 id="sec-15">平时用到却需要再次翻找的功能</h2>
 <div class="outline-text-2" id="text-15">
 </div><div id="outline-container-sec-15-1" class="outline-3">
-<h3 id="sec-15-1">打开新窗口，插入代码。</h3>
+<h3 id="sec-15-1">1. 打开新窗口，插入代码。</h3>
 </div>
 <div id="outline-container-sec-15-2" class="outline-3">
 <h3 id="sec-15-2">粘贴内容，并选中粘贴的内容</h3>
-<div class="outline-text-3" id="text-15-2">
+</div>
+<div id="outline-container-sec-15-3" class="outline-3">
+<h3 id="sec-15-3"></h3>
+<div class="outline-text-3" id="text-15-3">
 <p>
 C-y C-x C-x
 </p>
 </div>
 </div>
-<div id="outline-container-sec-15-3" class="outline-3">
-<h3 id="sec-15-3">列模式？选中内容前面加4个空格</h3>
-<div class="outline-text-3" id="text-15-3">
+<div id="outline-container-sec-15-4" class="outline-3">
+<h3 id="sec-15-4">列模式？选中内容前面加4个空格</h3>
+<div class="outline-text-3" id="text-15-4">
 <p>
 C-u 4 C-x &lt;TAB&gt;
 </p>
 </div>
 </div>
-<div id="outline-container-sec-15-4" class="outline-3">
-<h3 id="sec-15-4">就是要输入tab：M-i</h3>
+<div id="outline-container-sec-15-5" class="outline-3">
+<h3 id="sec-15-5">就是要输入tab：M-i</h3>
+</div>
+<div id="outline-container-sec-15-6" class="outline-3">
+<h3 id="sec-15-6">找不到/ or such file or directory</h3>
+<div class="outline-text-3" id="text-15-6">
+<p>
+没有权限.需以管理员身份运行!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-15-7" class="outline-3">
+<h3 id="sec-15-7">自动添加序号:</h3>
+<div class="outline-text-3" id="text-15-7">
+<p>
+直接加序号.完成一个后Alt+enter.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-15-8" class="outline-3">
+<h3 id="sec-15-8">简写: abbreviation</h3>
+<div class="outline-text-3" id="text-15-8">
+<p>
+配置见init.el
+</p>
+</div>
+<div id="outline-container-sec-15-8-1" class="outline-4">
+<h4 id="sec-15-8-1">常用</h4>
+<div class="outline-text-4" id="text-15-8-1">
+<pre class="example">
+(global-abbrev-table)
+
+"9bg"          0    "background"
+"9dm"          0    "(define-modify-macro"
+"9e"           0    "↵"
+"9ppm"         0    "(pprint (macroexpand-1"
+"9r"           0    "➤"
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-15-8-2" class="outline-4">
+<h4 id="sec-15-8-2">添加:</h4>
+<div class="outline-text-4" id="text-15-8-2">
+<pre class="example">
+add-global-abbrev C-x a g define a global abbrev.
+add-mode-abbrev C-x a l   define abbrev for current mode.
+</pre>
+<p>
+添加多个word:
+</p>
+<ol class="org-ol">
+<li>type
+</li>
+<li>select
+</li>
+<li>call universal-argument ➤ C-u ,type 0
+</li>
+<li>call add-global-abbrev ➤ C-x a g ,
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-15-8-3" class="outline-4">
+<h4 id="sec-15-8-3">delete:</h4>
+<div class="outline-text-4" id="text-15-8-3">
+<p>
+git a negative argument to add-global-abbrev
+</p>
+<pre class="example">
+1. call universal-argument ➤ C-u -1
+2. call add-global-abbrev ➤ C-x a g ,in the prompt, type the abbrev.
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-15-8-4" class="outline-4">
+<h4 id="sec-15-8-4">list</h4>
+<div class="outline-text-4" id="text-15-8-4">
+<p>
+M-x list-abbrevs
+</p>
+</div>
+</div>
+<div id="outline-container-sec-15-8-5" class="outline-4">
+<h4 id="sec-15-8-5">edit</h4>
+<div class="outline-text-4" id="text-15-8-5">
+<p>
+list后可直接编辑.保存文件|C-x C-s,即可立即生效.
+删除同理
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-15-9" class="outline-3">
+<h3 id="sec-15-9">M-L DOWNCASE-WORD</h3>
+</div>
+<div id="outline-container-sec-15-10" class="outline-3">
+<h3 id="sec-15-10">M-U UPCASE-WORD</h3>
+</div>
+<div id="outline-container-sec-15-11" class="outline-3">
+<h3 id="sec-15-11">输入unicode字符</h3>
+<div class="outline-text-3" id="text-15-11">
+<p>
+如输入lambda λ:
+</p>
+<pre class="example">
+1. M-x xal-math-input-mode.
+2. l
+3. S-SPC ;;Shift+Space
+</pre>
+<p>
+使用abbreviation 输入➤(但是绑定9&gt;无效)
+</p>
+<pre class="example">
+➤C-x a g 然后设置绑定键 9 r
+</pre>
+<p>
+使用abbreviation 输入 ↵ 
+</p>
+<pre class="example">
+这个,只能在buffer开头拷贝,然后设置了.
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-15-12" class="outline-3">
+<h3 id="sec-15-12"><span class="done DONE">DONE</span> Yasinppet</h3>
+<div class="outline-text-3" id="text-15-12">
+</div>
+<div id="outline-container-sec-15-12-1" class="outline-4">
+<h4 id="sec-15-12-1">安装 yasnippet</h4>
+<div class="outline-text-4" id="text-15-12-1">
+<p>
+从melpa安装 yasnippet 即可.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-15-12-2" class="outline-4">
+<h4 id="sec-15-12-2">配置</h4>
+<div class="outline-text-4" id="text-15-12-2">
+<pre class="example">
+(add-to-list 'load-path "e:/git/emacs/ex/snipptes");;自定义的snippet保存位置
+(global-set-key (kbd "C-z c") #'yas-new-snippet);;新建snippet
+(global-set-key (kbd "C-z s") #'yas-insert-snippet);;插入snippet
+(global-set-key (kbd "C-z v") #'yas-visit-snippet-file);;浏览snippet文件,如果需要优化,编辑保存即可立即生效
+(setq yas/root-directory "e:/git/emacs/ex/snippets")
+(yas/load-directory yas/root-directory);;新建的snippet,保存时,会自动选择该目录.执行该句前提:路径必须存在
+(add-hook 'web-mode-hook #'(lambda () (yas-activate-extra-mode 'html-mode)));;web-mode下激活html-mode;;html-mode下内置了很多模板,web-mode没有. 非必须
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-15-12-3" class="outline-4">
+<h4 id="sec-15-12-3">新建</h4>
+<div class="outline-text-4" id="text-15-12-3">
+<ol class="org-ol">
+<li>C-z c,即上面设置的yas-new-snippet 快捷键.进入如下buffer:
+</li>
+</ol>
+<pre class="example">
+# -*- mode: snippet -*-
+# name: 
+# key: 
+# --
+</pre>
+<ol class="org-ol">
+<li>以jQuery.ajax为例,两个要点.
+</li>
+</ol>
+<pre class="example">
+1. name: 显示名称
+2. key: key后按Tab,自动插入该模板
+3. 以$开头,从1开始,代表每次按Tab键跳转的位置. $0 表示最后停留位置.
+</pre>
+
+<pre class="example">
+# -*- mode: snippet -*-
+# name: jQuery.ajax 模板
+# key: ajax
+# --
+jQuery.ajax({
+    url: "$1",
+    data: $2,
+    type: "POST",
+    dataType: "json",
+    timeout: 5000,
+    success: function(data){
+        $3
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown){
+        $4
+    }
+});
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-15-12-4" class="outline-4">
+<h4 id="sec-15-12-4">使用</h4>
+<div class="outline-text-4" id="text-15-12-4">
+<p>
+键入ajax后按Tab,或C-z s,键入ajax,完成插入.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-15-12-5" class="outline-4">
+<h4 id="sec-15-12-5">查看/修改</h4>
+<div class="outline-text-4" id="text-15-12-5">
+<p>
+C-z v,编辑,保存,即可立即生效.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-15-13" class="outline-3">
+<h3 id="sec-15-13">Org 导出网页</h3>
+<div class="outline-text-3" id="text-15-13">
+</div><div id="outline-container-sec-15-13-1" class="outline-4">
+<h4 id="sec-15-13-1">配置见init.el</h4>
+</div>
+<div id="outline-container-sec-15-13-2" class="outline-4">
+<h4 id="sec-15-13-2">导出</h4>
+<div class="outline-text-4" id="text-15-13-2">
+<pre class="example">
+1. M-x org-publsh-project
+2. 选择blog
+完成.
+</pre>
+</div>
+</div>
 </div>
 </div>
 <div id="outline-container-sec-16" class="outline-2">
@@ -1767,6 +2445,69 @@ Tool-&gt;check model&#x2026;去掉Entity Attribute下Entity Attribute name uniqu
 </li>
 </ol>
 </div>
+<div id="outline-container-sec-16-1-1" class="outline-4">
+<h4 id="sec-16-1-1">myeclipse database explorer 配置</h4>
+<div class="outline-text-4" id="text-16-1-1">
+<pre class="example">
+driver name:
+随便取
+connection url:
+jdbc:jtds:sqlserver://192.168.1.223:1433/tms_tianshun;user=sa;password=sa123456
+user name:
+sa
+password:
+sa123456
+driver jars:
+jtds-1.2.5.jar
+driver classname:
+net.sourceforge.jtds.jdbc.Driver
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-16-1-2" class="outline-4">
+<h4 id="sec-16-1-2">设置主键自增</h4>
+<div class="outline-text-4" id="text-16-1-2">
+<pre class="example">
+cdm&gt;pdm,&gt;column,双击某表主键,选中右下角"indifity"
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-16-2" class="outline-3">
+<h3 id="sec-16-2">mybatis</h3>
+<div class="outline-text-3" id="text-16-2">
+</div><div id="outline-container-sec-16-2-1" class="outline-4">
+<h4 id="sec-16-2-1">异常:</h4>
+<div class="outline-text-4" id="text-16-2-1">
+<ol class="org-ol">
+<li>getting Invalid bound statement (not found)
+</li>
+</ol>
+<p>
+In my case I forgot to change the mapper namespace:
+</p>
+<pre class="example">
+&lt;mapper namespace="pl.my.package.MyNewMapper"&gt;
+</pre>
+<p>
+再如：
+org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.lcdt.frame.mapper.CustomerLevelMapper.selectByPrimaryKey
+，发现CustomerLevelMapper。xml中，
+&lt;mapper namespace="com.lcdt.customer.mapper.CustomerLevelMapper"&gt;
+当时自动生成的xml文件，原在customer下，后移动至frame下，故出错。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-16-3" class="outline-3">
+<h3 id="sec-16-3">struts2</h3>
+<div class="outline-text-3" id="text-16-3">
+<ol class="org-ol">
+<li>无法接收复杂对象.只能接收一个平面对象.
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div id="outline-container-sec-17" class="outline-2">
@@ -1777,10 +2518,1012 @@ symmetric <i>si'metrik</i> having similarly in size,shape,and relative position 
 </p>
 </div>
 </div>
+<div id="outline-container-sec-18" class="outline-2">
+<h2 id="sec-18">Lisp</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+冰河田春推荐软件：
+fileMaker
+FrameMaker
+</p>
+</div>
+<div id="outline-container-sec-18-1" class="outline-3">
+<h3 id="sec-18-1">快速学习:expand calls to the built-in macros</h3>
+<div class="outline-text-3" id="text-18-1">
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">(pprint (macroexpand-1 '(cond (a b)
+                         (c d e)
+                         (t f))))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-18-2" class="outline-3">
+<h3 id="sec-18-2"></h3>
+<div class="outline-text-3" id="text-18-2">
+<div class="org-src-container">
+
+<pre class="src src-lisp">list: '(1 2 3)
+函数求值方式: (1 2 3);没有',即函数求职方式.显然是错误的.
+'1 为原子
+'(1) 为list,与'1 不同.
+选择函数: first reset
+(first '(1 2 3))
+(reset '(1 2 3))
+构造函数: cons list append
+(cons '1 '(2 3)) &gt;'(1 2 3)
+(list '1 '2 '3) &gt;'(1 2 3)
+(append '(1) '(2 3)) &gt;'(1 2 3)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-18-3" class="outline-3">
+<h3 id="sec-18-3">Common Lisp</h3>
+<div class="outline-text-3" id="text-18-3">
+</div><div id="outline-container-sec-18-3-1" class="outline-4">
+<h4 id="sec-18-3-1">学习路径</h4>
+<div class="outline-text-4" id="text-18-3-1">
+<pre class="example">
+1.[[http://www.jonathanfischer.net/modern-common-lisp-on-windows/][getting going with modern common lisp on windows]]
+2.[[http://acl.readthedocs.io/en/latest/zhCN/index.html][ANSI Common Lisp 中文版]]
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-18-3-2" class="outline-4">
+<h4 id="sec-18-3-2">入门基本概念,容易混淆的地方</h4>
+<div class="outline-text-4" id="text-18-3-2">
+<ol class="org-ol">
+<li>原子(atom)与list
+</li>
+</ol>
+<pre class="example">
+atom:
+数值: 1 2 
+真: t T
+假: nil
+
+list:()包起来的0个或多个表达式
+()
+</pre>
+<ol class="org-ol">
+<li>求值 evaluation
+</li>
+</ol>
+<p>
+在顶层(终端?slime中cl-user&gt;)输入表达式,LISP会求值.
+原子会直接显示(自求值?)
+list内第一个是操作符,其余为实参.操作符往往是函数,特殊除外.
+quote操作符:不求值,接受一个实参,原封不动地返回.
+&gt;(quote (+ 3 5))
+(+ 3 5)
+</p>
+
+<p>
+或简化为
+&gt;'(+ 3 5)
+(+ 3 5)
+</p>
+
+<ol class="org-ol">
+<li>LISP 数据类型 符号(symbol) 与列表(list)
+</li>
+</ol>
+<p>
+符号(通常)不对自身求值,要引用符号,应该加上 ' 引用.
+意思是:如果不想被求值,就要加上'引用.
+</p>
+
+<ol class="org-ol">
+<li>真假判断
+</li>
+</ol>
+<p>
+假: () nil
+真: 任何非nil
+null: 实参为假,返回T
+not: 实参为假,返回T
+consp: 
+listp: (defun m-listp(x)(or (null x) (consp x)))
+zerop: 实参为0,T
+atom: 原子: 3 "atom" nil () '()
+oddp: 奇数 
+evenp: 偶数 
+</p>
+
+<p>
+➤ nil () '() all "eql".
+➤ listp,atom 上述,都为T
+</p>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">CL-USER&gt; (atom 1)
+T
+CL-USER&gt; (atom nil)
+T
+CL-USER&gt; (atom ())
+T
+CL-USER&gt; (atom "sdsdf")
+T
+CL-USER&gt; (atom 'sds)
+T
+
+CL-USER&gt; (ATOM 3)
+T
+CL-USER&gt; (atom "sdfa ")
+T
+CL-USER&gt; (atom 'a)
+T
+CL-USER&gt; (atom nil)
+T
+CL-USER&gt; (atom ())
+T
+CL-USER&gt; (atom (1))
+➤ wrong!
+CL-USER&gt; (atom '())
+T
+CL-USER&gt; (atom '(1))
+NIL
+CL-USER&gt; (eql nil ())
+T
+CL-USER&gt; (eql '() nil)
+T
+CL-USER&gt; (eql () nil)
+T
+CL-USER&gt; (listp nil)
+T
+CL-USER&gt; (listp ())
+T
+CL-USER&gt; (listp '())
+T
+</pre>
+</div>
+<p>
+5.if
+</p>
+<pre class="example">
+接收3个实参,第二个为条件,为真,则第二个实参被求值,返回. 否则第第三个被求值,返回.
+所以不能用函数实现,因为函数实参总是会被求值.
+第三个实参可以省略,默认为nil
+</pre>
+
+<p>
+6.and or
+</p>
+<pre class="example">
+仅对能影响返回值的实参求值.
+</pre>
+
+<p>
+7.函数定义
+#+BEGIN<sub>SRC</sub>(defun m-sum(x y)
+    (+ x y))
+#+END<sub>SRC</sub>
+</p>
+<ol class="org-ol">
+<li>递归(recursion <i>ri'kE:Sn</i> 
+</li>
+<li>迭代(iteration 
+</li>
+</ol>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">CL-USER&gt; (defun test(start end)
+           (do ((n start (+ n 1)))
+               ((= n end) (format t "---~a~%" n) 'done)
+             (format t "~a~%" n)))
+TEST
+CL-USER&gt; (test 1 4)
+1
+2
+3
+---4
+DONE
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">CL-USER&gt; (apply #'test '(1 4))
+1
+2
+3
+---
+DONE
+</pre>
+</div>
+<ol class="org-ol">
+<li>apply funcall
+</li>
+</ol>
+<pre class="example">
+CL-USER&gt; (setf x '(a b c d e f g h i j k l m n o p q r s t u v w x y z))
+(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+CL-USER&gt; (defun len(l)
+           (setf n 0)
+           (dolist (o l)
+             (setf n (+ n 1)))
+           n)
+LEN
+CL-USER&gt; (len x)
+26
+CL-USER&gt; (apply #'len (list x))
+26
+CL-USER&gt; (apply #'len `(,x)) ;`backquote,not '
+26
+CL-USER&gt; x
+(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+CL-USER&gt; (list x)
+((A B C D E F G H I J K L M N O P Q R S T U V W X Y Z))
+CL-USER&gt; 'x
+X
+CL-USER&gt; (funcall #'len x)
+26
+</pre>
+<ol class="org-ol">
+<li>list cons
+</li>
+</ol>
+<p>
+list: 把一个或几个元素加到nil上.
+</p>
+
+<pre class="example">
+CL-USER&gt; (cons 'a 'b)
+(A . B)
+CL-USER&gt; (cons 'a)
+
+; No value
+CL-USER&gt; (cons 'a nil)
+(A)
+CL-USER&gt; (cons 'a '(b))
+(A B)
+CL-USER&gt; (list 'a 'b)
+(A B)
+</pre>
+<ol class="org-ol">
+<li>所有不是Cons对象的东西,就是一个原子(atom).
+</li>
+</ol>
+<p>
+nil既是一个原子,也是一个列表.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-18-3-3" class="outline-4">
+<h4 id="sec-18-3-3">列表</h4>
+<div class="outline-text-4" id="text-18-3-3">
+<ol class="org-ol">
+<li></li>
+</ol>
+<pre class="example">
+CL-USER&gt; (setf lb '(e . f))
+(E . F)
+CL-USER&gt; (car lb)
+E
+CL-USER&gt; (cdr lb)
+F
+CL-USER&gt; (cdr '(e f))
+(F)
+</pre>
+</div>
+
+<div id="outline-container-sec-18-3-3-1" class="outline-5">
+<h5 id="sec-18-3-3-1">一个例子:压缩(游程编码),充分理解cons与list的区别,lisp(list)编码(处理)的核心思想</h5>
+<div class="outline-text-5" id="text-18-3-3-1">
+<p>
+当我只是看书学习的时候,看了两遍也仍然感觉高深莫测.
+而通过今晚的学习,练习,加深了list与cons操作的了解,以及把列表(list?)看作car与cdr的核心思想,突然一遍就搞明白了.自己尝试编码,除了错用list与cons这一个bug,其他都正确!
+当然最基本的思想,是全部有列表()组成:第一个为操作符,其他为空格间隔的实参.不要在犯 comp( 这样的错误.
+<code>=宗旨是模仿春秋笔法,尽量每一句都有意义,而不是无病呻吟的感慨=</code>
+目标:能达到如下效果:
+</p>
+<pre class="example">
+CL-USER&gt; (compress '(1 1 1 0 1 0 0 0 1))
+((3 1) 0 1 (3 0) 1)
+CL-USER&gt; (compress '(1))
+(1)
+CL-USER&gt; (compress 1)
+1
+</pre>
+
+<p>
+第一个函数:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">(defun comp(x)
+  "compress list x"
+  (if (consp x)
+      (comp-list (car x) 1 (cdr x))
+      x))
+</pre>
+</div>
+<p>
+第二个函数:
+三个参数,很好地体现了列表有car 和cdr组成的思想.
+学习一门语言,最重要地是学习到一种不同地思想,就体现在这种地方吧.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">(defun comp-list(elt n lst)
+  "compress cons only,elt is the car of cons,n记录当前重复elt次数,lst is the cdr of cons"
+  (if (null lst)
+      (build n elt)
+      (if (eql elt (car lst))
+          (comp-list elt (+ n 1) (cdr lst))
+          (list (build n elt) (comp-list (car lst) 1 (cdr lst))))))
+</pre>
+</div>
+<p>
+第三个函数:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">(defun build(n elt)
+  "如果n为1,返回elt,否则创建一个list,格式为(n elt)"
+  (if (= n 1)
+      elt
+      (list n elt)))
+</pre>
+</div>
+<p>
+执行
+</p>
+<pre class="example">
+CL-USER&gt; (comp 1)
+1
+CL-USER&gt; (comp '(1 1 1 0 1 0 0 0 0 1))
+((3 1) (0 (1 ((4 0) 1))))
+</pre>
+
+<p>
+BUG在于comp-list函数最后一句应该用cons,而不是list.改正:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">(defun comp-list(elt n lst)
+  "compress cons only,elt is the car of cons,n记录当前重复elt次数,lst is the cdr of cons"
+  (if (null lst)
+      (build n elt)
+      (if (eql elt (car lst))
+          (comp-list elt (+ n 1) (cdr lst))
+          (cons (build n elt) (comp-list (car lst) 1 (cdr lst))))))
+</pre>
+</div>
+<p>
+再次运行:
+</p>
+<pre class="example">
+CL-USER&gt; (comp '(1 1 1 0 1 0 0 0 0 1))
+((3 1) 0 1 (4 0) . 1)
+</pre>
+<p>
+还是与结果不符.很显然,出现 . 1)说明cons函数的第二个实参本来应该是个list,即(1),而出现了1.
+所以修改
+(if (null lst)(build n elt)
+为(if (null lst)(list (build n elt))
+最终:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">(defun comp-list(elt n lst)
+  (if (null lst)
+      (list (build n elt))
+      (if (eql elt (car lst))
+          (comp-list elt (+ n 1) (cdr lst))
+          (cons (build n elt) (comp-list (car lst) 1 (cdr lst))))))
+</pre>
+</div>
+<p>
+运行:
+</p>
+<pre class="example">
+CL-USER&gt; (comp '(1 1 1 0 1 0 0 0 0 1))
+((3 1) 0 1 (4 0) 1)
+</pre>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">(defun uncomp(x)
+           (if (not (consp x))
+               x
+               (uncomp-list (car x) (cdr x))))
+
+(defun uncomp-list(first lst)
+           (if (null lst)
+               (unbuild first)
+               (cons (unbuild first) (uncomp-list (car lst) (cdr lst)))))
+
+(defun unbuild(x)
+           (if (not (consp x))
+               x
+               (let ((m ()))
+                 (do ((n 0 (+ n 1)))
+                     ((= n (car x)) m)
+                   (setf m (cons (car (cdr x)) m))))))
+
+((1 1 1) 0 1 (0 0 0 0) . 1)
+&gt;(cons '(1 1 1) (0))
+((1 1 1) 0)
+</pre>
+</div>
+<p>
+修正后:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">(defun uncomp(x)
+           (if (not (consp x))
+               x
+               (uncomp-list (car x) (cdr x))))
+(defun uncomp-list(first lst)
+           (if (null lst)
+               (unbuild first)
+               (append (unbuild first) (uncomp-list (car lst) (cdr lst)))))
+(defun unbuild(x)
+           (if (not (consp x))
+               (list x)
+               (let ((m ()))
+                 (do ((n 0 (+ n 1)))
+                     ((= n (car x)) m)
+                   (setf m (cons (car (cdr x)) m))))))
+</pre>
+</div>
+<p>
+测试正确:
+</p>
+<pre class="example">
+CL-USER&gt; (uncomp (comp 1))
+1
+CL-USER&gt; 
+; No value
+CL-USER&gt; (uncomp (comp '(1)))
+(1)
+CL-USER&gt; (uncomp (comp '()))
+NIL
+CL-USER&gt; (uncomp (comp ()))
+NIL
+CL-USER&gt; (uncomp (comp '(1 1 1 0 1 0 0 0 0 1)))
+(1 1 1 0 1 0 0 0 0 1)
+</pre>
+<p>
+教程方法:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">(defun uncompress (lst)
+  (if (null lst)
+      nil
+      (let ((elt (car lst))
+            (rest (uncompress (cdr lst))))
+        (if (consp elt)
+            (append (apply #'list-of elt)
+                    rest)
+            (cons elt rest)))))
+
+(defun list-of (n elt)
+  (if (zerop n)
+      nil
+      (cons elt (list-of (- n 1) elt))))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-18-3-3-2" class="outline-5">
+<h5 id="sec-18-3-3-2"></h5>
+<div class="outline-text-5" id="text-18-3-3-2">
+<ol class="org-ol">
+<li>first ninth tenth rest nth nthcdr last
+</li>
+</ol>
+<p>
+CL-USER&gt; x
+(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+CL-USER&gt; (first x)
+A
+CL-USER&gt; (nth 0 x)
+A
+CL-USER&gt; (nthcdr 0 x)
+(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+CL-USER&gt; (nthcdr 1 x)
+(B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+CL-USER&gt; (nth 1 x)
+B
+CL-USER&gt; (equal (nth 0 x) (car (nthcdr 0 x)))
+T
+</p>
+<ol class="org-ol">
+<li>mapcar maplist
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-sec-18-3-3-3" class="outline-5">
+<h5 id="sec-18-3-3-3">tree</h5>
+<div class="outline-text-5" id="text-18-3-3-3">
+<ol class="org-ol">
+<li>copy-tree
+</li>
+<li>substitute
+</li>
+</ol>
+<div class="org-src-container">
+
+<pre class="src src-lisp">&gt;(substitute 'y 'x '(x y x x y))
+(Y Y Y Y Y)
+</pre>
+</div>
+<ol class="org-ol">
+<li>subst
+</li>
+</ol>
+<div class="org-src-container">
+
+<pre class="src src-lisp">CL-USER&gt; (subst 'xx 'a '((a b) c ((d e) f)))
+((XX B) C ((D E) F))
+</pre>
+</div>
+<ol class="org-ol">
+<li>member 默认使用eql比较.
+</li>
+</ol>
+<p>
+(member 'b '(a b c))
+(B C)
+关键字参数 :test
+</p>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">CL-USER&gt; (member '(b c) '(a (b c)))
+NIL
+CL-USER&gt; (member '(b c) '(a (b c)) :test #'equal)
+((B C))
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">(member 'a '((a b) (a c) (c d)) :key #'car)
+((A B) (A C) (C D))
+</pre>
+</div>
+<ol class="org-ol">
+<li>member-if
+</li>
+</ol>
+<pre class="example">
+CL-USER&gt; (member-if #'oddp '(2 3 4 1))
+(3 4 1)
+</pre>
+<ol class="org-ol">
+<li>adjoin
+</li>
+</ol>
+<pre class="example">
+CL-USER&gt; (adjoin 'b '(a b c))
+(A B C)
+CL-USER&gt; (adjoin 'z '(a b c))
+(Z A B C)
+</pre>
+<ol class="org-ol">
+<li>union intersection set-difference
+</li>
+</ol>
+<pre class="example">
+CL-USER&gt; (union '(a b c) '(c b s))
+(A C B S)
+CL-USER&gt; (intersection '(a b c) '(b b c))
+(B C)
+CL-USER&gt; (set-difference '(a b c d e) '(b e))
+(A C D)
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-18-3-3-4" class="outline-5">
+<h5 id="sec-18-3-3-4">序列 sequence</h5>
+<div class="outline-text-5" id="text-18-3-3-4">
+<ol class="org-ol">
+<li>length
+</li>
+<li>subseq
+</li>
+<li>reverse
+</li>
+<li>sort ;原序列会被修改
+</li>
+<li>nth 
+</li>
+<li>every
+</li>
+<li>some
+</li>
+</ol>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">CL-USER&gt; (length '(a b c b a ))
+5
+CL-USER&gt; (length '( (a b) c d '(e f)))
+4
+CL-USER&gt; (setf sx '( (a b) c d '(e f)))
+((A B) C D '(E F))
+CL-USER&gt; (subseq sx 0 (length sx))
+((A B) C D '(E F))
+CL-USER&gt; (subseq sx 0 2)
+((A B) C)
+CL-USER&gt; (reverse sx)
+('(E F) D C (A B))
+CL-USER&gt; (setf sy '(2 3 1 7 4 6))
+(2 3 1 7 4 6)
+CL-USER&gt; (setf sy2 (copy-list sy))
+(2 3 1 7 4 6)
+CL-USER&gt; sy2
+(2 3 1 7 4 6)
+CL-USER&gt; (sort sy2 #'&gt;)
+(7 6 4 3 2 1)
+CL-USER&gt; sy2
+(7 6 4 3 2 1)
+CL-USER&gt; (defun nmost (n se)
+           (nth (- n 1) (sort (copy-list se))))
+NMOST
+CL-USER&gt; (defun nmost (n se)
+           (nth (- n 1) (sort (copy-list se) #'&gt;)))
+NMOST
+CL-USER&gt; (nmost 2 sy2)
+6
+CL-USER&gt; (every #'oddp '(1 3 5))
+T
+CL-USER&gt; (every #'oddp '(1 3 5 4))
+NIL
+CL-USER&gt; (some #'oddp '(1 3 5))
+T
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-18-3-3-5" class="outline-5">
+<h5 id="sec-18-3-3-5">栈 Stacks</h5>
+<div class="outline-text-5" id="text-18-3-3-5">
+<p>
+明显,(push 'a '(b))是错误的.
+</p>
+<ol class="org-ol">
+<li>push
+</li>
+<li>pop
+</li>
+<li>pushnew
+</li>
+</ol>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">CL-USER&gt; (push 9 sy)
+(9 2 3 1 7 4 6)
+CL-USER&gt; (push 12 sy)
+(12 9 2 3 1 7 4 6)
+CL-USER&gt; (pop sy)
+12
+CL-USER&gt; sy
+(9 2 3 1 7 4 6)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-18-3-3-6" class="outline-5">
+<h5 id="sec-18-3-3-6">push 与cons的区别</h5>
+<div class="outline-text-5" id="text-18-3-3-6">
+<p>
+(cons x path);有值,但没有副作用,path不变.
+(push x path);也有值,但有副作用,path变化.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">CL-USER&gt; (defun np(path node net)
+           (mapcar #'(lambda(x)
+                       (cons x path))
+                   (cdr (assoc node net))))
+NP
+CL-USER&gt; (np p 'a net)
+((B A) (C A))
+CL-USER&gt; (defun pnp(path node net)
+           (mapcar #'(lambda(x)
+                       (push x path))
+                   (cdr (assoc node net))))
+PNP
+CL-USER&gt; (pnp p 'a net)
+((B A) (C B A))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-18-3-3-7" class="outline-5">
+<h5 id="sec-18-3-3-7">点状列表 dotted lists</h5>
+<div class="outline-text-5" id="text-18-3-3-7">
+<p>
+CL-USER&gt; (setf dm (cons 'a 'b))
+(A . B)
+</p>
+</div>
+</div>
+<div id="outline-container-sec-18-3-3-8" class="outline-5">
+<h5 id="sec-18-3-3-8">关联列表 assoc-lists</h5>
+<div class="outline-text-5" id="text-18-3-3-8">
+<p>
+由Cons对象组成的列表
+</p>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">CL-USER&gt; (setf assoc-m '((+ . "add")(- . "substract")))
+((+ . "add") (- . "substract"))
+CL-USER&gt; (assoc '- assoc-m)
+(- . "substract")
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-18-3-3-9" class="outline-5">
+<h5 id="sec-18-3-3-9">最短路径</h5>
+<div class="outline-text-5" id="text-18-3-3-9">
+<pre class="example">
+(setf min '((a b c) (b c) (c d)))
+(a b c)表示a与 b,c 右边.(广度为1,可以到b或c).
+</pre>
+<p>
+由节点a可以到达的节点(列表):
+</p>
+<pre class="example">
+(cdr (assoc 'a min))
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-18-3-3-10" class="outline-5">
+<h5 id="sec-18-3-3-10"></h5>
+</div>
+</div>
+<div id="outline-container-sec-18-3-4" class="outline-4">
+<h4 id="sec-18-3-4">特殊数据结构</h4>
+<div class="outline-text-4" id="text-18-3-4">
+</div><div id="outline-container-sec-18-3-4-1" class="outline-5">
+<h5 id="sec-18-3-4-1">array vector</h5>
+<div class="outline-text-5" id="text-18-3-4-1">
+<p>
+(setf arr (make-array '(2 3) :initial-element nil))
+(aref arr 0 2)
+</p>
+</div>
+</div>
+<div id="outline-container-sec-18-3-4-2" class="outline-5">
+<h5 id="sec-18-3-4-2"><span class="todo TODO">TODO</span> 二叉搜索</h5>
+</div>
+<div id="outline-container-sec-18-3-4-3" class="outline-5">
+<h5 id="sec-18-3-4-3">字符与字符串</h5>
+<div class="outline-text-5" id="text-18-3-4-3">
+<p>
+(sort "elow" #'char&lt;)
+(char&lt; ;char only
+(char&lt;=
+(char&gt;
+(char&gt;=
+(char/=
+</p>
+
+<p>
+(aref "abc" 2)
+(char "abc" 2);#\c
+(equal "abc" "abc")
+(string-equal "abc" "Abc")
+(format nil "~a world" "hello)
+(concatenate 'string "hello " "world")
+</p>
+</div>
+</div>
+<div id="outline-container-sec-18-3-4-4" class="outline-5">
+<h5 id="sec-18-3-4-4">序列:序列类型包含了列表与向量(list,vector)</h5>
+<div class="outline-text-5" id="text-18-3-4-4">
+<p>
+(setf s '(a b c))
+</p>
+
+<p>
+(remove
+(length s)
+(subseq
+(reverse
+(sort
+(every
+(some
+</p>
+
+<p>
+对列表:
+(nth
+对向量:
+(aref
+(sverf
+对字符串:(向量)
+(char
+</p>
+
+<p>
+通用:
+(elt '(a b c) 1)
+</p>
+
+<p>
+关键字参数:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">参数</th>
+<th scope="col" class="left">用途</th>
+<th scope="col" class="left">缺省值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">:key</td>
+<td class="left">应用至每个元素的函数</td>
+<td class="left">identity</td>
+</tr>
+
+<tr>
+<td class="left">:test</td>
+<td class="left">用来比较</td>
+<td class="left">eql</td>
+</tr>
+
+<tr>
+<td class="left">:from-end</td>
+<td class="left">若为真,反向工作</td>
+<td class="left">nil</td>
+</tr>
+
+<tr>
+<td class="left">:start</td>
+<td class="left">起始位置</td>
+<td class="left">0</td>
+</tr>
+
+<tr>
+<td class="left">:end</td>
+<td class="left">若有给定,结束位置</td>
+<td class="left">nil</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-18-3-5" class="outline-4">
+<h4 id="sec-18-3-5">ANSI COMMON LISP</h4>
+</div>
+<div id="outline-container-sec-18-3-6" class="outline-4">
+<h4 id="sec-18-3-6">SBCL</h4>
+<div class="outline-text-4" id="text-18-3-6">
+<ol class="org-ol">
+<li>lambda expression, lambda把能省（虽然common lisp允许）
+</li>
+</ol>
+<p>
+(lambda (x) (+ x 100))
+((lambda (x) (+ x 100)) 2);;102
+</p>
+<ol class="org-ol">
+<li>(defvar val &amp;optinal val doc)
+</li>
+</ol>
+<p>
+声明变量,如果该变量是第一次声明,且有值,则赋值.
+否则,该val赋值无效.
+</p>
+<ol class="org-ol">
+<li>(setf (car
+</li>
+</ol>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">CL-USER&gt; (defvar s1 0)
+S1
+CL-USER&gt; (setf s1 1)
+1
+CL-USER&gt; s1
+1
+CL-USER&gt; (defvar s2 '(0 a b c))
+S2
+CL-USER&gt; (setf (car s2) 1)
+1
+CL-USER&gt; s2
+(1 A B C)
+</pre>
+</div>
+<ol class="org-ol">
+<li></li>
+</ol>
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">CL-USER&gt; (defvar n nil)
+N
+CL-USER&gt; (setf (car (push 1 n))(1+ (car (push 1 n))))
+2
+CL-USER&gt; n
+(1 2)
+CL-USER&gt; (defvar o 1)
+O
+CL-USER&gt; (setf (car (push 1 o))(1+ (car (push 1 o))))
+2
+CL-USER&gt; o
+(1 2 . 1)
+CL-USER&gt; (setf lst nil)
+NIL
+CL-USER&gt; (incf (car (push 1 lst)))
+2
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-18-3-7" class="outline-4">
+<h4 id="sec-18-3-7"><span class="todo TODO">TODO</span> macro</h4>
+<div class="outline-text-4" id="text-18-3-7">
+<div class="org-src-container">
+
+<pre class="src src-common-lisp"><span class="linenr"> 1: </span>;;do
+<span class="linenr"> 2: </span>(do (
+<span class="linenr"> 3: </span>     (x 0 (+ x 1))
+<span class="linenr"> 4: </span>     )
+<span class="linenr"> 5: </span>    (
+<span class="linenr"> 6: </span>     (= x 10)
+<span class="linenr"> 7: </span>     ;;'done
+<span class="linenr"> 8: </span>     )
+<span class="linenr"> 9: </span>  (format t "~a" x)
+<span class="linenr">10: </span>  )
+<span class="linenr">11: </span>(defmacro while(test &amp;rest body)
+<span class="linenr">12: </span>  `(do
+<span class="linenr">13: </span>    ()
+<span class="linenr">14: </span>    (
+<span class="linenr">15: </span>     (not,test)
+<span class="linenr">16: </span>     )
+<span class="linenr">17: </span>     ,@body)
+<span class="linenr">18: </span>  )
+<span class="linenr">19: </span>(let ((x 0))
+<span class="linenr">20: </span>  (while (&lt; x 10)
+<span class="linenr">21: </span>    (format t "~a" x)
+<span class="linenr">22: </span>    (incf x 1)))
+<span class="linenr">23: </span>
+<span class="linenr">24: </span>(defmacro until(test &amp;rest body)
+<span class="linenr">25: </span>  `(do
+<span class="linenr">26: </span>    ()
+<span class="linenr">27: </span>    (
+<span class="linenr">28: </span>     ,test
+<span class="linenr">29: </span>     )
+<span class="linenr">30: </span>     ,@body)
+<span class="linenr">31: </span>  )
+<span class="linenr">32: </span>(let ((x 0))
+<span class="linenr">33: </span>  (until (= x 10)
+<span class="linenr">34: </span>         (format t "~a" x)
+<span class="linenr">35: </span>         (incf x 1)
+<span class="linenr">36: </span>         ))
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-08-11 周四 06:45</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2016-10-21 周五 03:55</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
