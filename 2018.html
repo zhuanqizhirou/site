@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>2018</title>
-<!-- 2018-05-16 周三 21:37 -->
+<!-- 2018-05-18 周五 09:09 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -232,6 +232,11 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2-5-2-18">内容不变执行commit</a></li>
 </ul>
 </li>
+<li><a href="#sec-2-5-3">github</a>
+<ul>
+<li><a href="#sec-2-5-3-1">本地库与自动生成README.md的远程库关联</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#sec-2-6">Spring Boot</a>
@@ -240,21 +245,23 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-2-6-1-1">启动运行</a></li>
 <li><a href="#sec-2-6-1-2">html template</a></li>
-<li><a href="#sec-2-6-1-3">启动热部署</a></li>
+<li><a href="#sec-2-6-1-3"><span class="done DONE">DONE</span> 启动热部署</a></li>
 </ul>
 </li>
+<li><a href="#sec-2-6-2"><span class="todo TODO">TODO</span> Spring Boot官方教程逐步学习计划</a></li>
 </ul>
 </li>
 <li><a href="#sec-2-7">Linux</a>
 <ul>
-<li>
+<li><a href="#sec-2-7-1">细说Linux网易教程</a></li>
+<li><a href="#sec-2-7-2">common</a>
 <ul>
-<li><a href="#sec-2-7-0-1">1.虚拟机忘记密码</a></li>
-<li><a href="#sec-2-7-0-2">2.安装chromium浏览器</a></li>
-<li><a href="#sec-2-7-0-3">3.安装失败，更换mirrorlist</a></li>
-<li><a href="#sec-2-7-0-4">4.vi基本操作</a></li>
-<li><a href="#sec-2-7-0-5">5.同步软件包数据库</a></li>
-<li><a href="#sec-2-7-0-6">6.</a></li>
+<li><a href="#sec-2-7-2-1">1.虚拟机忘记密码</a></li>
+<li><a href="#sec-2-7-2-2">2.安装chromium浏览器</a></li>
+<li><a href="#sec-2-7-2-3">3.安装失败，更换mirrorlist</a></li>
+<li><a href="#sec-2-7-2-4">4.vi基本操作</a></li>
+<li><a href="#sec-2-7-2-5">5.同步软件包数据库</a></li>
+<li><a href="#sec-2-7-2-6">6.</a></li>
 </ul>
 </li>
 </ul>
@@ -339,6 +346,36 @@ print u'中文' 或者 str.decode('utf-8')<br  />
 </p>
 <pre class="example">
 git config --global -e
+</pre>
+<pre class="example">
+[user]
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+[diff "gpg"]
+	textconv = gpg --decrypt
+[gui]
+	encoding = utf-8
+
+[core]
+	editor = "code --wait"
+[alias]
+	lg = log --color --graph --pretty=format:'%&gt;|(20)%C(yellow)%h%Creset%C(yellow)\t%d%Creset%ad\t%C(bold yellow)&lt;%an&gt;%&gt;|(55)%Creset%&gt;|(60)%s' --date=format:'%Y.%m.%d %H:%M:%S' --abbrev-commit
+
+[diff]
+  tool = tortoisediff
+[difftool]
+  prompt = false
+[merge]
+  tool = tortoisemerge
+[mergetool]
+  prompt = false
+  keepBackup = false
+[difftool "tortoisediff"]
+  cmd = \""D:/Program Files/TortoiseGIT/bin/TortoiseGitMerge.exe"\" -mine "$REMOTE" -base "$LOCAL"
+[mergetool "tortoisemerge"]
+  cmd = \""D:/Program Files/TortoiseGIT/bin/TortoiseGitMerge.exe"\" -base "$BASE" -theirs "$REMOTE" -mine "$LOCAL" -merged "$MERGED"
 </pre>
 </div>
 </div>
@@ -498,11 +535,10 @@ git rebase &#x2013;continue,直至最终成功自动回到topicbranch分支。<b
 </li>
 <li><a id="sec-2-5-2-15-3" name="sec-2-5-2-15-3"></a>黄金定律<br  /><div class="outline-text-6" id="text-2-5-2-15-3">
 <pre class="example">
-一旦分支中的提交物件发布到公共仓库，就千万不要对该分支执行rebase操作。
+绝不要在公共的分支上使用它。
 </pre>
 <p>
-我的理解是，如果本地dev分支commit后已经push，不要在此分支上执行git rebase other-branch的操作。但下次再次commit，未push，可以执行。<br  />
-【!不确定，可以确定的是，git pull &#x2013;rebase 没有问题】<br  />
+比如说，如果你把 master 分支 rebase 到你的 feature 分支上，【git checkout master, git rebase feature】,这次 rebase 将 master 分支上的所有提交都移到了 feature 分支后面。问题是它只发生在你的代码仓库中，其他所有的开发者还在原来的 master 上工作。<br  />
 </p>
 </div>
 </li>
@@ -519,6 +555,23 @@ git rebase &#x2013;continue,直至最终成功自动回到topicbranch分支。<b
 在dev上执行git rebase master<br  />
 或者在master分支上执行git rebase master dev,<br  />
 效果应该一致，最终都停留在dev分支.<br  />
+</p>
+</div>
+</li>
+<li><a id="sec-2-5-2-15-5" name="sec-2-5-2-15-5"></a>git rebase用来修改提交历史或合并本地提交记录<br  /><div class="outline-text-6" id="text-2-5-2-15-5">
+<p>
+如合并2次提交：<br  />
+1.执行<br  />
+</p>
+<pre class="example">
+git rebase -i HEAD~2
+</pre>
+<p>
+会出现：<br  />
+编辑窗口，按提交先后顺序从上到下列出最近2次提交。<br  />
+最上面一行保留，将下面的pick改成s或squash,即（#  s, squash = use commit, but meld into previous commit）。<br  />
+保存，关闭，会出现第二个编辑窗口，此时如果忽略掉注释内容，是2次提交的commit，编辑该内容后保存退出即可。<br  />
+如果中间出错，git rebase &#x2013;abort，退出此次rebase。<br  />
 </p>
 </div>
 </li></ul>
@@ -548,7 +601,24 @@ git commit &#x2013;allow-empty -m "initial empty commit"<br  />
 </div>
 </div>
 </div>
+<div id="outline-container-sec-2-5-3" class="outline-4">
+<h4 id="sec-2-5-3">github</h4>
+<div class="outline-text-4" id="text-2-5-3">
+</div><div id="outline-container-sec-2-5-3-1" class="outline-5">
+<h5 id="sec-2-5-3-1">本地库与自动生成README.md的远程库关联</h5>
+<div class="outline-text-5" id="text-2-5-3-1">
+<p>
+1.git remote add origin <a href="https://github.com/username/repository.git">https://github.com/username/repository.git</a> <br  />
+2.把README.md pull下来，避免提示refusing to merge unrelated histories<br  />
+git pull &#x2013;allow-unrelated-histories<br  />
+3.git push -u origin master #推送，并将本地与远程master分支关联。<br  />
+</p>
 </div>
+</div>
+</div>
+</div>
+
+
 <div id="outline-container-sec-2-6" class="outline-3">
 <h3 id="sec-2-6">Spring Boot</h3>
 <div class="outline-text-3" id="text-2-6">
@@ -584,7 +654,7 @@ java -jar target/gs-uploading-files-0.1.0.jar   #生成的jar包路径
 <h5 id="sec-2-6-1-2">html template</h5>
 </div>
 <div id="outline-container-sec-2-6-1-3" class="outline-5">
-<h5 id="sec-2-6-1-3">启动热部署</h5>
+<h5 id="sec-2-6-1-3"><span class="done DONE">DONE</span> 启动热部署</h5>
 <div class="outline-text-5" id="text-2-6-1-3">
 <p>
 ````<br  />
@@ -602,13 +672,31 @@ java -jar target/gs-uploading-files-0.1.0.jar   #生成的jar包路径
 </div>
 </div>
 </div>
+<div id="outline-container-sec-2-6-2" class="outline-4">
+<h4 id="sec-2-6-2"><span class="todo TODO">TODO</span> Spring Boot官方教程逐步学习计划</h4>
+<div class="outline-text-4" id="text-2-6-2">
+<p>
+文档：<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/index.html">Spring Boot Reference Guide</a>,II,Getting Started开始<br  />
+<a href="https://start.spring.io">start.spring.io自动生成配置项目</a><br  />
+</p>
 </div>
+</div>
+</div>
+
+
+
 <div id="outline-container-sec-2-7" class="outline-3">
 <h3 id="sec-2-7">Linux</h3>
 <div class="outline-text-3" id="text-2-7">
-</div><div id="outline-container-sec-2-7-0-1" class="outline-5">
-<h5 id="sec-2-7-0-1">1.虚拟机忘记密码</h5>
-<div class="outline-text-5" id="text-2-7-0-1">
+</div><div id="outline-container-sec-2-7-1" class="outline-4">
+<h4 id="sec-2-7-1"><a href="https://study.163.com/course/courseMain.htm?courseId=983014">细说Linux网易教程</a></h4>
+</div>
+<div id="outline-container-sec-2-7-2" class="outline-4">
+<h4 id="sec-2-7-2">common</h4>
+<div class="outline-text-4" id="text-2-7-2">
+</div><div id="outline-container-sec-2-7-2-1" class="outline-5">
+<h5 id="sec-2-7-2-1">1.虚拟机忘记密码</h5>
+<div class="outline-text-5" id="text-2-7-2-1">
 <p>
 1.虚拟机启动，在选择系统界面按e,<br  />
 2.编辑kernel line，即<br  />
@@ -645,25 +733,25 @@ reboot -f
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-2-7-0-2" class="outline-5">
-<h5 id="sec-2-7-0-2">2.安装chromium浏览器</h5>
-<div class="outline-text-5" id="text-2-7-0-2">
+<div id="outline-container-sec-2-7-2-2" class="outline-5">
+<h5 id="sec-2-7-2-2">2.安装chromium浏览器</h5>
+<div class="outline-text-5" id="text-2-7-2-2">
 <pre class="example">
 pacman -S chromium
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-2-7-0-3" class="outline-5">
-<h5 id="sec-2-7-0-3">3.安装失败，更换mirrorlist</h5>
-<div class="outline-text-5" id="text-2-7-0-3">
+<div id="outline-container-sec-2-7-2-3" class="outline-5">
+<h5 id="sec-2-7-2-3">3.安装失败，更换mirrorlist</h5>
+<div class="outline-text-5" id="text-2-7-2-3">
 <pre class="example">
 vi /etc/pacman.d/mirrorlist
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-2-7-0-4" class="outline-5">
-<h5 id="sec-2-7-0-4">4.vi基本操作</h5>
-<div class="outline-text-5" id="text-2-7-0-4">
+<div id="outline-container-sec-2-7-2-4" class="outline-5">
+<h5 id="sec-2-7-2-4">4.vi基本操作</h5>
+<div class="outline-text-5" id="text-2-7-2-4">
 <p>
 进入后默认命令行模式<br  />
 Enter 下一行<br  />
@@ -677,9 +765,9 @@ Esc离开编辑模式<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-7-0-5" class="outline-5">
-<h5 id="sec-2-7-0-5">5.同步软件包数据库</h5>
-<div class="outline-text-5" id="text-2-7-0-5">
+<div id="outline-container-sec-2-7-2-5" class="outline-5">
+<h5 id="sec-2-7-2-5">5.同步软件包数据库</h5>
+<div class="outline-text-5" id="text-2-7-2-5">
 <pre class="example">
 pacman -Syu
 </pre>
@@ -688,8 +776,9 @@ pacman -Syu
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-7-0-6" class="outline-5">
-<h5 id="sec-2-7-0-6">6.</h5>
+<div id="outline-container-sec-2-7-2-6" class="outline-5">
+<h5 id="sec-2-7-2-6">6.</h5>
+</div>
 </div>
 </div>
 </div>
