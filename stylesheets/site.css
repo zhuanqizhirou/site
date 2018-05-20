@@ -1,3 +1,7 @@
+#table-of-contents ul, menu, dir {
+  -webkit-padding-start: 20px !important;
+}
+
 #lightbox{  position: absolute; left: 0; width: 100%; z-index: 10000; text-align: center; line-height: 0;}  
 #lightbox img{ width: auto; height: auto;}  
 #lightbox a img{ border: none; }  
@@ -25,13 +29,7 @@
 #imageData #bottomNavClose{ width: 66px; float: right;  padding-bottom: 0.7em; outline: none;}        
   
 #overlay{ position: absolute; top: 0; left: 0; z-index: 9000; width: 100%; height: 500px; background-color: #000; }  
-
-
-#table-of-contents ul, menu, dir {
-  -webkit-padding-start: 10px !important;
-}
-
-
+  
   
 @media all  
 {  
@@ -1924,7 +1922,7 @@
   }  
 } /* END OF @media screen */  
   
-/* Date Author ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½å¼°ï¿½ï¿½ï¿½ï¿½ */  
+/* Date Author ÏÔÊ¾×ÖÌå¼°±³¾° */  
 div#postamble {  
     margin: 20px 0px 20px 0px;  
     font-style: italic;  
