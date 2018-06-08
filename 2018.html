@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>2018</title>
-<!-- 2018-06-06 周三 06:25 -->
+<!-- 2018-06-08 周五 14:21 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -214,33 +214,38 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2-6">Git</a>
 <ul>
 <li><a href="#sec-2-6-1">HTTP Basic: Access denied fatal: Authentication failed</a></li>
-<li><a href="#sec-2-6-2">git 配置</a></li>
-<li><a href="#sec-2-6-3">git版本管理实践内容</a>
+<li><a href="#sec-2-6-2">^M是windows下换行\r\n的\r</a>
 <ul>
-<li><a href="#sec-2-6-3-1">查看远程库</a></li>
-<li><a href="#sec-2-6-3-2">删除远程库</a></li>
-<li><a href="#sec-2-6-3-3">重新建立远程库</a></li>
-<li><a href="#sec-2-6-3-4">强制用远程分支覆盖本地分支</a></li>
-<li><a href="#sec-2-6-3-5">已经存在repository中的文件，本地修改不提交</a></li>
-<li><a href="#sec-2-6-3-6">查看已经加入在repository中但不提交的文件</a></li>
-<li><a href="#sec-2-6-3-7">恢复git跟踪</a></li>
-<li><a href="#sec-2-6-3-8">合并2次提交</a></li>
-<li><a href="#sec-2-6-3-9">git fetch 后查看log日志</a></li>
-<li><a href="#sec-2-6-3-10">修改最后一次提交记录</a></li>
-<li><a href="#sec-2-6-3-11">修改某次的提交记录</a></li>
-<li><a href="#sec-2-6-3-12">使用git rebase的一般情况：</a></li>
-<li><a href="#sec-2-6-3-13">不能使用git rebase 而应该使用git merge &#x2013;no-ff的情况</a></li>
-<li><a href="#sec-2-6-3-14">git lg -5 最近5条记录</a></li>
-<li><a href="#sec-2-6-3-15">git rebase</a></li>
-<li><a href="#sec-2-6-3-16">git add 与 git commit 合并</a></li>
-<li><a href="#sec-2-6-3-17">行尾追加内容</a></li>
-<li><a href="#sec-2-6-3-18">内容不变执行commit</a></li>
+<li><a href="#sec-2-6-2-1">用到\r\n的场景！</a></li>
 </ul>
 </li>
-<li><a href="#sec-2-6-4">github</a>
+<li><a href="#sec-2-6-3">git 配置</a></li>
+<li><a href="#sec-2-6-4">git版本管理实践内容</a>
 <ul>
-<li><a href="#sec-2-6-4-1">更新fork:</a></li>
-<li><a href="#sec-2-6-4-2">本地库与自动生成README.md的远程库关联</a></li>
+<li><a href="#sec-2-6-4-1">查看远程库</a></li>
+<li><a href="#sec-2-6-4-2">删除远程库</a></li>
+<li><a href="#sec-2-6-4-3">重新建立远程库</a></li>
+<li><a href="#sec-2-6-4-4">强制用远程分支覆盖本地分支</a></li>
+<li><a href="#sec-2-6-4-5">已经存在repository中的文件，本地修改不提交</a></li>
+<li><a href="#sec-2-6-4-6">查看已经加入在repository中但不提交的文件</a></li>
+<li><a href="#sec-2-6-4-7">恢复git跟踪</a></li>
+<li><a href="#sec-2-6-4-8">合并2次提交</a></li>
+<li><a href="#sec-2-6-4-9">git fetch 后查看log日志</a></li>
+<li><a href="#sec-2-6-4-10">修改最后一次提交记录</a></li>
+<li><a href="#sec-2-6-4-11">修改某次的提交记录</a></li>
+<li><a href="#sec-2-6-4-12">使用git rebase的一般情况：</a></li>
+<li><a href="#sec-2-6-4-13">不能使用git rebase 而应该使用git merge &#x2013;no-ff的情况</a></li>
+<li><a href="#sec-2-6-4-14">git lg -5 最近5条记录</a></li>
+<li><a href="#sec-2-6-4-15">git rebase</a></li>
+<li><a href="#sec-2-6-4-16">git add 与 git commit 合并</a></li>
+<li><a href="#sec-2-6-4-17">行尾追加内容</a></li>
+<li><a href="#sec-2-6-4-18">内容不变执行commit</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-6-5">github</a>
+<ul>
+<li><a href="#sec-2-6-5-1">更新fork:</a></li>
+<li><a href="#sec-2-6-5-2">本地库与自动生成README.md的远程库关联</a></li>
 </ul>
 </li>
 </ul>
@@ -279,14 +284,15 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-2-9-2-1">1.下载安装</a></li>
 <li><a href="#sec-2-9-2-2">选择分辨率:(以1920X1200为例)输入指令</a></li>
-<li><a href="#sec-2-9-2-3">修改源</a></li>
-<li><a href="#sec-2-9-2-4">安装Lantern</a></li>
-<li><a href="#sec-2-9-2-5">安装chrome</a></li>
-<li><a href="#sec-2-9-2-6">安装emacs</a></li>
-<li><a href="#sec-2-9-2-7">安装git</a></li>
-<li><a href="#sec-2-9-2-8">emacs配置</a></li>
-<li><a href="#sec-2-9-2-9">安装python3-pip</a></li>
-<li><a href="#sec-2-9-2-10">Java</a></li>
+<li><a href="#sec-2-9-2-3">执行sudo不需要输入密码：</a></li>
+<li><a href="#sec-2-9-2-4">修改源</a></li>
+<li><a href="#sec-2-9-2-5">安装Lantern</a></li>
+<li><a href="#sec-2-9-2-6">安装chrome</a></li>
+<li><a href="#sec-2-9-2-7">安装emacs</a></li>
+<li><a href="#sec-2-9-2-8">安装git</a></li>
+<li><a href="#sec-2-9-2-9">emacs配置</a></li>
+<li><a href="#sec-2-9-2-10">安装python3-pip</a></li>
+<li><a href="#sec-2-9-2-11">Java</a></li>
 </ul>
 </li>
 <li><a href="#sec-2-9-3">常见问题</a>
@@ -462,10 +468,27 @@ git config &#x2013;system &#x2013;unset credential.helper<br  />
 </div>
 </div>
 
-
 <div id="outline-container-sec-2-6-2" class="outline-4">
-<h4 id="sec-2-6-2">git 配置</h4>
+<h4 id="sec-2-6-2">^M是windows下换行\r\n的\r</h4>
 <div class="outline-text-4" id="text-2-6-2">
+<p>
+建议使用LF作为换行符，而非winsdows下CRLF。<br  />
+在linux中，可以使用cat -v 来查看不可见字符。<br  />
+</p>
+</div>
+<div id="outline-container-sec-2-6-2-1" class="outline-5">
+<h5 id="sec-2-6-2-1">用到\r\n的场景！</h5>
+<div class="outline-text-5" id="text-2-6-2-1">
+<p>
+HTTP规范里，可是要求换行都用\r\n的，也就是header之间用\r\n，header和body之间两个\r\n。当然很多web server是会做兼容的，但遇到严格遵守规范的程序，你想&lt; request.txt telnet xxxx 80这么玩就不行了。<br  />
+所以core.autocrlf使用false.<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-6-3" class="outline-4">
+<h4 id="sec-2-6-3">git 配置</h4>
+<div class="outline-text-4" id="text-2-6-3">
 <p>
 打开全局配置文件<br  />
 </p>
@@ -504,70 +527,70 @@ git config --global -e
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3" class="outline-4">
-<h4 id="sec-2-6-3">git版本管理实践内容</h4>
-<div class="outline-text-4" id="text-2-6-3">
-</div><div id="outline-container-sec-2-6-3-1" class="outline-5">
-<h5 id="sec-2-6-3-1">查看远程库</h5>
-<div class="outline-text-5" id="text-2-6-3-1">
+<div id="outline-container-sec-2-6-4" class="outline-4">
+<h4 id="sec-2-6-4">git版本管理实践内容</h4>
+<div class="outline-text-4" id="text-2-6-4">
+</div><div id="outline-container-sec-2-6-4-1" class="outline-5">
+<h5 id="sec-2-6-4-1">查看远程库</h5>
+<div class="outline-text-5" id="text-2-6-4-1">
 <p>
 git remote -v<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-2" class="outline-5">
-<h5 id="sec-2-6-3-2">删除远程库</h5>
-<div class="outline-text-5" id="text-2-6-3-2">
+<div id="outline-container-sec-2-6-4-2" class="outline-5">
+<h5 id="sec-2-6-4-2">删除远程库</h5>
+<div class="outline-text-5" id="text-2-6-4-2">
 <p>
 git remote rm origin<br  />
 git remote rm upstream<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-3" class="outline-5">
-<h5 id="sec-2-6-3-3">重新建立远程库</h5>
-<div class="outline-text-5" id="text-2-6-3-3">
+<div id="outline-container-sec-2-6-4-3" class="outline-5">
+<h5 id="sec-2-6-4-3">重新建立远程库</h5>
+<div class="outline-text-5" id="text-2-6-4-3">
 <p>
 git remote add origin <a href="https://github.com/xx/xx.git">https://github.com/xx/xx.git</a><br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-4" class="outline-5">
-<h5 id="sec-2-6-3-4">强制用远程分支覆盖本地分支</h5>
-<div class="outline-text-5" id="text-2-6-3-4">
+<div id="outline-container-sec-2-6-4-4" class="outline-5">
+<h5 id="sec-2-6-4-4">强制用远程分支覆盖本地分支</h5>
+<div class="outline-text-5" id="text-2-6-4-4">
 <p>
 git fetch<br  />
 git reset &#x2013;hard origin/master<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-5" class="outline-5">
-<h5 id="sec-2-6-3-5">已经存在repository中的文件，本地修改不提交</h5>
-<div class="outline-text-5" id="text-2-6-3-5">
+<div id="outline-container-sec-2-6-4-5" class="outline-5">
+<h5 id="sec-2-6-4-5">已经存在repository中的文件，本地修改不提交</h5>
+<div class="outline-text-5" id="text-2-6-4-5">
 <p>
 git update-index &#x2013;assume-unchanged examples/VnTrader/XSPEED_connect.json<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-6" class="outline-5">
-<h5 id="sec-2-6-3-6">查看已经加入在repository中但不提交的文件</h5>
-<div class="outline-text-5" id="text-2-6-3-6">
+<div id="outline-container-sec-2-6-4-6" class="outline-5">
+<h5 id="sec-2-6-4-6">查看已经加入在repository中但不提交的文件</h5>
+<div class="outline-text-5" id="text-2-6-4-6">
 <p>
 git ls-files -v | grep -e "^[hsmrck]"<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-7" class="outline-5">
-<h5 id="sec-2-6-3-7">恢复git跟踪</h5>
-<div class="outline-text-5" id="text-2-6-3-7">
+<div id="outline-container-sec-2-6-4-7" class="outline-5">
+<h5 id="sec-2-6-4-7">恢复git跟踪</h5>
+<div class="outline-text-5" id="text-2-6-4-7">
 <p>
 git update-index &#x2013;assume-unchanged filename<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-8" class="outline-5">
-<h5 id="sec-2-6-3-8">合并2次提交</h5>
-<div class="outline-text-5" id="text-2-6-3-8">
+<div id="outline-container-sec-2-6-4-8" class="outline-5">
+<h5 id="sec-2-6-4-8">合并2次提交</h5>
+<div class="outline-text-5" id="text-2-6-4-8">
 <p>
 1.执行<br  />
 </p>
@@ -584,9 +607,9 @@ git rebase -i HEAD~2
 </div>
 </div>
 
-<div id="outline-container-sec-2-6-3-9" class="outline-5">
-<h5 id="sec-2-6-3-9">git fetch 后查看log日志</h5>
-<div class="outline-text-5" id="text-2-6-3-9">
+<div id="outline-container-sec-2-6-4-9" class="outline-5">
+<h5 id="sec-2-6-4-9">git fetch 后查看log日志</h5>
+<div class="outline-text-5" id="text-2-6-4-9">
 <p>
 1.git fetch origin dev<br  />
 2.以下两命令结果一样<br  />
@@ -595,48 +618,48 @@ git log myDev..origin/dev<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-10" class="outline-5">
-<h5 id="sec-2-6-3-10">修改最后一次提交记录</h5>
-<div class="outline-text-5" id="text-2-6-3-10">
+<div id="outline-container-sec-2-6-4-10" class="outline-5">
+<h5 id="sec-2-6-4-10">修改最后一次提交记录</h5>
+<div class="outline-text-5" id="text-2-6-4-10">
 <p>
 git commit &#x2013;amend<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-11" class="outline-5">
-<h5 id="sec-2-6-3-11">修改某次的提交记录</h5>
-<div class="outline-text-5" id="text-2-6-3-11">
+<div id="outline-container-sec-2-6-4-11" class="outline-5">
+<h5 id="sec-2-6-4-11">修改某次的提交记录</h5>
+<div class="outline-text-5" id="text-2-6-4-11">
 <p>
 git rebase COMMIT-ID^ &#x2013;interactive<br  />
 选择要修改的（即第一条，将pick改为r),保存，关闭编辑器，弹出第二个编辑内容，修改为新的commit内容。保存退出。<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-12" class="outline-5">
-<h5 id="sec-2-6-3-12">使用git rebase的一般情况：</h5>
-<div class="outline-text-5" id="text-2-6-3-12">
+<div id="outline-container-sec-2-6-4-12" class="outline-5">
+<h5 id="sec-2-6-4-12">使用git rebase的一般情况：</h5>
+<div class="outline-text-5" id="text-2-6-4-12">
 <p>
 如果是对local 私有的临时性质的分支，则直接git rebase -i master(梳理历史信息比如合并成一个commit)+git merge产生一个fast forward,最终以一个commit展示在master分支上；<br  />
 (dev分支执行git rebase -i master.然后git checkout master,git merge dev)<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-13" class="outline-5">
-<h5 id="sec-2-6-3-13">不能使用git rebase 而应该使用git merge &#x2013;no-ff的情况</h5>
-<div class="outline-text-5" id="text-2-6-3-13">
+<div id="outline-container-sec-2-6-4-13" class="outline-5">
+<h5 id="sec-2-6-4-13">不能使用git rebase 而应该使用git merge &#x2013;no-ff的情况</h5>
+<div class="outline-text-5" id="text-2-6-4-13">
 <p>
 如果是一个特别活动的跟踪，比如feature分支，bugfix分支那么永远不要使用rebase,而是git merge &#x2013;no-ff，这样该分支历史永远存续在主分支上；<br  />
 （dev分支执行git merge master &#x2013;no-ff,解决冲突后commit，然后git checkout master,git merge dev）<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-14" class="outline-5">
-<h5 id="sec-2-6-3-14">git lg -5 最近5条记录</h5>
+<div id="outline-container-sec-2-6-4-14" class="outline-5">
+<h5 id="sec-2-6-4-14">git lg -5 最近5条记录</h5>
 </div>
-<div id="outline-container-sec-2-6-3-15" class="outline-5">
-<h5 id="sec-2-6-3-15">git rebase</h5>
-<div class="outline-text-5" id="text-2-6-3-15">
-</div><ul class="org-ul"><li><a id="sec-2-6-3-15-1" name="sec-2-6-3-15-1"></a>意义<br  /><div class="outline-text-6" id="text-2-6-3-15-1">
+<div id="outline-container-sec-2-6-4-15" class="outline-5">
+<h5 id="sec-2-6-4-15">git rebase</h5>
+<div class="outline-text-5" id="text-2-6-4-15">
+</div><ul class="org-ul"><li><a id="sec-2-6-4-15-1" name="sec-2-6-4-15-1"></a>意义<br  /><div class="outline-text-6" id="text-2-6-4-15-1">
 <p>
 变基，master分支切换到dev分支，后来master分支又有提交，你的dev就变old了，变基就是把你在dev上的提交，从最新的master上再重演一遍.变更的是dev分支，dev分支从旁支变为超前master分支的结果.<br  />
 rebase结束后，master 分支上执行git merge dev,可以直接fast-forward.<br  />
@@ -645,7 +668,7 @@ rebase结束后，master 分支上执行git merge dev,可以直接fast-forward.<
 </div>
 </li>
 
-<li><a id="sec-2-6-3-15-2" name="sec-2-6-3-15-2"></a>基本命令<br  /><div class="outline-text-6" id="text-2-6-3-15-2">
+<li><a id="sec-2-6-4-15-2" name="sec-2-6-4-15-2"></a>基本命令<br  /><div class="outline-text-6" id="text-2-6-4-15-2">
 <p>
 git rebase basebranch #在topicbranch分支上执行该命令，<br  />
 git rebase basebranch topicbranch #在basebranch分支上执行该命令，相比上面一条，省却了切换到topicbranch,再执行上面一条命令<br  />
@@ -658,7 +681,7 @@ git rebase &#x2013;continue,直至最终成功自动回到topicbranch分支。<b
 </p>
 </div>
 </li>
-<li><a id="sec-2-6-3-15-3" name="sec-2-6-3-15-3"></a>黄金定律<br  /><div class="outline-text-6" id="text-2-6-3-15-3">
+<li><a id="sec-2-6-4-15-3" name="sec-2-6-4-15-3"></a>黄金定律<br  /><div class="outline-text-6" id="text-2-6-4-15-3">
 <pre class="example">
 绝不要在公共的分支上使用它。
 </pre>
@@ -667,7 +690,7 @@ git rebase &#x2013;continue,直至最终成功自动回到topicbranch分支。<b
 </p>
 </div>
 </li>
-<li><a id="sec-2-6-3-15-4" name="sec-2-6-3-15-4"></a>参数<br  /><div class="outline-text-6" id="text-2-6-3-15-4">
+<li><a id="sec-2-6-4-15-4" name="sec-2-6-4-15-4"></a>参数<br  /><div class="outline-text-6" id="text-2-6-4-15-4">
 <p>
 1.git rebase &#x2013;onto master server client #取出client分支，找出处于client分支和server分支的共同祖先之后的修改，然后在master分支上重放一遍。<br  />
 2.-p, &#x2013;preserve-merges，我的理解：出现的场景是：<br  />
@@ -683,7 +706,7 @@ git rebase &#x2013;continue,直至最终成功自动回到topicbranch分支。<b
 </p>
 </div>
 </li>
-<li><a id="sec-2-6-3-15-5" name="sec-2-6-3-15-5"></a>git rebase用来修改提交历史或合并本地提交记录<br  /><div class="outline-text-6" id="text-2-6-3-15-5">
+<li><a id="sec-2-6-4-15-5" name="sec-2-6-4-15-5"></a>git rebase用来修改提交历史或合并本地提交记录<br  /><div class="outline-text-6" id="text-2-6-4-15-5">
 <p>
 如合并2次提交：<br  />
 1.执行<br  />
@@ -701,37 +724,37 @@ git rebase -i HEAD~2
 </div>
 </li></ul>
 </div>
-<div id="outline-container-sec-2-6-3-16" class="outline-5">
-<h5 id="sec-2-6-3-16">git add 与 git commit 合并</h5>
-<div class="outline-text-5" id="text-2-6-3-16">
+<div id="outline-container-sec-2-6-4-16" class="outline-5">
+<h5 id="sec-2-6-4-16">git add 与 git commit 合并</h5>
+<div class="outline-text-5" id="text-2-6-4-16">
 <p>
 git commit -am 'commit msg' 所有内容都会commit<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-17" class="outline-5">
-<h5 id="sec-2-6-3-17">行尾追加内容</h5>
-<div class="outline-text-5" id="text-2-6-3-17">
+<div id="outline-container-sec-2-6-4-17" class="outline-5">
+<h5 id="sec-2-6-4-17">行尾追加内容</h5>
+<div class="outline-text-5" id="text-2-6-4-17">
 <p>
 echo msg &gt;&gt; b.txt<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-6-3-18" class="outline-5">
-<h5 id="sec-2-6-3-18">内容不变执行commit</h5>
-<div class="outline-text-5" id="text-2-6-3-18">
+<div id="outline-container-sec-2-6-4-18" class="outline-5">
+<h5 id="sec-2-6-4-18">内容不变执行commit</h5>
+<div class="outline-text-5" id="text-2-6-4-18">
 <p>
 git commit &#x2013;allow-empty -m "initial empty commit"<br  />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-2-6-4" class="outline-4">
-<h4 id="sec-2-6-4">github</h4>
-<div class="outline-text-4" id="text-2-6-4">
-</div><div id="outline-container-sec-2-6-4-1" class="outline-5">
-<h5 id="sec-2-6-4-1">更新fork:</h5>
-<div class="outline-text-5" id="text-2-6-4-1">
+<div id="outline-container-sec-2-6-5" class="outline-4">
+<h4 id="sec-2-6-5">github</h4>
+<div class="outline-text-4" id="text-2-6-5">
+</div><div id="outline-container-sec-2-6-5-1" class="outline-5">
+<h5 id="sec-2-6-5-1">更新fork:</h5>
+<div class="outline-text-5" id="text-2-6-5-1">
 <pre class="example">
 1.git remote add upstream git@...git #upstream随便取
 2.git fetch upstream
@@ -750,9 +773,9 @@ git merge upstream/dev
 </div>
 </div>
 
-<div id="outline-container-sec-2-6-4-2" class="outline-5">
-<h5 id="sec-2-6-4-2">本地库与自动生成README.md的远程库关联</h5>
-<div class="outline-text-5" id="text-2-6-4-2">
+<div id="outline-container-sec-2-6-5-2" class="outline-5">
+<h5 id="sec-2-6-5-2">本地库与自动生成README.md的远程库关联</h5>
+<div class="outline-text-5" id="text-2-6-5-2">
 <p>
 1.git remote add origin <a href="https://github.com/username/repository.git">https://github.com/username/repository.git</a> <br  />
 2.把README.md pull下来，避免提示refusing to merge unrelated histories<br  />
@@ -954,31 +977,70 @@ xrandr -s 1440x900<br  />
 </div>
 </div>
 <div id="outline-container-sec-2-9-2-3" class="outline-5">
-<h5 id="sec-2-9-2-3">修改源</h5>
+<h5 id="sec-2-9-2-3">执行sudo不需要输入密码：</h5>
 <div class="outline-text-5" id="text-2-9-2-3">
+<p>
+sudo visudo<br  />
+%admin ALL=(ALL)ALL注释掉，<br  />
+改为<br  />
+%admin ALL=(ALL)NOPASSWD:NOPASSWD:ALL<br  />
+</p>
+
+<p>
+之后write out<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-9-2-4" class="outline-5">
+<h5 id="sec-2-9-2-4">修改源</h5>
+<div class="outline-text-5" id="text-2-9-2-4">
 <p>
 1.备份<br  />
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak<br  />
 2.编辑<br  />
 sudo emacs /etc/apt/sources.list<br  />
+</p>
+<blockquote>
+<p>
+<br  />
+</p>
+
+<p>
+##中科大源<br  />
+</p>
+
+<p>
+deb <a href="https://mirrors.ustc.edu.cn/ubuntu/">https://mirrors.ustc.edu.cn/ubuntu/</a> bionic main restricted universe multiverse<br  />
+deb-src <a href="https://mirrors.ustc.edu.cn/ubuntu/">https://mirrors.ustc.edu.cn/ubuntu/</a> bionic main restricted universe multiverse<br  />
+deb <a href="https://mirrors.ustc.edu.cn/ubuntu/">https://mirrors.ustc.edu.cn/ubuntu/</a> bionic-updates main restricted universe multiverse<br  />
+deb-src <a href="https://mirrors.ustc.edu.cn/ubuntu/">https://mirrors.ustc.edu.cn/ubuntu/</a> bionic-updates main restricted universe multiverse<br  />
+deb <a href="https://mirrors.ustc.edu.cn/ubuntu/">https://mirrors.ustc.edu.cn/ubuntu/</a> bionic-backports main restricted universe multiverse<br  />
+deb-src <a href="https://mirrors.ustc.edu.cn/ubuntu/">https://mirrors.ustc.edu.cn/ubuntu/</a> bionic-backports main restricted universe multiverse<br  />
+deb <a href="https://mirrors.ustc.edu.cn/ubuntu/">https://mirrors.ustc.edu.cn/ubuntu/</a> bionic-security main restricted universe multiverse<br  />
+deb-src <a href="https://mirrors.ustc.edu.cn/ubuntu/">https://mirrors.ustc.edu.cn/ubuntu/</a> bionic-security main restricted universe multiverse<br  />
+deb <a href="https://mirrors.ustc.edu.cn/ubuntu/">https://mirrors.ustc.edu.cn/ubuntu/</a> bionic-proposed main restricted universe multiverse<br  />
+deb-src <a href="https://mirrors.ustc.edu.cn/ubuntu/">https://mirrors.ustc.edu.cn/ubuntu/</a> bionic-proposed main restricted universe multiverse<br  />
+</p>
+</blockquote>
+<p>
 3.sudo apt-get update<br  />
 4.软件更新，可省略<br  />
 sudo apt-get upgrade<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-9-2-4" class="outline-5">
-<h5 id="sec-2-9-2-4">安装Lantern</h5>
-<div class="outline-text-5" id="text-2-9-2-4">
+<div id="outline-container-sec-2-9-2-5" class="outline-5">
+<h5 id="sec-2-9-2-5">安装Lantern</h5>
+<div class="outline-text-5" id="text-2-9-2-5">
 <p>
 下载后，打开文件夹，右键，选择“在终端打开”<br  />
 输入 sudo dpkg -i lantern*.deb<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-9-2-5" class="outline-5">
-<h5 id="sec-2-9-2-5">安装chrome</h5>
-<div class="outline-text-5" id="text-2-9-2-5">
+<div id="outline-container-sec-2-9-2-6" class="outline-5">
+<h5 id="sec-2-9-2-6">安装chrome</h5>
+<div class="outline-text-5" id="text-2-9-2-6">
 <p>
 ubuntu自带firefox中打开google.com/chrome,下载，<br  />
 选择download，按上面的步骤，即<br  />
@@ -986,9 +1048,9 @@ sudo dpkg -i google*.deb<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-9-2-6" class="outline-5">
-<h5 id="sec-2-9-2-6">安装emacs</h5>
-<div class="outline-text-5" id="text-2-9-2-6">
+<div id="outline-container-sec-2-9-2-7" class="outline-5">
+<h5 id="sec-2-9-2-7">安装emacs</h5>
+<div class="outline-text-5" id="text-2-9-2-7">
 <p>
 sudo apt-get update -o acquire-by-hash=yes<br  />
 sudo apt-get install emacs25<br  />
@@ -999,17 +1061,17 @@ emacs<br  />
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-2-9-2-7" class="outline-5">
-<h5 id="sec-2-9-2-7">安装git</h5>
-<div class="outline-text-5" id="text-2-9-2-7">
+<div id="outline-container-sec-2-9-2-8" class="outline-5">
+<h5 id="sec-2-9-2-8">安装git</h5>
+<div class="outline-text-5" id="text-2-9-2-8">
 <p>
 sudo apt install git<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-9-2-8" class="outline-5">
-<h5 id="sec-2-9-2-8">emacs配置</h5>
-<div class="outline-text-5" id="text-2-9-2-8">
+<div id="outline-container-sec-2-9-2-9" class="outline-5">
+<h5 id="sec-2-9-2-9">emacs配置</h5>
+<div class="outline-text-5" id="text-2-9-2-9">
 <p>
 <a href="https://github.com/Qquanwei/emacs">https://github.com/Qquanwei/emacs</a><br  />
 </p>
@@ -1021,9 +1083,9 @@ sudo apt install git<br  />
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2-9-2-9" class="outline-5">
-<h5 id="sec-2-9-2-9">安装python3-pip</h5>
-<div class="outline-text-5" id="text-2-9-2-9">
+<div id="outline-container-sec-2-9-2-10" class="outline-5">
+<h5 id="sec-2-9-2-10">安装python3-pip</h5>
+<div class="outline-text-5" id="text-2-9-2-10">
 <p>
 sudo apt install python3-pip<br  />
 </p>
@@ -1035,10 +1097,10 @@ sudo apt install python3-pip<br  />
 </div>
 </div>
 
-<div id="outline-container-sec-2-9-2-10" class="outline-5">
-<h5 id="sec-2-9-2-10">Java</h5>
-<div class="outline-text-5" id="text-2-9-2-10">
-</div><ul class="org-ul"><li><a id="sec-2-9-2-10-1" name="sec-2-9-2-10-1"></a>sudo apt install openjdk-8-jdk<br  /><div class="outline-text-6" id="text-2-9-2-10-1">
+<div id="outline-container-sec-2-9-2-11" class="outline-5">
+<h5 id="sec-2-9-2-11">Java</h5>
+<div class="outline-text-5" id="text-2-9-2-11">
+</div><ul class="org-ul"><li><a id="sec-2-9-2-11-1" name="sec-2-9-2-11-1"></a>sudo apt install openjdk-8-jdk<br  /><div class="outline-text-6" id="text-2-9-2-11-1">
 <p>
 貌似ubuntu18默认带java环境，不过执行maven命令mvn install 出现Perhaps you are running on a JRE rather than a JDK?<br  />
 ,使用命令重装即可<br  />
@@ -1050,7 +1112,7 @@ sudo apt install openjdk-8-jdk<br  />
 </blockquote>
 </div>
 </li>
-<li><a id="sec-2-9-2-10-2" name="sec-2-9-2-10-2"></a>废弃<br  /><div class="outline-text-6" id="text-2-9-2-10-2">
+<li><a id="sec-2-9-2-11-2" name="sec-2-9-2-11-2"></a>废弃<br  /><div class="outline-text-6" id="text-2-9-2-11-2">
 <p>
 ？手工方式下载安装，貌似不用安装及可以使用，不用修改bash？？，待确认。<br  />
 <a href="https://www.cnblogs.com/a2211009/p/4265225.html">https://www.cnblogs.com/a2211009/p/4265225.html</a><br  />
