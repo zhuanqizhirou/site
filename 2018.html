@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>2018</title>
-<!-- 2018-06-08 周五 14:21 -->
+<!-- 2018-07-05 周四 15:25 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -193,6 +193,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2-2-1">禁止windows更新</a></li>
 <li><a href="#sec-2-2-2">远程连接Oracle修复</a></li>
 <li><a href="#sec-2-2-3">mklink</a></li>
+<li><a href="#sec-2-2-4">端口占用</a></li>
 </ul>
 </li>
 <li><a href="#sec-2-3">emacs</a></li>
@@ -315,6 +316,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2-9-6-6">6.</a></li>
 </ul>
 </li>
+<li><a href="#sec-2-9-7">mysql</a></li>
 </ul>
 </li>
 <li><a href="#sec-2-10">Mathematica</a>
@@ -322,6 +324,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2-10-1">资料 QQ:464254638</a></li>
 </ul>
 </li>
+<li><a href="#sec-2-11">graphviz</a></li>
 </ul>
 </li>
 <li><a href="#sec-3">GTD</a>
@@ -399,6 +402,33 @@ d:\deploy&gt; mklink index.html e:\git\site\fie-toolkit-qnui.html
 </p>
 <pre class="example">
 mklink /j site e:\git\site
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-2-2-4" class="outline-4">
+<h4 id="sec-2-2-4">端口占用</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<p>
+=netstat -ano|findstr "9100"=<br  />
+</p>
+<pre class="example">
+C:\Users\Administrator&gt;netstat -ano|findstr "9100"
+  TCP    0.0.0.0:9100           0.0.0.0:0              LISTENING       8308
+  TCP    [::]:9100              [::]:0                 LISTENING       8308
+</pre>
+<p>
+=tasklist|findstr "8308"=<br  />
+</p>
+<pre class="example">
+C:\Users\Administrator&gt;tasklist|findstr "8308"
+javaw.exe                     8308 Console                    1    535,052 K
+</pre>
+<p>
+<code>taskkill /f /t /im javaw.exe</code><br  />
+</p>
+<pre class="example">
+C:\Users\Administrator&gt;taskkill /f /t /im javaw.exe
+成功: 已终止 PID 8308 (属于 PID 25224 子进程)的进程。
 </pre>
 </div>
 </div>
@@ -1047,6 +1077,12 @@ ubuntu自带firefox中打开google.com/chrome,下载，<br  />
 sudo dpkg -i google*.deb<br  />
 </p>
 </div>
+<ul class="org-ul"><li><a id="sec-2-9-2-6-1" name="sec-2-9-2-6-1"></a>删除数据<br  /><div class="outline-text-6" id="text-2-9-2-6-1">
+<p>
+rm -r ~/.config/google-chrome<br  />
+</p>
+</div>
+</li></ul>
 </div>
 <div id="outline-container-sec-2-9-2-7" class="outline-5">
 <h5 id="sec-2-9-2-7">安装emacs</h5>
@@ -1248,7 +1284,91 @@ pacman -Syu
 <h5 id="sec-2-9-6-6">6.</h5>
 </div>
 </div>
+<div id="outline-container-sec-2-9-7" class="outline-4">
+<h4 id="sec-2-9-7">mysql</h4>
+<div class="outline-text-4" id="text-2-9-7">
+</div><ul class="org-ul"><li><a id="sec-2-9-7-0-1" name="sec-2-9-7-0-1"></a>安装<br  /><div class="outline-text-6" id="text-2-9-7-0-1">
+<p>
+sudo apt install mysql-server<br  />
+</p>
 </div>
+</li>
+<li><a id="sec-2-9-7-0-2" name="sec-2-9-7-0-2"></a>常用命令<br  /><div class="outline-text-6" id="text-2-9-7-0-2">
+<p>
+sudo service mysql status<br  />
+sudo service mysql stop<br  />
+sudo service mysql start<br  />
+<del><b><b>*</b></b> 修改ubuntu下连接</del><br  />
+sudo vi /etc/mysql/debian.cnf<br  />
+将user修改为登录账号（非root）<br  />
+<del><b><b>*</b></b> 修改mysql配置</del><br  />
+/etc/mysql/mysql.conf.d/mysqld.cnf,注释掉<br  />
+</p>
+<pre class="example">
+# bind-address = 127.0.0.1
+</pre>
+</div>
+</li>
+<li><a id="sec-2-9-7-0-3" name="sec-2-9-7-0-3"></a>进入mysql<br  /><div class="outline-text-6" id="text-2-9-7-0-3">
+<p>
+mysql -uroot -p<br  />
+输入密码<br  />
+➤ mysql命令必须以；结尾<br  />
+➤ 退出mysql: \q<br  />
+</p>
+</div>
+</li>
+<li><a id="sec-2-9-7-0-4" name="sec-2-9-7-0-4"></a>mysql历史命令<br  /><div class="outline-text-6" id="text-2-9-7-0-4">
+<p>
+cat ~/.mysql_history <br  />
+</p>
+</div>
+</li>
+<li><a id="sec-2-9-7-0-5" name="sec-2-9-7-0-5"></a>mysql 5.7 添加用户 新建数据库 用户授权 删除用户 修改密码<br  /><div class="outline-text-6" id="text-2-9-7-0-5">
+<p>
+<a href="https://blog.csdn.net/adu198888/article/details/54092857">源自csdn博客</a><br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-mysql-shell">select host,user,authentication_string from user;
+
+create user 'sunshine'@'localhost' IDENTIFIED BY "123456";
+create user 'sunshine'@'%' IDENTIFIED BY "123456";
+
+\q
+
+create database lcdt_warehouse default charset utf8 collate utf8_general_ci;
+
+grant all privileges on lcdt_warehouse.* to sunshine@"%" identified by '123456';
+grant all privileges on lcdt_warehouse.* to sunshine@"localhost" identified by '123456';
+flush privileges;
+
+\q
+mysql -usunshine -p123456
+</pre>
+</div>
+
+<p>
+➤ 指定部分权限<br  />
+grant select,update,delete on lcdt_warehouse.* to 'sunshine'@'localhost' identified by '123456';<br  />
+➤ 授权所有数据库的某些权限<br  />
+grant select,update,delete,create,drop on . to sunshine@% identified by '123456'; 不包括localhost<br  />
+➤ 删除用户<br  />
+Delete FROM mysql.user Where User=”test” and Host=”localhost”;<br  />
+flush privileges;<br  />
+drop database testDB;<br  />
+➤ 删除账户与权限<br  />
+drop user 用户名@’%’;<br  />
+drop user 用户名@ localhost;<br  />
+➤ 修改制定用户密码<br  />
+update mysql.user set authentication_string=password(“新密码”) where User=”test” and Host=”localhost”;<br  />
+flush privileges;<br  />
+</p>
+</div>
+</li></ul>
+</div>
+</div>
+
 <div id="outline-container-sec-2-10" class="outline-3">
 <h3 id="sec-2-10">Mathematica</h3>
 <div class="outline-text-3" id="text-2-10">
@@ -1285,7 +1405,18 @@ pacman -Syu
 </div>
 </div>
 </div>
+<div id="outline-container-sec-2-11" class="outline-3">
+<h3 id="sec-2-11">graphviz</h3>
+<div class="outline-text-3" id="text-2-11">
+
+<div class="figure">
+<p><img src="graphviz.png" alt="graphviz.png" /><br  />
+</p>
 </div>
+</div>
+</div>
+</div>
+
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3">GTD</h2>
 <div class="outline-text-2" id="text-3">
