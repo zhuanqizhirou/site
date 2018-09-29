@@ -1,0 +1,1665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>fie-toolkit-qnui</title>
+<!-- 2018-09-29 周六 12:16 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="stylesheets/site.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">fie-toolkit-qnui</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">相关资料</a></li>
+<li><a href="#sec-2">项目下载安装,打包发布.</a>
+<ul>
+<li><a href="#sec-2-1">0.前提！important</a></li>
+<li><a href="#sec-2-2">1.安装fie环境</a></li>
+<li><a href="#sec-2-3">【非必须，可参考】安装fie-toolkit-qnui 示例项目.</a></li>
+<li><a href="#sec-2-4">2.SVN下载pc_qnui_source项目</a></li>
+<li><a href="#sec-2-5">开发测试方法：</a>
+<ul>
+<li><a href="#sec-2-5-1">IDE: webStorm，切记：Double Shift，Search Everywhere!</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-6">发布/部署到线上/测试环境</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">推荐本地使用Git管理代码</a>
+<ul>
+<li><a href="#sec-3-1">个人常用Git命令</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">注意事项</a></li>
+<li><a href="#sec-5">项目分析</a>
+<ul>
+<li><a href="#sec-5-1">Redux</a>
+<ul>
+<li><a href="#sec-5-1-1">containers内容:</a>
+<ul>
+<li><a href="#sec-5-1-1-1">ES6 模板字符串(自由打印示例)</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-1-2">actions内容:</a></li>
+<li><a href="#sec-5-1-3">reducers</a>
+<ul>
+<li><a href="#sec-5-1-3-1">/src/pages/root/reducers/index.js</a></li>
+<li><a href="#sec-5-1-3-2">/src/pages/root/reducers/print/index.js</a></li>
+<li><a href="#sec-5-1-3-3">/src/pages/root/reducers/print/searchPrint.js</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-6">基本开发流程</a>
+<ul>
+<li><a href="#sec-6-1">从添加菜单开始到页面正常显示</a></li>
+<li><a href="#sec-6-2">数据处理流程</a>
+<ul>
+<li><a href="#sec-6-2-1">Redux原理:</a></li>
+<li><a href="#sec-6-2-2">1.事件触发（containers视图内）</a></li>
+<li><a href="#sec-6-2-3">2.动作处理（actions文件夹内）</a></li>
+<li><a href="#sec-6-2-4">3.reducer处理（reducers文件夹内）</a></li>
+<li><a href="#sec-6-2-5">4.state变化后，自动更新视图内容</a>
+<ul>
+<li><a href="#sec-6-2-5-1">一般情况：</a></li>
+<li><a href="#sec-6-2-5-2">本例中，组件Form部分,统一更新表单数据</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-7">开发规范</a>
+<ul>
+<li><a href="#sec-7-1">通用</a></li>
+<li><a href="#sec-7-2">目录划分</a>
+<ul>
+<li><a href="#sec-7-2-1">build/external</a></li>
+<li><a href="#sec-7-2-2">src 目录</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-3">样式</a></li>
+</ul>
+</li>
+<li><a href="#sec-8">已解锁</a>
+<ul>
+<li><a href="#sec-8-1">0.Double Shift,Search Everywhere。</a></li>
+<li><a href="#sec-8-2">1.新旧版切换,参照短信关怀&gt;短信群发,跳转到旧版,点击"to QNUI",返回新版.</a></li>
+<li><a href="#sec-8-3">2.webpack.config.js alias配置</a></li>
+<li><a href="#sec-8-4">3.图片资源使用url-loader</a>
+<ul>
+<li><a href="#sec-8-4-1">准备</a></li>
+<li><a href="#sec-8-4-2">原理/配置项</a></li>
+<li><a href="#sec-8-4-3">应用</a></li>
+</ul>
+</li>
+<li><a href="#sec-8-5"><span class="done DONE">DONE</span> 4.版本号自增</a></li>
+<li><a href="#sec-8-6"><span class="done DONE">DONE</span> 5.动态路由功能</a></li>
+<li><a href="#sec-8-7"><span class="todo TODO">TODO</span> 6.自动更新引用页中js，css版本</a></li>
+<li><a href="#sec-8-8"><span class="done DONE">DONE</span> 7.引用第三方js</a></li>
+<li><a href="#sec-8-9"><span class="done DONE">DONE</span> 8.原框架使用webpack1.2,升级至最新版3.4</a></li>
+<li><a href="#sec-8-10"><span class="done DONE">DONE</span> 9.sass/scss样式相关</a>
+<ul>
+<li><a href="#sec-8-10-1">禁止条例</a></li>
+</ul>
+</li>
+<li><a href="#sec-8-11"><span class="done DONE">DONE</span> 10.根据窗口大小动态设置主页滚动条高度，避免顶级菜单右侧出现滚动条</a></li>
+<li><a href="#sec-8-12"><span class="done DONE">DONE</span> 11.使用lodash &amp; 只导出引用的方法。</a>
+<ul>
+<li><a href="#sec-8-12-1">_.get(object, path, [defaultValue]) 避免多层取值时中间出现null或undefined</a></li>
+<li><a href="#sec-8-12-2">_.cloneDeep(value) 深度克隆</a></li>
+</ul>
+</li>
+<li><a href="#sec-8-13"><span class="done DONE">DONE</span> 12. ！Important：使用_.get(object, path, [defaultValue]) 避免多层取值时出现null或undefined</a></li>
+<li><a href="#sec-8-14"><span class="done DONE">DONE</span> 13.开发阶段通过配置proxy实现ajax跨域</a></li>
+<li><a href="#sec-8-15"><span class="done DONE">DONE</span> 13-1[优化]只代理以/pc开头，action结尾的地址</a></li>
+<li><a href="#sec-8-16"><span class="done DONE">DONE</span> 14.state 结合classnames 控制className</a></li>
+<li><a href="#sec-8-17"><span class="done DONE">DONE</span> 15.获取ref="xx" 高度</a></li>
+<li><a href="#sec-8-18"><span class="done DONE">DONE</span> 16.React Property initializers @author:薛念华</a></li>
+<li><a href="#sec-8-19"><span class="done DONE">DONE</span> 17.React中key的重要性</a></li>
+<li><a href="#sec-8-20"><span class="done DONE">DONE</span> 18.函数式编程 参考</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">相关资料</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+1.<a href="http://qnui.taobao.org/start/getStart/index.html">千牛UI</a>组件库<br  />
+2.<a href="http://qnui.taobao.org/start/fie/">千牛UI推荐的脚手架fie-toolkit-qnui基本介绍</a><br  />
+3.<a href="https://github.com/fieteam/fie-toolkit-qnui">github:fie-toolkit-qnui</a><br  />
+4.<a href="https://github.com/fieteam/fie-toolkit-qnui">github:fie</a><br  />
+5.<a href="http://www.8dou5che.com/2017/01/22/react-router-redux/">react-router-redux 中文文档</a><br  />
+6.<a href="https://react-guide.github.io/react-router-cn/">react-router 中文文档</a><br  />
+7.<a href="https://doc.webpack-china.org/guides/getting-started/">webpack 起步</a><br  />
+8.<a href="http://iconfont.cn/collections/index?spm=a313x.7781069.1998910419.3&type=1">IconFont</a><br  />
+9.<a href="https://lodash.com/docs/4.17.4">lodash 4.17.4</a> <a href="http://www.css88.com/doc/lodash/">lodash 4.16.1中文版</a><br  />
+10.<a href="https://developer.mozilla.org/zh-CN/docs/Web">Mozilla.org Web技术文档</a> <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">Mozilla.org JavaScript</a><br  />
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">项目下载安装,打包发布.</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">0.前提！important</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+1.安装node<br  />
+2.为实现快速安装，不需要代理，避免执行npm i失败，可以使用cnpm代替npm。安装方法：<br  />
+npm i cnpm -g<br  />
+下面提到的所有npm 命令，可用cnpm代替。如npm i fie -g 替换为cnpm i fie -g<br  />
+npm i 为 npm install 简称。<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">1.安装fie环境</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+
+<pre class="src src-js">npm install fie -g --registry=https://registry.npm.taobao.org
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3">【非必须，可参考】安装fie-toolkit-qnui 示例项目.</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+1.安装fie-toolkit-qnui<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-js">fie install toolkit-qnui
+</pre>
+</div>
+<p>
+2.初始化<br  />
+</p>
+<pre class="example">
+fie init qnui
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4">2.SVN下载pc_qnui_source项目</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+1.checkout pc_qnui_source文件夹,svn地址(xxxx修改成正确ip):<br  />
+</p>
+<pre class="example">
+https://xxxx/svn/qnpy_trade/qianniuPCWeb/WebRoot/pc_qnui_source
+</pre>
+<p>
+2.安装modules<br  />
+</p>
+<pre class="example">
+npm i
+</pre>
+<p>
+3.开发: webStorm terminal,或者cmd，或者Git Bash中执行:<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-js">fie start,即可边改边查看效果
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5">开发测试方法：</h3>
+<div class="outline-text-3" id="text-2-5">
+</div><div id="outline-container-sec-2-5-1" class="outline-4">
+<h4 id="sec-2-5-1">IDE: webStorm，切记：Double Shift，Search Everywhere!</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<p>
+淘宝后台测试回调地址为 <a href="http://127.0.0.1:9000/pages/root.html">http://127.0.0.1:9000/pages/root.html</a>, 添加上自己的测试账号，本地fie start启动，保证端口9000未被占用，就可以在千牛中登录自己账号，点击普云交易，即可。<br  />
+F12，查看信息。<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-6" class="outline-3">
+<h3 id="sec-2-6">发布/部署到线上/测试环境</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+fie.config.js中配置了要用的deploy命令,用于将需要deploy的目录复制到pc_qnui目录下.<br  />
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-js">fie build
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-js">fie deploy
+</pre>
+</div>
+<p>
+主要有三个目录:<br  />
+</p>
+<pre class="example">
+/build      build后主要内容
+/pages      唯一的入口文件目录
+/pc         拷贝的原pc目录, 用于新项目中新旧版互相访问,修改.旧版pc目录不动.
+</pre>
+
+<p>
+此时 直接将pc_qnui文件夹中的内容覆盖到PC版WebRoot/pc_qnui文件夹中即可.<br  />
+此时可正常访问<br  />
+<a href="http://192.168.1.67:7001/pc_qnui/pages/root.html">http://192.168.1.67:7001/pc_qnui/pages/root.html</a><br  />
+</p>
+
+<p>
+/build/lib下同时包含两个版本js,可以只保留min版本.<br  />
+建议后期使用cdn.<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">推荐本地使用Git管理代码</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+强烈建议本地使用Git管理版本,每次成功实现一个功能,及时commit. 否则bug查找起来不是那么容易.<br  />
+svn checkout, 先执行下面命令加入本地Git版本库.<br  />
+执行下面初始化命令时,会覆盖文件,可以使用Git命令恢复.<br  />
+</p>
+<pre class="example">
+git init
+git add .
+git commit -m 'first commit, checkout from SVN'
+</pre>
+</div>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1">个人常用Git命令</h3>
+<div class="outline-text-3" id="text-3-1">
+<pre class="example">
+git brahch              # 查看分支
+git checkout -b dev     # 创建并切换到dev分支
+git checkout master     # 切换到默认master分支
+git diff &lt;file&gt;         # 比较工作区与暂存区
+git diff --ignore-space-change file     # 忽略空格
+git diff --cached file  # 比较暂存区与版本库
+git log --pretty=oneline #单行显示版本变更记录
+git checkout -- file    # 版本库覆盖工作区内容
+git reset 1111          # 文件不动,版本库指向1111
+git reset --hard 1111         # 版本库1111内容强制覆盖本地内容, 慎用! untracked内容不会被覆盖
+git rm  -r -n --cached   .svn/ #递归从版本库中删除.snv/目录
+git clean -nf           ;;查看要删除的untracded files
+git clean -nfd          ;;查看要删除的untracded files，以及目录
+git clean -f            ;;执行删除
+git clean -fd           ;;执行删除，以及目录
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">注意事项</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+1.pages/root.html<br  />
+</p>
+<pre class="example">
+1. 核心库文件
+2. ../build/vender.js,              相对路径
+3. ../build/pages/root/index.js     相对路径,编译后的主要文件,页面onload后加载.
+3. ../build/pages/root/index.bundle.css     相对路径
+</pre>
+<p>
+2./pages/js/common.js 与/src/utils/index.js中都有一个isLocal()方法,<br  />
+如果是127.0.0.1或localhost, 表示本地开发测试.<br  />
+其他为表示pc_qnui/目录下部署环境.<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">项目分析</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1">Redux</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+核心思路是将各种组件的State统一到store中,在各个组件内使用this.props.xxx引用,形成真正的无生命周期纯UI组件,只需要render()方法.<br  />
+主要涉及三处:<br  />
+</p>
+<pre class="example">
+/src/pages/root/actions
+/src/pages/root/reducers
+/src/pages/root/containers/ 下各个页面Component.
+</pre>
+<p>
+以打单发货&gt;查询补打页面为例.点击按钮,<br  />
+</p>
+</div>
+<div id="outline-container-sec-5-1-1" class="outline-4">
+<h4 id="sec-5-1-1">containers内容:</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<p>
+/src/containers/print/freePrint/con_searchPrint.js<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-js">import * as actions from '../../../actions/print/searchPrint';
+
+class SearchPrint extends React.Component {
+    handleClick() {
+        var {dispatch, searchPrint} = this.props;
+        dispatch(actions.getList(searchPrint.counter + 1));
+    }
+}
+export default connect((state) =&gt; {
+    return {
+        searchPrint: state.print.searchPrint,
+    };
+})(SearchPrint);
+</pre>
+</div>
+<p>
+state.print.searchPrint,其中print对应reducers/index.js中print,<br  />
+print.searchPrint对应reducers/print/index.js中的searchPrint,即 reducers/print/searchPrint.js<br  />
+</p>
+</div>
+<div id="outline-container-sec-5-1-1-1" class="outline-5">
+<h5 id="sec-5-1-1-1">ES6 模板字符串(自由打印示例)</h5>
+<div class="outline-text-5" id="text-5-1-1-1">
+<div class="org-src-container">
+
+<pre class="src src-js">`文本 ${variable} 文本`
+</pre>
+</div>
+<p>
+`, 反引号不是单引号'<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5-1-2" class="outline-4">
+<h4 id="sec-5-1-2">actions内容:</h4>
+<div class="outline-text-4" id="text-5-1-2">
+<p>
+/src/pages/root/actions/print/searchPrint.js<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-js">'use strict';
+
+import {ajax, nameSpace} from '../../../../utils/index';
+
+let ns = nameSpace('print-searchPrint');
+export const GET_LIST_REQUEST = ns('GET_LIST_REQUEST'); //"print-searchPrint-GET_LIST_REQUEST"
+export const GET_LIST_SUCCESS = ns('GET_LIST_SUCCESS');
+export const GET_LIST_FAILED = ns('GET_LIST_FAILED');
+
+export function getList(data) {
+
+    return (dispatch) =&gt; {
+
+        //发送请求前
+        dispatch({
+            type: GET_LIST_REQUEST,
+            data: data
+        });
+
+        //接收到数据
+        ajax({
+            api: 'page2List',
+            method: 'GET',
+        }).then(json =&gt; {
+            //成功后
+            dispatch({
+                type: GET_LIST_SUCCESS,
+                data: json.data
+            });
+
+        }, json =&gt; {
+            //失败后
+            dispatch({
+                type: GET_LIST_FAILED,
+                data: json
+            });
+
+        });
+
+    };
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-1-3" class="outline-4">
+<h4 id="sec-5-1-3">reducers</h4>
+<div class="outline-text-4" id="text-5-1-3">
+</div><div id="outline-container-sec-5-1-3-1" class="outline-5">
+<h5 id="sec-5-1-3-1">/src/pages/root/reducers/index.js</h5>
+<div class="outline-text-5" id="text-5-1-3-1">
+<div class="org-src-container">
+
+<pre class="src src-js">'use strict';
+
+import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
+import print from './print/';
+import trade from './trade/';
+
+// 将现有的reduces加上路由的reducer
+const rootReducer = combineReducers({
+  trade,
+  print,
+  routing: routerReducer
+});
+
+export default rootReducer;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-1-3-2" class="outline-5">
+<h5 id="sec-5-1-3-2">/src/pages/root/reducers/print/index.js</h5>
+<div class="outline-text-5" id="text-5-1-3-2">
+<div class="org-src-container">
+
+<pre class="src src-js">'use strict';
+
+import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
+import freePrint from './freePrint';
+import searchPrint from './searchPrint';
+
+// 将现有的reduces加上路由的reducer
+const rootReducer = combineReducers({
+    freePrint,
+    searchPrint,
+    routing: routerReducer
+});
+
+export default rootReducer;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5-1-3-3" class="outline-5">
+<h5 id="sec-5-1-3-3">/src/pages/root/reducers/print/searchPrint.js</h5>
+<div class="outline-text-5" id="text-5-1-3-3">
+<div class="org-src-container">
+
+<pre class="src src-js">'use strict';
+
+import * as actions from '../../actions/print/searchPrint';
+
+// 对页面prop 数据进行管理
+const initialState = {
+    list: [],
+    listLoading: false,
+    counter: 0
+};
+const defaultAction = {
+    type: 'doNothing'
+};
+
+export default function index(state = initialState, action = defaultAction) {
+    switch (action.type) {
+
+        case actions.GET_LIST_REQUEST:
+
+            return Object.assign({}, state, {
+                listLoading: true,
+                counter: action.data
+            });
+
+        case actions.GET_LIST_SUCCESS:
+
+            return Object.assign({}, state, {
+                listLoading: false,
+                list: action.data.list.map(item =&gt; {
+                    return `第${state.counter}次加载：${item}`;
+                })
+            });
+
+        case actions.GET_LIST_FAILED:
+
+            return Object.assign({}, state, {
+                listLoading: false
+            });
+
+        default:
+            return state;
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">基本开发流程</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1">从添加菜单开始到页面正常显示</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+也可作为拍错检查步骤.再次建议,本地使用Git管理,与svn不冲突,将.git添加到svn ignore(recursively)中.<br  />
+.gitignore中已添加*.svn/<br  />
+下面是打单发货下面添加物流动态菜单的步骤,物流动态包括交易物流动态和高级物流查询.<br  />
+</p>
+
+<p>
+1.src/layout/rootHeader中添加菜单<br  />
+2.src/pages/root/routes.js 中配置路由与组件对应关系<br  />
+</p>
+<pre class="example">
+1.引用组件
+2.配置路由组件对应关系
+</pre>
+<p>
+3.src/pages/root/containers 添加组件<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-js">1.通常一个组件一个目录,包含一个js与一个scss文件.所以直接复制同级/上级一个组件,
+2.修改文件夹名称,js名称,不建议用默认的index,否则调试时全是index.
+3.js中类名,以及export中类名与state...路径, 以及引用的地方
+如:
+class PrintLogisticsStatus extends React.Component { //PrintLogisticsStatus 类名
+    handleClick() {
+        var {dispatch, printLogisticsStatus} = this.props; // printLogisticsStatus
+        dispatch(actions.addText(`文本${printLogisticsStatus.list.length + 1}`)); //printLogisticsStatus
+    }
+}
+export default connect((state) =&gt; {
+    return {
+        printLogisticsStatus: state.print.logistics.status,//printLogisticsStatus,以及state后面的
+    };
+})(PrintLogisticsStatus);//类名
+
+
+4.js中文件开头的相对路径(../).按住Ctrl点击路径末尾,如果不变蓝则为无效路径.
+5.js文件开头的actions路径名称
+</pre>
+</div>
+<p>
+4.src/pages/root/actions增加对应目录文件,<br  />
+</p>
+<pre class="example">
+1,修改import 相对路径
+2.修改 let ns = nameSpace('print-searchPrint');为 - 间隔的对应路径
+</pre>
+<p>
+5.src/pages/root/reducers/下维护对应的目录文件,引用关系.注意是到文件夹还是文件夹里面对应的js.<br  />
+</p>
+<pre class="example">
+1.修改相对路径与文件: import * as actions from '../../../actions/print/logistics/status';
+2.
+</pre>
+<p>
+6.Contain组件内容,action与reducers中具体业务逻辑<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2">数据处理流程</h3>
+<div class="outline-text-3" id="text-6-2">
+</div><div id="outline-container-sec-6-2-1" class="outline-4">
+<h4 id="sec-6-2-1">Redux原理:</h4>
+<div class="outline-text-4" id="text-6-2-1">
+<p>
+通过containers中&lt;RateDefendSate/&gt;组件中最后一段的定义，set与state，会作为props传递给组件。<br  />
+组件内就可以通过this.props.set,this.props.state引用里面保存的数据。<br  />
+基于React原生组件规则，state,与props变化，对应render()方法中引用部分会自动更新。所以这里reducers里面改变了state，页面自动更新。<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-javascript">export default connect((state) =&gt; {
+    return {
+        set: state.rate.defend.set,//返回当前组件自己的state，属性名随便定义，组件内统一用它代表通常组件自己的state，属性值最后的set，则是reducers文件夹内层层配置的.
+        state: state,//也可以返回其他层次的state.
+    };
+})(RateDefendSet);
+</pre>
+</div>
+
+<p>
+示例：评价管理》差评师防御》设置页面，页面显示自动请求数据，立即显示加载中旋转的蓝色图标，三秒后获取到数据，更新最上面switch，隐藏加载中图标。<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-2-2" class="outline-4">
+<h4 id="sec-6-2-2">1.事件触发（containers视图内）</h4>
+<div class="outline-text-4" id="text-6-2-2">
+<div class="org-src-container">
+
+<pre class="src src-javascript">src/pages/root/containers/rate/defend/set/reteDefendSet.js
+一般是事件触发，这里是打开页面执行获取数据动作。
+this.props.dispatch(actions.loadData());
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6-2-3" class="outline-4">
+<h4 id="sec-6-2-3">2.动作处理（actions文件夹内）</h4>
+<div class="outline-text-4" id="text-6-2-3">
+<p>
+一般是调用service层接口，service层调用api获取数据，这里用ajax示例。<br  />
+成功后，执行dispatch(action).<br  />
+action对象只有2个属性：<br  />
+    type:字符串，表示动作<br  />
+    data:对象，需要更新的数据<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-javascript">src/pages/root/actions/rate/defend/set.js
+export function loadData() {
+    return (dispatch) =&gt; {
+        //发送请求前
+        dispatch({
+            type: BEFORE_REQUEST,//只是设置state中loading为true，显示Loading组件。
+        });
+        //接收到数据
+        ajax({
+            api: 'loadSet',
+            method: 'GET',
+        }).then(json =&gt; {
+            //成功后
+            setTimeout(() =&gt; {
+                dispatch({
+                    type: REQUEST_SUCCESS,
+                    data: json.data
+                });
+            }, 3000)//模拟数据加载、处理3秒，上一步dispatch更新state后页面根据state显示Loading组件，之后更新state，隐藏Loading，更新数据显示。
+
+        }, json =&gt; {
+            //失败后
+            dispatch({
+                type: REQUEST_FAILED,
+                data: json
+            });
+
+        });
+    }
+}
+</pre>
+</div>
+<p>
+基本流程是页面内或路由里面通过<br  />
+this.props.disptach(actions.xxx())<br  />
+,<br  />
+actions里面xxx方法调用service层获取并处理数据，service调用api获取数据<br  />
+actions根据处理情况调用<br  />
+dispatch({<br  />
+                type: REQUEST_SUCCESS,<br  />
+                data: json.data<br  />
+            });<br  />
+,交给reducers更新state。<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-2-4" class="outline-4">
+<h4 id="sec-6-2-4">3.reducer处理（reducers文件夹内）</h4>
+<div class="outline-text-4" id="text-6-2-4">
+<p>
+主要就是根据action.type, 将action.data更新到state中<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-javascript">src/pages/root/reducers/rate/defend/set/index.js
+export default function index(state = initialState, action = defaultAction) {
+    switch (action.type) {
+        case actions.BEFORE_REQUEST://数据请求开始，设置loading为true，显示Loading组件
+            return Object.assign({}, state, {
+                loading: true,
+            });
+
+        case actions.REQUEST_SUCCESS://数据加载成功，更新数据 
+            return Object.assign({}, state, {
+                loading: false,
+                formData: action.data
+            });
+
+        case actions.REQUEST_FAILED://数据加载失败，设置loading为false，隐藏Loading组件。
+            return Object.assign({}, state, {
+                loading: false,
+            });
+
+        default:
+            return state;
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6-2-5" class="outline-4">
+<h4 id="sec-6-2-5">4.state变化后，自动更新视图内容</h4>
+<div class="outline-text-4" id="text-6-2-5">
+</div><div id="outline-container-sec-6-2-5-1" class="outline-5">
+<h5 id="sec-6-2-5-1">一般情况：</h5>
+<div class="outline-text-5" id="text-6-2-5-1">
+<p>
+页面组件，&lt;Loading show={this.props.set.loading}/&gt;，set作为props传递给&lt;RateDefendSate&gt;组件，则上面第三部reducers中更新state设置loading为true，则显示加载中。三秒后无论成功失败，loading为false，自动隐藏。<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-2-5-2" class="outline-5">
+<h5 id="sec-6-2-5-2">本例中，组件Form部分,统一更新表单数据</h5>
+<div class="outline-text-5" id="text-6-2-5-2">
+<p>
+和上面一样,set 更新,即this.props更新,会触发生命周期函数componentWillReceiveProps(nextProps)方法.<br  />
+通过nextProps.set.xxx 可以获取最新数据.其余是组件的用法,不再赘述.<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-javascript">componentWillReceiveProps(nextProps) {
+    console.log(`componentWillReceiveProps.formData:`, nextProps.set.formData)
+    this.field.setValues(nextProps.set.formData);
+    console.log("lasttime:", nextProps.set.formData.lastTime)
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">开发规范</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1">通用</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+0.提交之前,或者本地commit之前,一定格式化代码!!! line separators(换行符)统一使用LF，已在.editconfig中定义。<br  />
+1.containers,actions,reducers路径与菜单路径保存一致.<br  />
+2.虽然webpack.config.js中设置了alias，但还是建议使用相对路径查找吧。如reducers中使用actions，可以有编辑器提示。而用别名，则没有。<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2">目录划分</h3>
+<div class="outline-text-3" id="text-7-2">
+</div><div id="outline-container-sec-7-2-1" class="outline-4">
+<h4 id="sec-7-2-1">build/external</h4>
+<div class="outline-text-4" id="text-7-2-1">
+<p>
+放置需要在页面中引用的额外的js文件。jquery仅示范，原则上不建议使用jquery，积极使用QNUI组件丰富功能。<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-2-2" class="outline-4">
+<h4 id="sec-7-2-2">src 目录</h4>
+<div class="outline-text-4" id="text-7-2-2">
+<pre class="example">
+|-- components                      通用组件
+|   |-- Common
+|   |-- DialogModifyPrice               原供应商PC版内容，仅供参考，现在页面内容不要放在这里。
+|   |-- DialogRate                      同上
+|   |-- DialogSendGoods                 同上
+|   |-- DialogViewLogistics             同上
+|   |-- Loading                         加载中，可优化
+|   |-- Logistics                       原供应商PC版内容，仅供参考，现在页面内容不要放在这里。
+|   |-- OrderItem                       原供应商PC版内容，列表Order中子订单组件
+|   |-- Rate                            原供应商PC版内容，仅供参考，现在页面内容不要放在这里。
+|   |-- Star5                           五星好评
+|   |-- Toast                           自己制作的toast，
+|   |-- order                           原供应商PC版内容，列表Order组件
+|   `-- orderSearch
+|-- data_api                        数据API
+|   |-- aliapi.js                       供应商PC版的示例，不要用
+|   |-- api.js                          调用淘宝接口api
+|   |-- cache.js                        cache相关接口
+|   `-- server.js                       调用后台接口api
+|-- data_service                    service层
+|   `-- CommonService.js                示例而已，不适合放在一个文件内，建议还是按照菜单划分，一个二级菜单（现在一般是一个人负责一个二级菜单）一个。
+|-- layout                          页面总框架
+|   |-- commonHeader                    菜单内部横向菜单，通用，如不同订单状态
+|   |-- rootHeader                      主菜单
+|   `-- rootLayout                      主页面内容
+|-- pages                                   
+|   `-- root                        对应pages/root.html
+|       |-- actions                     redux 动作文件夹
+|       |-- containers                  主要view视图
+|       |-- index.js                    主要入口
+|       |-- index.scss                  主要入口的样式文件
+|       |-- reducers                    redux reducers内容，action中dispatch后从这里更新state
+|       |-- routes.js                   路由文件入口
+|       |-- routes_print.js         
+|       |-- routes_rate.js
+|       |-- routes_rate_defend.js
+|       |-- routes_trade.js
+|       `-- store                   store内容，暂不需要变动
+|-- static                          可以放公共图片，使用url-loader模式处理，参考/layout/rootHeader中logo使用方式
+|-- styles                          样式文件夹
+|   |-- _var.scss                       统一使用的变量，如色块。使用色值一定引用此文件，参考《已解锁.9》
+|   |-- common.scss                     通用样式，
+|   `-- theme.scss                      更改qnui样式时修改。
+`-- utils                           通用工具
+    |-- apimap.js
+    |-- common.js                       通用js工具放在这里
+    |-- config.js                       通用配置
+    |-- consts.js                       通用常量，如订单状态
+    `-- index.js                        框架自带，已经有一些工具方法
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-7-3" class="outline-3">
+<h3 id="sec-7-3">样式</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+0.样式尽量定义在当前页面render()方法最外层div类里面，否则自己的样式容易与qnui冲突，<br  />
+1.凡是scss文件顶层的样式，会作用于所有页面。所以，自己的样式，一定放在方法顶层div样式内.className按照菜单路径逐级，避免重复。<br  />
+2.顶层（rootLayout ）z-index设为了200，顶层菜单（rootHeader）设为了100，各页面大家用100以内<br  />
+5.可通过添加className的方式，改变默认qnui样式。<br  />
+如&lt;RadioGroup&gt;默认各选项连在一起，可通过F12查看class name,然后再自定义一个className样式。如：<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-css">&lt;RadioGroup shape="button" size="medium" onChange={this.onConditionChange}&gt;
+    &lt;Radio className="rowElement" id="banana" value="banana"&gt;宽松条件&lt;/Radio&gt;
+    &lt;Radio className="rowElement" id="watermelon" value="watermelon"&gt;适中条件&lt;/Radio&gt;
+    &lt;Radio className="rowElement" id="peach" value="peach"&gt;严格条件&lt;/Radio&gt;
+&lt;/RadioGroup&gt;
+
+//radio-group 加间距
+.next-radio-wrapper.rowElement {
+    margin-right: 12px;
+}
+</pre>
+</div>
+<p>
+其他：参照最新《已解锁.9》<br  />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">已解锁</h2>
+<div class="outline-text-2" id="text-8">
+</div><div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1">0.Double Shift,Search Everywhere。</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+如Double shift, containers/rate/defend/,自动定位到对应文件夹。文件更是如此。<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2">1.新旧版切换,参照短信关怀&gt;短信群发,跳转到旧版,点击"to QNUI",返回新版.</h3>
+</div>
+<div id="outline-container-sec-8-3" class="outline-3">
+<h3 id="sec-8-3">2.webpack.config.js alias配置</h3>
+<div class="outline-text-3" id="text-8-3">
+<p>
+alias中配置layout等,就可以直接import CommonHeader from "layout/commonHeader",不需要一级级../查找.<br  />
+缺点:不能按住Ctrl键高亮确定是否引用正确; 编辑器无法快捷提示。<br  />
+</p>
+
+<pre class="example">
+--- a/src/pages/root/containers/print/logistics/printLogistics.js
++++ b/src/pages/root/containers/print/logistics/printLogistics.js
+@@ -6,7 +6,7 @@ import * as actions from '../../../actions/print/printLogistics';
+ import {Button} from 'qnui';
+ import './index.scss';
+ import CONFIG from "../../../../../utils/config";
+-import CommonHeader from '../../../../../layout/commonHeader'
++import CommonHeader from 'layout/commonHeader';
+
+ class PrintLogistics extends React.Component {
+     constructor(props) {
+diff --git a/webpack.config.js b/webpack.config.js
+index 4320202..3ca870d 100644
+--- a/webpack.config.js
++++ b/webpack.config.js
+@@ -36,6 +36,7 @@ var config = {
+     extensions: ['', '.js', '.jsx'],
+     alias: {
+       components: path.join(__dirname, 'src/components'),
++      layout: path.join(__dirname, 'src/layout'),
+       utils: path.join(__dirname, 'src/utils'),
+       styles: path.join(__dirname, 'src/styles'),
+       pages: path.join(__dirname, 'src/pages')
+warning: LF will be replaced by CRLF in webpack.config.js.
+The file will have its original line endings in your working directory.
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-8-4" class="outline-3">
+<h3 id="sec-8-4">3.图片资源使用url-loader</h3>
+<div class="outline-text-3" id="text-8-4">
+</div><div id="outline-container-sec-8-4-1" class="outline-4">
+<h4 id="sec-8-4-1">准备</h4>
+<div class="outline-text-4" id="text-8-4-1">
+<p>
+删除了/pc_qnui_source/images目录，将可能公用的图片存放在/pc_qnui_source/src/static目录下，或者与组件高度相关的直接放在组件文件夹内，多图可再建imgs子文件夹。<br  />
+使用url-loader,图片小于10k直接转为编码，减少网络请求，保持组件完整性。<br  />
+</p>
+
+<p>
+首先更新package.json后直接执行下面命令，安装url-loader：<br  />
+</p>
+<pre class="example">
+npm install
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-8-4-2" class="outline-4">
+<h4 id="sec-8-4-2">原理/配置项</h4>
+<div class="outline-text-4" id="text-8-4-2">
+<pre class="example">
+webpack.config.js
+{
+                test: /\.(jpg|jpe?g|png|gif|svg)$/,
+                loader: 'url-loader?limit=8096&amp;name=/images/[hash].[ext]',
+                exclude: /node_modules/,
+                include: path.resolve(__dirname, 'src')
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-8-4-3" class="outline-4">
+<h4 id="sec-8-4-3">应用</h4>
+<div class="outline-text-4" id="text-8-4-3">
+<p>
+以/src/layout/rootHeader/index.js中logo为例。<br  />
+</p>
+
+<p>
+引用：<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-javascript">import logo from './imgs/logo.png';
+</pre>
+</div>
+<p>
+使用：<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-javascript">&lt;img src={logo}/&gt;
+</pre>
+</div>
+<p>
+可能公用的图片，放在/src/static目录下。<br  />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8-5" class="outline-3">
+<h3 id="sec-8-5"><span class="done DONE">DONE</span> 4.版本号自增</h3>
+<div class="outline-text-3" id="text-8-5">
+<p>
+/version.txt保存了格式为1.00.010的当前版本信息。<br  />
+执行fie build,会自动取改版本信息并+1，自动将生产的css,js文件后缀加入该版本信息。<br  />
+逻辑位于versionControl.js与webpack.config.js中//=====版本号控制======================及VERSION字段相关部分。<br  />
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-8-6" class="outline-3">
+<h3 id="sec-8-6"><span class="done DONE">DONE</span> 5.动态路由功能</h3>
+<div class="outline-text-3" id="text-8-6">
+<p>
+1.配置webpack.config.js,主要是chunkFilename:[name].chunk.js<br  />
+</p>
+<pre class="example">
+output: {
+        //DEV==1,开发环境，不用hash值； 非开发环境下（如执行fie build），使build文件含hash前5位
+        path: 'build',
+        publicPath: DEV == 1 ? '/build' : '../build',
+        filename: DEV == 1 ? '[name].js' : '[name]-' + VERSION + '.js',
+        chunkFilename: DEV == 1 ? '/[name].chunk.js' : '/[name].chunk-' + VERSION + '.js'
+    },
+</pre>
+<p>
+2.配置route,如按主菜单分，<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-javascript">&lt;Route path={"/"}
+           component={RootLayout}
+           getChildRoutes={(location, cb) =&gt; {
+               console.log(location);
+               if (location.pathname.indexOf("/trade") == 0) {
+                   require.ensure([], require =&gt; {
+                       console.log(location);
+                       cb(null, require('./routes_trade').default);
+                   }, "routes_trade")
+               }
+               else if (location.pathname.indexOf("/rate") == 0) {
+                       require.ensure([], require =&gt; {
+                           console.log(location);
+                           cb(null, require('./routes_rate').default);
+                       }, "routes_rate");
+                }
+               else if (location.pathname.indexOf("/print") == 0) {
+                   require.ensure([], require =&gt; {
+                       console.log(location);
+                       cb(null, require('./routes_print').default);
+                   }, "routes_print")
+               }
+           }
+           }
+    &gt;
+        &lt;IndexRedirect from="/" to="/trade"/&gt;
+    &lt;/Route&gt;
+</pre>
+</div>
+<p>
+3.上面require.ensure第三个参数，将取代webpack.config.js中配置的[name],<br  />
+如当第一次进入评价菜单，加载route_rate.chunk.js<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-8-7" class="outline-3">
+<h3 id="sec-8-7"><span class="todo TODO">TODO</span> 6.自动更新引用页中js，css版本</h3>
+<div class="outline-text-3" id="text-8-7">
+</div>
+</div>
+<div id="outline-container-sec-8-8" class="outline-3">
+<h3 id="sec-8-8"><span class="done DONE">DONE</span> 7.引用第三方js</h3>
+<div class="outline-text-3" id="text-8-8">
+<p>
+原理：动态路由的同时，向head中写入&lt;script&gt;。实现了写入后再加载页面js功能。<br  />
+1.入口pages/root.html中增加一个window变量<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-javascript">//已经引用过的第三方js，都放在build/external目录下，引用第三方js，css等，调用CommonJS.loadExternalFile(),会自动维护。
+window.externalJS = new Set();
+</pre>
+</div>
+<p>
+2.routes控制时修改：<br  />
+</p>
+<div class="org-src-container">
+
+<pre class="src src-javascript">import CommonJS from 'utils/common';
+else if (location.pathname.indexOf("/rate") == 0) {
+   {/*如果不需要引用第三方js，css,则直接require.ensure(...)*/
+   }
+   CommonJS.loadExternalFile("jquery", "../build/external/jquery-1.4.2.min.js?qntag=1", () =&gt; {
+       require.ensure([], require =&gt; {
+           console.log(location);
+           cb(null, require('./routes_rate').default);
+       }, "routes_rate");
+   });
+}
+</pre>
+</div>
+<p>
+结果：<br  />
+</p>
+<pre class="example">
+index.js	200	script	index.js	67 B	15 ms
+log.js	200	script	log.js	4.6 KB	16 ms
+jquery-1.4.2.min.js?qntag=1	200	script	common.js:35	70.8 KB	6 ms
+routes_rate.chunk.js	200	script	bootstrap 10caa08…:79	86.4 KB	4 ms
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-8-9" class="outline-3">
+<h3 id="sec-8-9"><span class="done DONE">DONE</span> 8.原框架使用webpack1.2,升级至最新版3.4</h3>
+<div class="outline-text-3" id="text-8-9">
+<p>
+部分配置项可能有变更。<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-8-10" class="outline-3">
+<h3 id="sec-8-10"><span class="done DONE">DONE</span> 9.sass/scss样式相关</h3>
+<div class="outline-text-3" id="text-8-10">
+<p>
+1./src/styles/_var.scss中定义了常用样式变量。尽量，或者一定使用统一变量。尤其是颜色值，设计那边已经给定色板，做到统一。<br  />
+2.使用上述变量方法：<br  />
+</p>
+<pre class="example">
+//scss文件顶部引入，不需要修改任何
+
+@import "~styles/var";
+background-color: $cbrand_common;
+</pre>
+<p>
+3.不要引入任何带有普通样式的scss；否则最终打包的css样式会重复；所以变量单独存放在了_var.scss中。<br  />
+</p>
+</div>
+
+<div id="outline-container-sec-8-10-1" class="outline-4">
+<h4 id="sec-8-10-1">禁止条例</h4>
+<div class="outline-text-4" id="text-8-10-1">
+<p>
+1.凡是scss文件顶层的样式，会作用于所有页面。所以，自己的样式，一定放在方法顶层div样式内.className按照菜单路径逐级，避免重复。<br  />
+</p>
+<pre class="example">
+render(&lt;div className="rateDefendSet-page"&gt;&lt;/div&gt;);
+
+//scss文件，只包含一个顶层
+.rateDefendSet-page{
+    ...自己的所有样式
+}
+</pre>
+
+<p>
+2.如果通用样式，使用公共组件，或者添加自定义类。<br  />
+禁止出现类似下面这种，完全是QNUI的样式，直接修改的情况。否则样式由影响时很难查找到底是哪里使用的。<br  />
+(首页右上角个人中心浮框)<br  />
+</p>
+<pre class="example">
+&lt;Balloon ...
+
+// 隐藏掉balloon外面三角
+.next-balloon-normal.next-balloon-top:after {
+    display: none !important;
+}
+</pre>
+<p>
+建议用法：<br  />
+</p>
+<pre class="example">
+&lt;Balloon className="lcdt"
+
+// 隐藏掉balloon外面三角
+.lcdt.next-balloon-normal.next-balloon-top:after {
+    display: none !important;
+}
+</pre>
+<p>
+或者父元素增加class，与css类选择器同理。<br  />
+</p>
+<pre class="example">
+&lt;div className="myClass"&gt;
+    &lt;Component
+
+.myClass .next-xxx{
+    ...
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8-11" class="outline-3">
+<h3 id="sec-8-11"><span class="done DONE">DONE</span> 10.根据窗口大小动态设置主页滚动条高度，避免顶级菜单右侧出现滚动条</h3>
+<div class="outline-text-3" id="text-8-11">
+<p>
+见/src/layout/RootLayout文件夹<br  />
+</p>
+<pre class="example">
+handleResize = () =&gt; {
+        this.setState({
+            clientHeight: document.documentElement.clientHeight,
+        })
+    }
+
+    componentDidMount() {
+        this.setState({
+            clientHeight: document.documentElement.clientHeight,
+        })
+        window.addEventListener("resize", this.handleResize);
+    }
+
+    render() {
+        const headerHeight = 60;//顶级菜单高度，styles/_var.scss中定义。用于计算滚动窗口高度。
+        let {folden} = this.state;
+        return (
+            &lt;div className="rootLayout-container"&gt;
+                &lt;Header /&gt;
+                &lt;div className="main-content" style={{height: `${this.state.clientHeight - headerHeight}px`}}&gt;
+                    {this.props.children}
+                &lt;/div&gt;
+            &lt;/div&gt;
+        );
+    }
+样式：
+.rootLayout-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .main-content {
+        width: 100%;
+        overflow: auto;
+        position: absolute;
+        top: $headerHeight;
+    }
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-8-12" class="outline-3">
+<h3 id="sec-8-12"><span class="done DONE">DONE</span> 11.使用lodash &amp; 只导出引用的方法。</h3>
+<div class="outline-text-3" id="text-8-12">
+<p>
+0.资料：<a href="https://lodash.com/docs/4.17.4">lodash 4.17.4</a> <a href="http://www.css88.com/doc/lodash/">lodash 4.16.1中文版</a><br  />
+1.安装：cnpm i &#x2013;save lodash<br  />
+或更新svn:package.json,执行cnpm i<br  />
+2.用法：import _ from "lodash";<br  />
+3.使用lodash-webpack-plugin实现最终js只包含引用到的方法，而不需要70多k都引入<br  />
+具体见webpack.config.js<br  />
+</p>
+</div>
+<div id="outline-container-sec-8-12-1" class="outline-4">
+<h4 id="sec-8-12-1">_.get(object, path, [defaultValue]) 避免多层取值时中间出现null或undefined</h4>
+</div>
+<div id="outline-container-sec-8-12-2" class="outline-4">
+<h4 id="sec-8-12-2">_.cloneDeep(value) 深度克隆</h4>
+</div>
+</div>
+
+<div id="outline-container-sec-8-13" class="outline-3">
+<h3 id="sec-8-13"><span class="done DONE">DONE</span> 12. ！Important：使用_.get(object, path, [defaultValue]) 避免多层取值时出现null或undefined</h3>
+<div class="outline-text-3" id="text-8-13">
+<p>
+常见异常原因是多层嵌套取值时，中间某个值为null或undefined，而一个个去判断又很麻烦，所以这里单独提出来，增加我们系统的健壮性。用法：<br  />
+</p>
+
+<p>
+import _ from "lodash";<br  />
+</p>
+
+<p>
+var object = { 'a': [{ 'b': { 'c': 3 } }] };<br  />
+_.get(object, 'a<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>.b.c');<br  />
+// =&gt; 3<br  />
+_.get(object, ['a', '0', 'b', 'c']);<br  />
+// =&gt; 3<br  />
+_.get(object, 'a.b.c', 'default');<br  />
+// =&gt; 'default'<br  />
+</p>
+</div>
+</div>
+<div id="outline-container-sec-8-14" class="outline-3">
+<h3 id="sec-8-14"><span class="done DONE">DONE</span> 13.开发阶段通过配置proxy实现ajax跨域</h3>
+<div class="outline-text-3" id="text-8-14">
+<p>
+只需关注前两步中标注TODO的部分。<br  />
+1./src/utils/apimap.js<br  />
+</p>
+<pre class="example">
+//TODO 根据开发环境还是生产环境，选择性注释
+export const _API_HOST = "/api";//与webpack.config.js中devServer部分配置的"/api"部分对应。
+// export const _API_HOST = "https://puyunsoft.com";
+
+export default{
+    //TODO 需要维护的内容
+    findBlackList: _API_HOST + "/pc/negativeInterceptAction!findBadBuyerBlackList.action",
+
+}
+</pre>
+<p>
+2./src/pages/root/actions/xxx.js<br  />
+</p>
+<pre class="example">
+import {ajax, nameSpace} from 'utils/index';
+import apis from 'utils/apimap';
+
+ajax({
+    api: apis.findBlackList, //TODO 选用自己需要的接口
+    method: 'GET',
+}).then(json =&gt; {
+    console.log(json);
+    //成功后
+    dispatch({
+        type: REQUEST_SUCCESS,
+        data: json.data
+    });
+}
+</pre>
+<p>
+3.utils/index.js, 调用组件执行请求.不需要动.<br  />
+</p>
+<pre class="example">
+var Tools = {
+    ajax: function (param, suc, err) {
+        param.url =param.api;           // 如2,外层统一使用api,实际需要的是url.(使用api仅仅是延续,无任何特殊意义)
+        param.type = 'json';
+        var startTime = new Date().getTime();
+        return reqwest(param).then((res) =&gt; {
+</pre>
+
+<p>
+4.webpack.config.js核心配置:新增proxy配置<br  />
+</p>
+<pre class="example">
+// 发布状态
+if (!DEV) {
+} else {
+    config.devServer = {
+        headers: {'Access-Control-Allow-Origin': '*'},
+        proxy: {
+            //自动将                 /api/package/action!function.action转化为
+            //      http://127.0.0.1:7001/package/action!function.action
+            "/api": {
+                target: "http://localhost:7001",
+                pathRewrite: {
+                    '^/api': ''
+                }
+            }
+        }
+        // 'Access-Control-Allow-Credentials': 'true'
+    };
+    config.plugins.push(new webpack.SourceMapDevToolPlugin({}));
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-8-15" class="outline-3">
+<h3 id="sec-8-15"><span class="done DONE">DONE</span> 13-1[优化]只代理以/pc开头，action结尾的地址</h3>
+<div class="outline-text-3" id="text-8-15">
+<p>
+资料：<a href="https://github.com/chimurai/http-proxy-middleware#context-matching">http-proxy-middleware#context-matching</a><br  />
+配置：<br  />
+</p>
+<pre class="example">
+"/pc/**/*.action": {
+    target: "http://192.168.1.88",
+},
+</pre>
+<pre class="example">
+export const _API_HOST = "";//不需要再区分开发还是生产环境，保存原地址不变。
+
+findBlackList: _API_HOST + "/pc/negativeInterceptAction!findBadBuyerBlackList.action",
+</pre>
+<p>
+(webpack-dev服务转发到weblogic服务)如地址<br  />
+127.0.0.1:9000/pc/negativeInterceptAction!findBadBuyerBlackList.action<br  />
+转化为<br  />
+192.168.1.88/pc/negativeInterceptAction!findBadBuyerBlackList.action<br  />
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-8-16" class="outline-3">
+<h3 id="sec-8-16"><span class="done DONE">DONE</span> 14.state 结合classnames 控制className</h3>
+<div class="outline-text-3" id="text-8-16">
+<p>
+如下，根据this.state.xxx,控制是否className 是否包含hide:<br  />
+</p>
+<pre class="example">
+//component.js
+import classnames from 'classnames';
+
+let classnameCommon = classnames({
+    commonRow: true,
+    "hide": this.state.xxx ? true : false,
+})
+&lt;Component className="classnameCommon"/&gt;
+
+//component.scss
+.hide{
+    xxx
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-8-17" class="outline-3">
+<h3 id="sec-8-17"><span class="done DONE">DONE</span> 15.获取ref="xx" 高度</h3>
+<div class="outline-text-3" id="text-8-17">
+<pre class="example">
+import ReactDOM from 'react-dom';
+
+
+handleClick=()=&gt;{
+    let height = ReactDOM.findDOMNode(this.refs.xx).clientHeight;
+}
+
+render(){
+    return(
+        ...
+        &lt;Component ref="xx"/&gt;
+        ...        
+    )
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-8-18" class="outline-3">
+<h3 id="sec-8-18"><span class="done DONE">DONE</span> 16.React Property initializers @author:薛念华</h3>
+<div class="outline-text-3" id="text-8-18">
+<div class="org-src-container">
+
+<pre class="src src-javascript">import React, { Component , PropTypes} from "react";
+
+class TodoHeader extends Component {
+    static get defaultProps() { //设置初始值，调用组件不传props，则为默认值
+        return {
+            name:"Json wu",
+            count:25
+        }
+    }
+
+    static propTypes = {        //制定类型，如果不符合会报错。
+        name:PropTypes.string.isRequired,
+        count:PropTypes.number.isRequired
+    };
+
+
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h2&gt;Hello,{this.props.name}&lt;/h2&gt;
+                &lt;h3&gt;您有{this.props.count}项待办事项未处理&lt;/h3&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+
+export default TodoHeader;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-8-19" class="outline-3">
+<h3 id="sec-8-19"><span class="done DONE">DONE</span> 17.React中key的重要性</h3>
+<div class="outline-text-3" id="text-8-19">
+<p>
+<a href="https://facebook.github.io/react/tutorial/tutorial.html#keys">Facebook-react: keys</a>:<br  />
+Keys tell React about the identity of each component, so that it can maintain the state across rerenders. If you change the key of a component, it will be completely destroyed and recreated with a new state.<br  />
+</p>
+
+<p>
+列表中元素往往知道用key，但下面情景，也需要用key。<br  />
+情景：快递单打印预览，&lt;Preview&gt;中嵌套&lt;View&gt;，用于显示快递单预览内容。<br  />
+点击上一个、下一个，更新&lt;View&gt;预览内容，此时，一定要设置不同的key！<br  />
+如下：<br  />
+</p>
+<pre class="example">
+&lt;Preview&gt;
+    render(){
+        ...
+        &lt;View 
+            order={orders[this.state.index-1]}
+            index={this.state.index}
+            template={this.state.template}
+            key={this.state.index}
+        /&gt;
+
+&lt;a href="javascript:void(0);" className="rowElement" onClick={() =&gt; {
+    if (this.state.index != 1) {
+        this.setState({
+            index: this.state.index - 1,
+        })
+    }
+}}&gt;上一个&lt;/a&gt;
+&lt;span className="rowElement"&gt;{this.state.index} / {orders.length}&lt;/span&gt;
+&lt;a href="javascript:void(0);" onClick={() =&gt; {
+    if (this.state.index != orders.length) {
+        this.setState({
+            index: this.state.index + 1,
+        })
+    }
+}}&gt;下一个&lt;/a&gt;   
+        ...
+    }
+&lt;/Preview&gt;
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-8-20" class="outline-3">
+<h3 id="sec-8-20"><span class="done DONE">DONE</span> 18.函数式编程 参考</h3>
+<div class="outline-text-3" id="text-8-20">
+<p>
+<a href="https://zhuanlan.zhihu.com/p/26174525">React世界的函数式编程(Functional Programming)</a><br  />
+<a href="https://justclear.gitlab.io/functional-in-react/">React 中的函数式思想</a><br  />
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p>DEFINITION NOT FOUND.</p></div>
+
+
+</div>
+</div></div>
+</body>
+</html>
