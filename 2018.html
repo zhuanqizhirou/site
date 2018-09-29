@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>2018</title>
-<!-- 2018-09-29 周六 12:17 -->
+<!-- 2018-09-29 周六 12:24 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -282,6 +282,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-2-8-10">店管家架构注意点</a></li>
 <li><a href="#sec-2-8-11">遍历session</a></li>
 <li><a href="#sec-2-8-12">queryBySql</a></li>
+<li><a href="#sec-2-8-13">queryByJpql</a></li>
 </ul>
 </li>
 <li><a href="#sec-2-9">SQL</a>
@@ -1414,6 +1415,35 @@ log.info("pw session id: " + ss.getId());
         Page&lt;Map&lt;String, Object&gt;&gt; page = new PageImpl&lt;Map&lt;String, Object&gt;&gt;(contents, pageable, total);
         return page;
     }
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-8-13" class="outline-4">
+<h4 id="sec-2-8-13">queryByJpql</h4>
+<div class="outline-text-4" id="text-2-8-13">
+<div class="org-src-container">
+
+<pre class="src src-java">@Override
+public Page&lt;JdpTbTrade&gt; list(JdpTbTradeCondition condition, Pageable pageable) {
+    StringBuffer sb = new StringBuffer("select model from JdpTbTrade model  where 1=1  ");
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    Map&lt;String, Object&gt; params = new HashMap&lt;String, Object&gt;();
+    if (condition.getModifyStart() != null) {
+        sb.append(" and model.jdpModified &gt;= :ms");
+        params.put("ms", (condition.getModifyStart()));
+    }
+    if (condition.getModifyEnd() != null) {
+        sb.append(" and model.jdpModified&lt;:me");
+        params.put("me", (condition.getModifyEnd()));
+    }
+    Long total = countByJpql(sb.toString(), params);
+    sb.append(" order by model.jdpModified asc");
+    List&lt;JdpTbTrade&gt; contents = queryArrayByJpql(sb.toString(), params, ((int) pageable.getOffset()),
+            ((int) pageable.getPageSize()));
+    Page&lt;JdpTbTrade&gt; page = new PageImpl&lt;JdpTbTrade&gt;(contents, pageable, total);
+    return page;
+}
 </pre>
 </div>
 </div>
