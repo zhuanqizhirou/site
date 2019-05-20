@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-05-06 周一 18:10 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="stylesheets/site.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org35296a4">Netty</a>
+<ul>
+<li><a href="#orgd49b71b">Netty 的特点</a></li>
+<li><a href="#org72900b5">资料</a>
+<ul>
+<li><a href="#org305de65">download</a></li>
+<li><a href="#orgf796d0e">maven:</a></li>
+<li><a href="#org413b596">入门资料</a></li>
+</ul>
+</li>
+<li><a href="#org502a662">windows启用telnet</a></li>
+<li><a href="#org8a21d40">4.x getting started 示例</a>
+<ul>
+<li><a href="#orgeaca58a">1.discard 协议</a></li>
+<li><a href="#org65b05dd">2.echo 协议</a></li>
+<li><a href="#org23e3fa9">3.http 协议</a></li>
+<li><a href="#orgad4f297">4.time</a></li>
+<li><a href="#org57edd87">4.1 Dealing with a Stream-based Transport(处理基于流的传输）</a>
+<ul>
+<li><a href="#org31d415d">方法1</a></li>
+<li><a href="#org06746cc">方法2,正确的做法</a></li>
+</ul>
+</li>
+<li><a href="#org3bbaae4">使用POJO而不是ByteBuf</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga899233">WebFlux</a>
+<ul>
+<li><a href="#org3c8d284">简单示例</a>
+<ul>
+<li><a href="#org62c53e3">maven引用</a></li>
+<li><a href="#orge2e7086">启动类不变</a></li>
+<li><a href="#org8c48752">handler处理</a></li>
+<li><a href="#orgeb41187">routeerConfig</a></li>
+<li><a href="#org0faa983">启动服务并访问</a></li>
+</ul>
+</li>
+<li><a href="#orgfe4f108">WebFlux+MongoDB</a>
+<ul>
+<li><a href="#org45e5e2c">chrome插件：restlet</a></li>
+<li><a href="#orgf443c78">maven增加dependency</a></li>
+<li><a href="#org6a70d64">注解模式</a></li>
+<li><a href="#orgd9ac3aa">Handler模式,地址user多了一个R：userR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge1fc5a0">总结</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org35296a4" class="outline-2">
+<h2 id="org35296a4">Netty</h2>
+<div class="outline-text-2" id="text-org35296a4">
+<p>
+NIO(Not Blocking IO?)框架，异步、事件驱动的高性能、高可靠性的网络应用框架。<br />
+用于创造一个高度优化的协议来处理一些特殊的场景。<br />
+</p>
+</div>
+<div id="outline-container-orgd49b71b" class="outline-3">
+<h3 id="orgd49b71b">Netty 的特点</h3>
+<div class="outline-text-3" id="text-orgd49b71b">
+<p>
+1）设计优雅：适用于各种传输类型的统一 API 阻塞和非阻塞 Socket；基于灵活且可扩展的事件模型，可以清晰地分离关注点；高度可定制的线程模型 - 单线程，一个或多个线程池；真正的无连接数据报套接字支持（自 3.1 起）。<br />
+2）使用方便：详细记录的 Javadoc，用户指南和示例；没有其他依赖项，JDK 5（Netty 3.x）或 6（Netty 4.x）就足够了。<br />
+3）高性能、吞吐量更高：延迟更低；减少资源消耗；最小化不必要的内存复制。<br />
+4）安全：完整的 SSL/TLS 和 StartTLS 支持。<br />
+5）社区活跃、不断更新：社区活跃，版本迭代周期短，发现的 Bug 可以被及时修复，同时，更多的新功能会被加入。<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org72900b5" class="outline-3">
+<h3 id="org72900b5">资料</h3>
+<div class="outline-text-3" id="text-org72900b5">
+</div>
+<div id="outline-container-org305de65" class="outline-4">
+<h4 id="org305de65"><a href="https://netty.io/downloads.html">download</a></h4>
+</div>
+<div id="outline-container-orgf796d0e" class="outline-4">
+<h4 id="orgf796d0e">maven:</h4>
+<div class="outline-text-4" id="text-orgf796d0e">
+<pre class="example">
+&lt;dependency&gt;
+    &lt;groupId&gt;io.netty&lt;/groupId&gt;
+    &lt;artifactId&gt;netty-all&lt;/artifactId&gt;
+    &lt;version&gt;4.1.32.Final&lt;/version&gt;
+    &lt;scope&gt;compile&lt;/scope&gt;
+  &lt;/dependency&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-org413b596" class="outline-4">
+<h4 id="org413b596">入门资料</h4>
+<div class="outline-text-4" id="text-org413b596">
+<p>
+<a href="https://netty.io/wiki/user-guide-for-4.x.html">4.x getting started</a><br />
+<a href="https://waylau.gitbooks.io/netty-4-user-guide/content/Preface/The%20Problem.html">4.x getting started中文翻译</a><br />
+<a href="https://netty.io/wiki/index.html">更多示例</a> <br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org502a662" class="outline-3">
+<h3 id="org502a662">windows启用telnet</h3>
+<div class="outline-text-3" id="text-org502a662">
+<p>
+设置&gt;应用和功能&gt;页面右侧程序和功能&gt;启用或关闭windows功能&gt;telnet客户端<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org8a21d40" class="outline-3">
+<h3 id="org8a21d40">4.x getting started 示例</h3>
+<div class="outline-text-3" id="text-org8a21d40">
+<p>
+源于官方入门教程，由最简单的Discard协议入门，通过层层递进的示例，不断加深对Netty的了解。<br />
+</p>
+</div>
+<div id="outline-container-orgeaca58a" class="outline-4">
+<h4 id="orgeaca58a">1.discard 协议</h4>
+<div class="outline-text-4" id="text-orgeaca58a">
+<p>
+1.启动DiscardServer,telnet localhost 9400 (或运行DiscardServerTest)<br />
+2.取消System.out.println注释，打印接收到的信息<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org65b05dd" class="outline-4">
+<h4 id="org65b05dd">2.echo 协议</h4>
+<div class="outline-text-4" id="text-org65b05dd">
+<p>
+run EchoServer, telnet localhost 9401,每个按键会显示2次。<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org23e3fa9" class="outline-4">
+<h4 id="org23e3fa9">3.http 协议</h4>
+<div class="outline-text-4" id="text-org23e3fa9">
+<p>
+run HttpServer,<br />
+</p>
+
+<p>
+<a href="http://127.0.0.1:8091">http://127.0.0.1:8091</a><br />
+<a href="http://127.0.0.1:8091/302">http://127.0.0.1:8091/302</a><br />
+<a href="http://127.0.0.1:8091/404">http://127.0.0.1:8091/404</a><br />
+<a href="http://127.0.0.1:8091/400">http://127.0.0.1:8091/400</a><br />
+<a href="http://127.0.0.1:8091/500">http://127.0.0.1:8091/500</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgad4f297" class="outline-4">
+<h4 id="orgad4f297">4.time</h4>
+<div class="outline-text-4" id="text-orgad4f297">
+<p>
+run TimeServer,run TimeClient. In TCP/IP, Netty reads the data sent from a peer into a ByteBuf.<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">channelRead</span>(<span style="color: #228b22;">ChannelHandlerContext</span> <span style="color: #a0522d;">ctx</span>, <span style="color: #228b22;">Object</span> <span style="color: #a0522d;">msg</span>) {
+
+        <span style="color: #228b22;">ByteBuf</span> <span style="color: #a0522d;">m</span> = (<span style="color: #228b22;">ByteBuf</span>) msg;
+        <span style="color: #a020f0;">try</span> {
+                <span style="color: #228b22;">long</span> <span style="color: #a0522d;">currentTimeMillis</span> = (m.readUnsignedInt() - 2208988800L) * 1000L;
+                System.out.println(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">Date</span>(currentTimeMillis));
+                ctx.close();
+        } <span style="color: #a020f0;">finally</span> {
+                m.release();
+        }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org57edd87" class="outline-4">
+<h4 id="org57edd87">4.1 Dealing with a Stream-based Transport(处理基于流的传输）</h4>
+<div class="outline-text-4" id="text-org57edd87">
+<p>
+基于流的传输比如 TCP/IP，并不是一个数据包队列，而是一个字节队列。存在粘包的问题，需要封包，解包。<br />
+</p>
+<pre class="example">
+假设我们连续调用两次send分别发送两端数据data1和data2，在接收端有以下几种接收情况：
+
+先接收到data1，然后接收到data2；
+先接收到data1的部分数据，然后接收到data1余下的部分以及data2的全部；
+先接收到了data1的全部数据和data2的部分数据，然后接收到了data2的余下数据；
+一次性接收到了data1和data2的全部数据。
+</pre>
+</div>
+
+<div id="outline-container-org31d415d" class="outline-5">
+<h5 id="org31d415d">方法1</h5>
+<div class="outline-text-5" id="text-org31d415d">
+<p>
+（com.lcdt.netty2.time._2)：重写一个TimeClientHandler，其中构造一个内部的可积累的缓冲，直到4个字节全部接收到了内部缓冲。<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-java">b.handler(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">ChannelInitializer</span>&lt;<span style="color: #228b22;">SocketChannel</span>&gt;() {
+
+        <span style="color: #008b8b;">@Override</span>
+        <span style="color: #a020f0;">protected</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">initChannel</span>(<span style="color: #228b22;">SocketChannel</span> <span style="color: #a0522d;">ch</span>) <span style="color: #a020f0;">throws</span> <span style="color: #228b22;">Exception</span> {
+                ch.pipeline().addLast(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">TimeClientHandler2</span>());
+        }
+
+});
+</pre>
+</div>
+<p>
+问题：更复杂的协议，handler变得难以维护<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org06746cc" class="outline-5">
+<h5 id="org06746cc">方法2,正确的做法</h5>
+<div class="outline-text-5" id="text-org06746cc">
+<p>
+(com.lcdt.netty2.time._3)：在ChannelPipeline中添加多个ChannelHandler，原始TimeClientHandler不变.<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-java">b.handler(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">ChannelInitializer</span>&lt;<span style="color: #228b22;">SocketChannel</span>&gt;() {
+
+        <span style="color: #008b8b;">@Override</span>
+        <span style="color: #a020f0;">protected</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">initChannel</span>(<span style="color: #228b22;">SocketChannel</span> <span style="color: #a0522d;">ch</span>) <span style="color: #a020f0;">throws</span> <span style="color: #228b22;">Exception</span> {
+                ch.pipeline().addLast(
+                                <span style="color: #b22222;">// </span><span style="color: #b22222;">Add</span>
+                                <span style="color: #a020f0;">new</span> <span style="color: #228b22;">TimeDecoder</span>(), <span style="color: #b22222;">//</span><span style="color: #b22222;">&lt;--------------------------new added.</span>
+                                <span style="color: #a020f0;">new</span> <span style="color: #228b22;">TimeClientHandler</span>());
+        }
+
+});
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org3bbaae4" class="outline-4">
+<h4 id="org3bbaae4">使用POJO而不是ByteBuf</h4>
+<div class="outline-text-4" id="text-org3bbaae4">
+<p>
+1.POJO UnixTime.java<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">UnixTime</span> {
+        <span style="color: #a020f0;">private</span> <span style="color: #a020f0;">final</span> <span style="color: #228b22;">long</span> <span style="color: #a0522d;">value</span>;
+
+        <span style="color: #a020f0;">public</span> <span style="color: #0000ff;">UnixTime</span>() {
+                <span style="color: #b22222;">//</span><span style="color: #b22222;">?</span>
+                <span style="color: #a020f0;">this</span>(System.currentTimeMillis() / 1000L + 2208988800L);
+        }
+
+        <span style="color: #a020f0;">public</span> <span style="color: #0000ff;">UnixTime</span>(<span style="color: #228b22;">long</span> <span style="color: #a0522d;">value</span>) {
+                <span style="color: #a020f0;">this</span>.value = value;
+        }
+
+        <span style="color: #a020f0;">public</span> <span style="color: #228b22;">long</span> <span style="color: #0000ff;">value</span>() {
+                <span style="color: #a020f0;">return</span> value;
+        }
+
+        <span style="color: #008b8b;">@Override</span>
+        <span style="color: #a020f0;">public</span> <span style="color: #228b22;">String</span> <span style="color: #0000ff;">toString</span>() {
+                <span style="color: #a020f0;">return</span> <span style="color: #a020f0;">new</span> <span style="color: #228b22;">Date</span>((value() - 2208988800L) * 1000L).toString();
+        }
+}
+</pre>
+</div>
+<p>
+2.TimeDecoder解码处理<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">TimeDecoder</span> <span style="color: #a020f0;">extends</span> <span style="color: #228b22;">ByteToMessageDecoder</span> {
+
+        <span style="color: #008b8b;">@Override</span>
+        <span style="color: #a020f0;">protected</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">decode</span>(<span style="color: #228b22;">ChannelHandlerContext</span> <span style="color: #a0522d;">ctx</span>, <span style="color: #228b22;">ByteBuf</span> <span style="color: #a0522d;">in</span>, <span style="color: #228b22;">List</span>&lt;<span style="color: #228b22;">Object</span>&gt; <span style="color: #a0522d;">out</span>) <span style="color: #a020f0;">throws</span> <span style="color: #228b22;">Exception</span> {
+                <span style="color: #b22222;">// </span><span style="color: #b22222;">TODO Auto-generated method stub</span>
+                <span style="color: #a020f0;">if</span> (in.readableBytes() &lt; 4) {
+                        <span style="color: #a020f0;">return</span>;
+                }
+                <span style="color: #b22222;">// </span><span style="color: #b22222;">Please remember that you don't need to decode multiple messages.</span>
+                <span style="color: #b22222;">// </span><span style="color: #b22222;">ByteToMessageDecoder will keep calling the decode() method until it adds</span>
+                <span style="color: #b22222;">// </span><span style="color: #b22222;">nothing to out.</span>
+<span style="color: #b22222;">//              </span><span style="color: #b22222;">out.add(in.readBytes(4));</span>
+
+                out.add(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">UnixTime</span>(in.readUnsignedInt()));
+        }
+}
+</pre>
+</div>
+<p>
+3.TimeClient<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-java">b.handler(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">ChannelInitializer</span>&lt;<span style="color: #228b22;">SocketChannel</span>&gt;() {
+
+        <span style="color: #008b8b;">@Override</span>
+        <span style="color: #a020f0;">protected</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">initChannel</span>(<span style="color: #228b22;">SocketChannel</span> <span style="color: #a0522d;">ch</span>) <span style="color: #a020f0;">throws</span> <span style="color: #228b22;">Exception</span> {
+                <span style="color: #b22222;">// </span><span style="color: #b22222;">TODO Auto-generated method stub</span>
+                ch.pipeline().addLast(
+                                <span style="color: #b22222;">//</span><span style="color: #b22222;">Add </span>
+                                <span style="color: #a020f0;">new</span> <span style="color: #228b22;">TimeDecoder</span>(),<span style="color: #b22222;">//</span><span style="color: #b22222;">&lt;----------------------------&#20808;&#35299;&#30721;</span>
+                                <span style="color: #a020f0;">new</span> <span style="color: #228b22;">TimeClientHandler</span>());
+        }
+
+});
+</pre>
+</div>
+<p>
+4.TimeClientHandler中接收到的数据为POJO类型。<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #a020f0;">public</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">channelRead</span>(<span style="color: #228b22;">ChannelHandlerContext</span> <span style="color: #a0522d;">ctx</span>, <span style="color: #228b22;">Object</span> <span style="color: #a0522d;">msg</span>) {
+<span style="color: #b22222;">// </span><span style="color: #b22222;">&#21407;&#22987;ByteBuf&#31867;&#22411;&#25968;&#25454;</span>
+<span style="color: #b22222;">//              </span><span style="color: #b22222;">// In TCP/IP, Netty reads the data sent from a peer into a ByteBuf.</span>
+<span style="color: #b22222;">//              </span><span style="color: #b22222;">ByteBuf m = (ByteBuf) msg;</span>
+<span style="color: #b22222;">//              </span><span style="color: #b22222;">try {</span>
+<span style="color: #b22222;">//                      </span><span style="color: #b22222;">long currentTimeMillis = (m.readUnsignedInt() - 2208988800L) * 1000L;</span>
+<span style="color: #b22222;">//                      </span><span style="color: #b22222;">System.out.println(new Date(currentTimeMillis));</span>
+<span style="color: #b22222;">//                      </span><span style="color: #b22222;">ctx.close();</span>
+<span style="color: #b22222;">//              </span><span style="color: #b22222;">} finally {</span>
+<span style="color: #b22222;">//                      </span><span style="color: #b22222;">m.release();</span>
+<span style="color: #b22222;">//              </span><span style="color: #b22222;">}</span>
+        <span style="color: #b22222;">//</span><span style="color: #b22222;">POJO&#31867;&#22411;&#25968;&#25454;</span>
+        <span style="color: #228b22;">UnixTime</span> <span style="color: #a0522d;">m</span> = (<span style="color: #228b22;">UnixTime</span>) msg;
+        System.out.println(m);
+        ctx.close();
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga899233" class="outline-2">
+<h2 id="orga899233">WebFlux</h2>
+<div class="outline-text-2" id="text-orga899233">
+</div>
+<div id="outline-container-org3c8d284" class="outline-3">
+<h3 id="org3c8d284">简单示例</h3>
+<div class="outline-text-3" id="text-org3c8d284">
+</div>
+<div id="outline-container-org62c53e3" class="outline-4">
+<h4 id="org62c53e3">maven引用</h4>
+<div class="outline-text-4" id="text-org62c53e3">
+<p>
+不再使用 spring-boot-starter-web<br />
+</p>
+<pre class="example">
+&lt;dependency&gt;
+	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+	&lt;artifactId&gt;spring-boot-starter-webflux&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-orge2e7086" class="outline-4">
+<h4 id="orge2e7086">启动类不变</h4>
+<div class="outline-text-4" id="text-orge2e7086">
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #008b8b;">@SpringBootApplication</span>
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">WebfluxApplication</span> {
+
+        <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #228b22;">void</span> <span style="color: #0000ff;">main</span>(<span style="color: #228b22;">String</span>[] <span style="color: #a0522d;">args</span>) {
+                SpringApplication.run(WebfluxApplication.<span style="color: #a020f0;">class</span>, args);
+        }
+
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8c48752" class="outline-4">
+<h4 id="org8c48752">handler处理</h4>
+<div class="outline-text-4" id="text-org8c48752">
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #008b8b;">@Component</span>
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">TimeHandler</span> {
+        <span style="color: #a020f0;">public</span> <span style="color: #228b22;">Mono</span>&lt;<span style="color: #228b22;">ServerResponse</span>&gt; <span style="color: #0000ff;">getTime</span>(<span style="color: #228b22;">ServerRequest</span> <span style="color: #a0522d;">serverRequest</span>) {
+                <span style="color: #a020f0;">return</span> ServerResponse.ok().contentType(<span style="color: #008b8b;">MediaType</span>.TEXT_PLAIN)
+                                .body(Mono.just(<span style="color: #8b2252;">"Now is "</span> + <span style="color: #a020f0;">new</span> <span style="color: #228b22;">SimpleDateFormat</span>(<span style="color: #8b2252;">"HH:mm:ss"</span>).format(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">Date</span>())), String.<span style="color: #a020f0;">class</span>);
+
+        }
+
+        <span style="color: #a020f0;">public</span> <span style="color: #228b22;">Mono</span>&lt;<span style="color: #228b22;">ServerResponse</span>&gt; <span style="color: #0000ff;">getDate</span>(<span style="color: #228b22;">ServerRequest</span> <span style="color: #a0522d;">serverRequest</span>) {
+                <span style="color: #a020f0;">return</span> ServerResponse.ok().contentType(<span style="color: #008b8b;">MediaType</span>.TEXT_PLAIN)
+                                .body(Mono.just(<span style="color: #8b2252;">"Today is "</span> + <span style="color: #a020f0;">new</span> <span style="color: #228b22;">SimpleDateFormat</span>(<span style="color: #8b2252;">"yyyy-MM-dd"</span>).format(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">Date</span>())), String.<span style="color: #a020f0;">class</span>);
+        }
+
+        <span style="color: #a020f0;">public</span> <span style="color: #228b22;">Mono</span>&lt;<span style="color: #228b22;">ServerResponse</span>&gt; <span style="color: #0000ff;">sendTimePerSec</span>(<span style="color: #228b22;">ServerRequest</span> <span style="color: #a0522d;">serverRequest</span>) {
+                <span style="color: #a020f0;">return</span> ServerResponse.ok().contentType(<span style="color: #008b8b;">MediaType</span>.TEXT_EVENT_STREAM).body(
+                                Flux.interval(Duration.ofSeconds(1)).map(l -&gt; <span style="color: #a020f0;">new</span> <span style="color: #228b22;">SimpleDateFormat</span>(<span style="color: #8b2252;">"HH:mm:ss"</span>).format(<span style="color: #a020f0;">new</span> <span style="color: #228b22;">Date</span>())),
+                                String.<span style="color: #a020f0;">class</span>);
+        }
+
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeb41187" class="outline-4">
+<h4 id="orgeb41187">routeerConfig</h4>
+<div class="outline-text-4" id="text-orgeb41187">
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #008b8b;">@Configuration</span>
+<span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #228b22;">RouterConfig</span> {
+
+        <span style="color: #008b8b;">@Autowired</span>
+        <span style="color: #a020f0;">private</span> <span style="color: #228b22;">TimeHandler</span> <span style="color: #a0522d;">timeHandler</span>;
+
+        <span style="color: #008b8b;">@Bean</span>
+        <span style="color: #a020f0;">public</span> <span style="color: #228b22;">RouterFunction</span>&lt;<span style="color: #228b22;">ServerResponse</span>&gt; <span style="color: #0000ff;">timerRouter</span>() {
+                <span style="color: #a020f0;">return</span> RouterFunctions.route(<span style="color: #008b8b;">RequestPredicates</span>.GET(<span style="color: #8b2252;">"/time"</span>), req -&gt; timeHandler.getTime(req))
+                                .andRoute(<span style="color: #008b8b;">RequestPredicates</span>.GET(<span style="color: #8b2252;">"/date"</span>), timeHandler::getDate)
+                                .andRoute(<span style="color: #008b8b;">RequestPredicates</span>.GET(<span style="color: #8b2252;">"/times"</span>), timeHandler::sendTimePerSec)
+                                ;
+        }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0faa983" class="outline-4">
+<h4 id="org0faa983">启动服务并访问</h4>
+<div class="outline-text-4" id="text-org0faa983">
+<p>
+启动会看到是由Netty提供服务。<br />
+</p>
+<pre class="example">
+Netty started on port(s): 9300
+Started WebfluxApplication in 8.738 seconds (JVM running for 11.589)
+</pre>
+
+<p>
+[/hello][<a href="http://127.0.0.1:9300/hello">http://127.0.0.1:9300/hello</a>)<br />
+</p>
+
+<p>
+[/helloReactor](<a href="http://127.0.0.1:9300/helloReactor">http://127.0.0.1:9300/helloReactor</a>)<br />
+</p>
+
+<p>
+[/time](<a href="http://127.0.0.1:9300/time">http://127.0.0.1:9300/time</a>)<br />
+</p>
+
+<p>
+[/date](<a href="http://127.0.0.1:9300/date">http://127.0.0.1:9300/date</a>)<br />
+</p>
+
+<p>
+[/times](<a href="http://127.0.0.1:9300/times">http://127.0.0.1:9300/times</a>)<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfe4f108" class="outline-3">
+<h3 id="orgfe4f108">WebFlux+MongoDB</h3>
+<div class="outline-text-3" id="text-orgfe4f108">
+<p>
+基本概念：<br />
+mono 单声道的，		0..1 elements<br />
+flux 不断的变动，	0..N elements<br />
+</p>
+</div>
+<div id="outline-container-org45e5e2c" class="outline-4">
+<h4 id="org45e5e2c">chrome插件：restlet</h4>
+<div class="outline-text-4" id="text-org45e5e2c">
+<p>
+用于发送请求测试<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgf443c78" class="outline-4">
+<h4 id="orgf443c78">maven增加dependency</h4>
+<div class="outline-text-4" id="text-orgf443c78">
+<pre class="example">
+&lt;dependency&gt;
+	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+	&lt;artifactId&gt;spring-boot-starter-data-mongodb-reactive&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</pre>
+</div>
+</div>
+<div id="outline-container-org6a70d64" class="outline-4">
+<h4 id="org6a70d64">注解模式</h4>
+<div class="outline-text-4" id="text-org6a70d64">
+<p>
+chrome中测试：<br />
+post <a href="http://127.0.0.1:9301/user">http://127.0.0.1:9301/user</a><br />
+restlet中测试：<br />
+get <a href="http://127.0.0.1:9301/user">http://127.0.0.1:9301/user</a><br />
+delete <a href="http://127.0.0.1:9301/user/zhangsan">http://127.0.0.1:9301/user/zhangsan</a><br />
+get <a href="http://127.0.0.1:9301/user/zhangsan">http://127.0.0.1:9301/user/zhangsan</a><br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgd9ac3aa" class="outline-4">
+<h4 id="orgd9ac3aa">Handler模式,地址user多了一个R：userR</h4>
+<div class="outline-text-4" id="text-orgd9ac3aa">
+<p>
+chrome中测试：<br />
+post <a href="http://127.0.0.1:9301/userR">http://127.0.0.1:9301/userR</a><br />
+Body格式不能选form，只能是text<br />
+</p>
+<pre class="example">
+{"id":"5c6279978fba2d456c1515cd","username":"lisi","phone":null,"email":null,"name":"李四","birthday":null}
+</pre>
+<p>
+restlet中测试：<br />
+get <a href="http://127.0.0.1:9301/userR">http://127.0.0.1:9301/userR</a><br />
+delete <a href="http://127.0.0.1:9301/userR/zhangsan">http://127.0.0.1:9301/userR/zhangsan</a><br />
+get <a href="http://127.0.0.1:9301/userR/zhangsan">http://127.0.0.1:9301/userR/zhangsan</a><br />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge1fc5a0" class="outline-2">
+<h2 id="orge1fc5a0">总结</h2>
+<div class="outline-text-2" id="text-orge1fc5a0">
+<p>
+咨询高手的时候偶然被推荐netty,然后搜索拓展到WebFlux，然后是Full Stack Reactive，构成了一个完整的最前沿技术栈。<br />
+代码精心准备，文档精心准备，演示层层递进，一起拓展知识边界，希望对大家有帮助。<br />
+分享者才是学习中的最大受益者，由于需要成文章，所以需要查阅大量的资料。在整个过程中，又学习到很多知识点。<br />
+希望能从大家学到更多东西。<br />
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>
