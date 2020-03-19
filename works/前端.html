@@ -1,0 +1,214 @@
+<html>
+
+<head>
+    <title>前端学习</title>
+    <style type="text/css">
+        .example {
+            display: flex;
+        }
+
+        .code {
+            border: 1px solid #666666;
+            padding: 20px;
+            align-self: stretch;
+            margin: 0;
+        }
+
+        .desc,
+        .summary {
+            border: 1px solid #999999;
+            padding: 20px;
+            color: red;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>css选择器</h2>
+    <div class="h4">
+        <h4>已学 1.id选择器</h4>
+        <div class="example">
+            <pre class='code'>
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;css&#x5b66;&#x4e60;&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        #gray {
+            background: gray;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;gray&quot;&gt;&#x8fd9;&#x662f;div&#x5185;&#x5bb9;&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </pre>
+            <div class="img">
+                <img src="./imgs/20200320_0033_001.png" />
+            </div>
+        </div>
+    </div>
+    <div class="h4">
+        <h4>已学 2.类选择器</h4>
+        <div class="example">
+            <pre class='code'>
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;css学习&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        .gray {
+            background: gray;
+            margin-bottom: 20px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;gray&quot;&gt;这是div内容&lt;/div&gt;
+    &lt;div class=&quot;gray&quot;&gt;这是div2内容&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </pre>
+            <div class="img">
+                <img src="./imgs/20200320_0040_001.png" />
+            </div>
+        </div>
+
+    </div>
+
+    <div class="h4">
+        <h4>已学 3.派生选择器</h4>
+        <div class="example">
+            <pre class='code'>
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;css学习&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        div span {
+            color: red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;
+        &lt;span&gt;div下span元素，可以通过 div span{color:red}选择&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;div&gt;div下div元素，则不能通过 div span{color:red}选择&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </pre>
+            <div class="img">
+                <img src="./imgs/20200320_001.png" />
+            </div>
+        </div>
+
+    </div>
+
+    <div class="h4">
+        <h4>4.元素选择器</h4>
+        <div class="example">
+            <pre class='code'>
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;css&#x5b66;&#x4e60;&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        div {
+            color: red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;
+        &#x53ea;&#x6709;&#x4e00;&#x4e2a;&#x6700;&#x57fa;&#x672c;&#x7684;div&#x5143;&#x7d20;&#xff0c;&#x5176;&#x4ed6;&#x5c5e;&#x6027;id&#x3001;class&#x7b49;&#x7b49;&#x90fd;&#x6ca1;&#x6709;&#x3002;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </pre>
+            <div class="img">
+                <img src="./imgs/20200320_002.png" />
+            </div>
+        </div>
+        <pre class="summary">
+1.元素【即html元素】选择器是最基本的选择器！
+因为最基本的网页，不需要id，不需要class也能通过元素设置样式。
+2.w3school中有专门几节讲选择器，从<a target="_blank" href='https://www.w3school.com.cn/css/css_selector_type.asp'>元素选择器</a>开始。
+2.上面的派生选择器，也是基于元素选择器。【div span】,选择div元素下的span元素，可以看作是2个最基本的元素选择器组合起来。
+        </pre>
+    </div>
+
+
+    <div class="h4">
+        <h4>5.更复杂的派生选择器</h4>
+        <pre class="desc">
+1.派生选择器是css2中的名称，在css1中叫做“上下文选择器”。
+2.在上面简单派生选择器示例中，是由2个最基本的元素选择器组成
+3.派生选择器还可由其他选择器通过空格连接组成。如：
+2个类选择器组合 .a .b{color:red;}  
+1个类选择器与1个元素选择器组合 .x div{color:blue;}
+        </pre>
+        <div class="example">
+            <pre class='code'>
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;css&#x5b66;&#x4e60;&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        .a .b {
+            color: red;
+        }
+
+        .x div {
+            color: blue;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;a&quot;&gt;
+        &lt;div class=&quot;b&quot;&gt;.a .b&lt;/div&gt;
+        &lt;div class=&quot;c&quot;&gt;.a .c&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;x&quot;&gt;
+        &lt;div&gt;.x div&lt;/div&gt;
+        &lt;span&gt;.x span&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </pre>
+            <div class="img">
+                <img src="./imgs/20200320_003.png" />
+            </div>
+        </div>
+        <pre class="summary">
+
+        </pre>
+    </div>
+
+
+    <div class="h4">
+        <h4>6.从简单到负责的选择器</h4>
+        <pre class="desc">
+1.html组织页面内容，css优化内容的显示
+2.一个纯的html，可以通过元素选择器设置特定元素的样式
+3.如果想为页面某一个指定的内容设置样式，可以通过id选择器。
+4.如果想为页面多个内容设置相同样式，可以通过为选定内容的元素上增加class，通过类选择器设置样式。
+5.其他更复杂、精准的，使用派生选择器，组合起来达到目的。
+        </pre>
+    </div>
+
+</html>
