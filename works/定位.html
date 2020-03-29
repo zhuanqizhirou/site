@@ -213,10 +213,11 @@
             </div>
             <pre class="summary" id="absolute用法">
 1.首先将B元素position设为relative；
-2.将B1,B2position设为absolute;
+2.将B1,B2 position设为absolute;
 
 B1,B2绝对定位后，脱离文档流，B3顶上。
-B1,B2的位置，基于最近的已定位祖先元素:
+B1,B2的位置，基于最近的已定位祖先元素，本例中就是第一步设置了position为relative的B元素。
+B也可设置为fixed,absolute,B1,B2的位置相对于B效果是一样的。但B本身的位置就会变化，所以最常用的是将父元素B设为relative，B元素位置本身没有任何变化。
 
 top:100px; 则上面距离B顶部距离为100.
 right:20px;则右边距离B右边框距离20px;
@@ -303,7 +304,7 @@ bottom:20px;下边距离B下边框距离20px;
         <div class="h4">
             <h4 id="relative">5.相对定位</h4>
             <pre class="desc">
-1.相对定位最简单，即相对于他在文档流中原本的位置，进行一个偏移。可用于微调。
+1.相对定位最简单最容易理解，即相对于他在文档流中原本的位置，进行一个偏移。可用于微调。
 2.从示例可看出，后面的C\D\E不受B元素位置的变动影响。
         </pre>
             <div class="example">
