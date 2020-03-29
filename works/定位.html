@@ -1,0 +1,372 @@
+<html>
+
+<head>
+    <title>前端学习</title>
+    <style type="text/css">
+        .example {
+            display: flex;
+        }
+
+        .code {
+            border: 1px solid #666666;
+            padding: 20px;
+            align-self: stretch;
+            margin: 0;
+        }
+
+        .desc,
+        .summary {
+            border: 1px solid #999999;
+            padding: 20px;
+            color: red;
+            font-size: 16px;
+        }
+
+        .link a {
+            display: list-item;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="link">
+        <a href="#static">默认定位static</a>
+        <a href="#fixed">固定定位fixed</a>
+        <a href="#absolute">绝对定位absolute</a>
+        <a href="#absolute用法">absolute用法</a>
+        <a href="#relative">相对定位</a>
+        </div>
+        <h2>css定位</h2>
+        <div class="h4">
+            <h4>1.文档流</h4>
+            <pre class="summary">
+1.一切皆框
+2.文档流：根据元素位置，从上往下顺序排列
+        </pre>
+            <div class="example">
+                <pre class='code'>
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;position&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        div {
+            border: 1px solid #999999;
+            margin: 1px;
+            height: 50px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;A&quot;&gt;
+        A
+    &lt;/div&gt;
+    &lt;div class=&quot;AA&quot;&quot;&gt;
+        AA
+    &lt;/div&gt;
+    &lt;div class=&quot; B&quot;&gt;
+        B
+    &lt;/div&gt;
+    &lt;div class=&quot;C&quot;&gt;
+        C
+    &lt;/div&gt;
+    &lt;div class=&quot;D&quot;&gt;
+        D
+    &lt;/div&gt;
+    &lt;div class=&quot;E&quot;&gt;
+        E
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </pre>
+                <div class="img">
+                    <img src="./imgs/20200329_001.png" />
+                </div>
+            </div>
+        </div>
+        <div class="h4">
+            <h4 id="static">2.默认定位：static</h4>
+            <h4 id="fixed">3.固定定位：fixed</h4>
+            对AA进行固定定位，AA脱离文档流，位于窗口右下角，文档流AA下面的元素B顶上来。文档高度变小，滚动条消失。
+            <div class="example">
+                <pre class='code'>
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;position&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        div {
+            border: 1px solid #999999;
+            margin: 1px;
+            height: 50px;
+        }
+
+        .AA {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            background: RED;
+            color: white;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;A&quot;&gt;
+        A
+    &lt;/div&gt;
+    &lt;div class=&quot;AA&quot;&quot;&gt;
+        AA
+    &lt;/div&gt;
+    &lt;div class=&quot; B&quot;&gt;
+        B
+    &lt;/div&gt;
+    &lt;div class=&quot;C&quot;&gt;
+        C
+    &lt;/div&gt;
+    &lt;div class=&quot;D&quot;&gt;
+        D
+    &lt;/div&gt;
+    &lt;div class=&quot;E&quot;&gt;
+        E
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </pre>
+                <div class="img">
+                    <img src="./imgs/20200329_002.png" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="h4">
+            <h4 id="absolute">4.绝对定位absolute</h4>
+            先看默认显示，B包含3个DIV，B1,B2,B3从上往下排列。
+            <div class="example">
+                <pre class='code'>
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;position&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        div {
+            border: 1px solid #999999;
+            margin: 1px;
+            height: 50px;
+        }
+
+        .AA {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            background: RED;
+            color: white;
+        }
+
+        .B {
+            height: 200px;
+            position: relative;
+        }
+
+        .B div {
+            width: 200px;
+            height: 50px;
+            border: 1px solid red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;A&quot;&gt;
+        A
+    &lt;/div&gt;
+    &lt;div class=&quot;AA&quot;&quot;&gt;
+        AA
+    &lt;/div&gt;
+    &lt;div class=&quot; B&quot;&gt;
+        &lt;div class=&quot;b1&quot;&gt;B1&lt;/div&gt;
+        &lt;div class=&quot;b2&quot;&gt;B2&lt;/div&gt;
+        &lt;div class=&quot;b3&quot;&gt;B3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;C&quot;&gt;
+        C
+    &lt;/div&gt;
+    &lt;div class=&quot;D&quot;&gt;
+        D
+    &lt;/div&gt;
+    &lt;div class=&quot;E&quot;&gt;
+        E
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </pre>
+                <div class="img">
+                    <img src="./imgs/20200330_001.png" />
+                </div>
+            </div>
+            <pre class="summary" id="absolute用法">
+1.首先将B元素position设为relative；
+2.将B1,B2position设为absolute;
+
+B1,B2绝对定位后，脱离文档流，B3顶上。
+B1,B2的位置，基于最近的已定位祖先元素:
+
+top:100px; 则上面距离B顶部距离为100.
+right:20px;则右边距离B右边框距离20px;
+left:20px;左边距离B左边框距离20px;
+bottom:20px;下边距离B下边框距离20px;
+        </pre>
+            <div class="example">
+                <pre class='code'>
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;position&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        div {
+            border: 1px solid #999999;
+            margin: 1px;
+            height: 50px;
+        }
+
+        .AA {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            background: RED;
+            color: white;
+        }
+
+        .B {
+            height: 200px;
+            position: relative;
+        }
+
+        .B div {
+            width: 200px;
+            height: 50px;
+            border: 1px solid red;
+        }
+
+        .b1 {
+            position: absolute;
+            right: 0;
+        }
+
+        .b2 {
+            position: absolute;
+            top: 100px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;A&quot;&gt;
+        A
+    &lt;/div&gt;
+    &lt;div class=&quot;AA&quot;&quot;&gt;
+        AA
+    &lt;/div&gt;
+    &lt;div class=&quot; B&quot;&gt;
+        &lt;div class=&quot;b1&quot;&gt;B1,absolute,right:0&lt;/div&gt;
+        &lt;div class=&quot;b2&quot;&gt;B2,absolute,top:100px;&lt;/div&gt;
+        &lt;div class=&quot;b3&quot;&gt;B3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;C&quot;&gt;
+        C
+    &lt;/div&gt;
+    &lt;div class=&quot;D&quot;&gt;
+        D
+    &lt;/div&gt;
+    &lt;div class=&quot;E&quot;&gt;
+        E
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </pre>
+                <div class="img">
+                    <img src="./imgs/20200329_004.png" />
+                </div>
+            </div>
+        </div>
+
+
+        <div class="h4">
+            <h4 id="relative">5.相对定位</h4>
+            <pre class="desc">
+1.相对定位最简单，即相对于他在文档流中原本的位置，进行一个偏移。可用于微调。
+2.从示例可看出，后面的C\D\E不受B元素位置的变动影响。
+        </pre>
+            <div class="example">
+                <pre class='code'>
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;position&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        div {
+            border: 1px solid #999999;
+            margin: 1px;
+            height: 50px;
+        }
+
+        .AA {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            background: RED;
+            color: white;
+        }
+
+        .B {
+            position: relative;
+            left: 20px;
+            top: 20px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;A&quot;&gt;
+        A
+    &lt;/div&gt;
+    &lt;div class=&quot;AA&quot;&quot;&gt;
+        AA
+    &lt;/div&gt;
+    &lt;div class=&quot; B&quot;&gt;
+        B
+    &lt;/div&gt;
+    &lt;div class=&quot;C&quot;&gt;
+        C
+    &lt;/div&gt;
+    &lt;div class=&quot;D&quot;&gt;
+        D
+    &lt;/div&gt;
+    &lt;div class=&quot;E&quot;&gt;
+        E
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+            </pre>
+                <div class="img">
+                    <img src="./imgs/20200330_002.png" />
+                </div>
+            </div>
+            <pre class="summary">
+
+        </pre>
+        </div>
+        </div>
+
+</html>
