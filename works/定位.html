@@ -10,22 +10,25 @@
 
 <body>
     <embed type="text/html" src="index.html" />
-    <ul class="link">
-        <a href="#static">默认定位static</a>
-        <a href="#fixed">固定定位fixed</a>
-        <a href="#absolute">绝对定位absolute</a>
-        <a href="#absolute用法">absolute用法</a>
-        <a href="#relative">相对定位</a>
+    <div class="sections">
+        本页内直达：
+        <div class="links">
+            <a href="#static">默认定位static</a>
+            <a href="#fixed">固定定位fixed</a>
+            <a href="#absolute">绝对定位absolute</a>
+            <a href="#absolute用法">absolute用法</a>
+            <a href="#relative">相对定位</a>
         </div>
-        <h2>css定位</h2>
-        <div class="h4">
-            <h4>1.文档流</h4>
-            <pre class="summary">
+    </div>
+    <h2>css定位</h2>
+    <div class="h4">
+        <h4>1.文档流</h4>
+        <pre class="summary">
 1.一切皆框
 2.文档流：根据元素位置，从上往下顺序排列
         </pre>
-            <div class="example">
-                <pre class='code'>
+        <div class="example">
+            <pre class='code'>
 &lt;html&gt;
 
 &lt;head&gt;
@@ -62,17 +65,17 @@
 
 &lt;/html&gt;
             </pre>
-                <div class="img">
-                    <img src="./imgs/20200329_001.png" />
-                </div>
+            <div class="img">
+                <img src="./imgs/20200329_001.png" />
             </div>
         </div>
-        <div class="h4">
-            <h4 id="static">2.默认定位：static</h4>
-            <h4 id="fixed">3.固定定位：fixed</h4>
-            对AA进行固定定位，AA脱离文档流，位于窗口右下角，文档流AA下面的元素B顶上来。文档高度变小，滚动条消失。
-            <div class="example">
-                <pre class='code'>
+    </div>
+    <div class="h4">
+        <h4 id="static">2.默认定位：static</h4>
+        <h4 id="fixed">3.固定定位：fixed</h4>
+        对AA进行固定定位，AA脱离文档流，位于窗口右下角，文档流AA下面的元素B顶上来。文档高度变小，滚动条消失。
+        <div class="example">
+            <pre class='code'>
 &lt;html&gt;
 
 &lt;head&gt;
@@ -118,18 +121,18 @@
 
 &lt;/html&gt;
             </pre>
-                <div class="img">
-                    <img src="./imgs/20200329_002.png" />
-                </div>
+            <div class="img">
+                <img src="./imgs/20200329_002.png" />
             </div>
-
         </div>
 
-        <div class="h4">
-            <h4 id="absolute">4.绝对定位absolute</h4>
-            先看默认显示，B包含3个DIV，B1,B2,B3从上往下排列。
-            <div class="example">
-                <pre class='code'>
+    </div>
+
+    <div class="h4">
+        <h4 id="absolute">4.绝对定位absolute</h4>
+        先看默认显示，B包含3个DIV，B1,B2,B3从上往下排列。
+        <div class="example">
+            <pre class='code'>
 &lt;html&gt;
 
 &lt;head&gt;
@@ -188,11 +191,11 @@
 
 &lt;/html&gt;
             </pre>
-                <div class="img">
-                    <img src="./imgs/20200330_001.png" />
-                </div>
+            <div class="img">
+                <img src="./imgs/20200330_001.png" />
             </div>
-            <pre class="summary" id="absolute用法">
+        </div>
+        <pre class="summary" id="absolute用法">
 1.首先将B元素position设为relative；
 2.将B1,B2 position设为absolute;
 
@@ -205,8 +208,8 @@ right:20px;则右边距离B右边框距离20px;
 left:20px;左边距离B左边框距离20px;
 bottom:20px;下边距离B下边框距离20px;
         </pre>
-            <div class="example">
-                <pre class='code'>
+        <div class="example">
+            <pre class='code'>
 &lt;html&gt;
 
 &lt;head&gt;
@@ -275,21 +278,21 @@ bottom:20px;下边距离B下边框距离20px;
 
 &lt;/html&gt;
             </pre>
-                <div class="img">
-                    <img src="./imgs/20200329_004.png" />
-                </div>
+            <div class="img">
+                <img src="./imgs/20200329_004.png" />
             </div>
         </div>
+    </div>
 
 
-        <div class="h4">
-            <h4 id="relative">5.相对定位</h4>
-            <pre class="desc">
+    <div class="h4">
+        <h4 id="relative">5.相对定位</h4>
+        <pre class="desc">
 1.相对定位最简单最容易理解，即相对于他在文档流中原本的位置，进行一个偏移。可用于微调。
 2.从示例可看出，后面的C\D\E不受B元素位置的变动影响。
         </pre>
-            <div class="example">
-                <pre class='code'>
+        <div class="example">
+            <pre class='code'>
 &lt;html&gt;
 
 &lt;head&gt;
@@ -341,14 +344,14 @@ bottom:20px;下边距离B下边框距离20px;
 
 &lt;/html&gt;
             </pre>
-                <div class="img">
-                    <img src="./imgs/20200330_002.png" />
-                </div>
+            <div class="img">
+                <img src="./imgs/20200330_002.png" />
             </div>
-            <pre class="summary">
+        </div>
+        <pre class="summary">
 
         </pre>
-        </div>
-        </div>
+    </div>
+    </div>
 
 </html>
