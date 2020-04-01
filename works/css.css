@@ -31,6 +31,11 @@ embed {
     left: 20px;
 }
 
+a,
+a:visited {
+    color: #1a0dab;
+}
+
 .pages {
     position: fixed;
     right: 0;
