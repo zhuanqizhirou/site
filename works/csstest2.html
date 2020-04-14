@@ -1,0 +1,151 @@
+<html>
+
+<head>
+    <title>css实战</title>
+    <style type="text/css">
+        .exercise.an {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+        }
+
+        .exercise {
+            border: 1px solid #ee0000;
+            padding: 20px;
+            margin: 2px;
+            position: relative;
+        }
+
+
+
+        .border {
+            border: 1px solid #999999;
+        }
+
+        .block {
+            border: 1px solid #999999;
+            padding: 20px;
+            margin: 2px;
+            height: 100px;
+        }
+
+
+
+        /* 以下为练习答案： */
+
+        .prewrap {
+            white-space: pre-wrap;
+        }
+
+        #e1 span {
+            display: block;
+        }
+
+        #e31 {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        #d1 {
+            text-align: center;
+            /* 已知height100px; height等于line-height,则垂直居中 */
+            line-height: 100px;
+        }
+
+        #d2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #d3 {
+            position: relative;
+        }
+
+        #d3 span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #e32 div:nth-child(2) {
+            position: relative;
+        }
+
+        #e32 div:nth-child(2) span {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        /* 或使用last-child */
+        #e32 div:last-child span {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        #e33 span:nth-child(2) {
+            position: relative;
+            top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="e1" class="exercise">
+        改变span性质，每个span一行：
+        <div class="block">
+            <span>span1</span><span>span3</span><span>span3</span>
+        </div>
+    </div>
+    <div class="exercise">
+        <div id="d1" class="block">
+            <span>这是一个span 位于#d1，请放在高100px的div中间</span>
+        </div>
+        <div id="d2" class="block">
+            <span>这是一个span 位于#d2，请放在高100px的div中间</span>
+        </div>
+        <div id="d3" class="block">
+            <span>这是一个span 位于#d3，请放在高100px的div中间</span>
+        </div>
+        <div id="d4" class="block">
+            <span>这是一个span 位于#d4，请放在高100px的div中间</span>
+        </div>
+    </div>
+    <div class="exercise" id="e3">
+        1.将#e31确定按钮固定在右上角，靠边20px;
+        <button id="e31" class="block">
+            确定
+        </button>
+
+        <div id="e32" class="block" style="padding:0; height:150px; ">
+            <div>
+                <span>定位练习</span>
+            </div>
+            <div style="border: 1px solid blue;width:100%;height:100px;">
+                <span class="border">通过#e32结合nth-child(num) 或 :last-child ，将本span放在蓝框div右下角，靠边20px</span>
+            </div>
+        </div>
+        3.
+        <div id="e33" class="block">
+            <span style="border:1px solid gray;margin:2px;">这是一个span</span>
+            <span style="border:1px solid gray;margin:2px;">这是一个span，不添加id或class将我向下偏移5px</span>
+            <span style="border:1px solid gray;margin:2px;">这是一个span</span>
+        </div>
+    </div>
+    <div id="e4" class="exercise">
+        请用white-space将下面文字元素按原格式显示成3行：
+        <div class="prewrap">
+            操作失败：
+            1. 商品名称为空;
+            2. 商品规格为空
+        </div>
+    </div>
+    <div class="exercise an"><a href="csstest2.html" target="_blank">答案页</a></div>
+</body>
+
+</html>
